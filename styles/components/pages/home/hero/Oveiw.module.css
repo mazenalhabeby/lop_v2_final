@@ -1,0 +1,15 @@
+.wrapper {
+  perspective: 1000;
+  z-index: 2;
+  @apply absolute top-0 w-full h-screen;
+}
+.container {
+  background-image: url(/images/tample.png);
+  @apply bg-cover w-full h-full overflow-x-hidden;
+}
+
+.text_wrapper {
+  background-image: url(/images/paper.png);
+  @apply bg-cover bg-no-repeat bg-center p-8 font-papyrus text-xl shadow-lg tracking-widest leading-loose font-semibold text-center capitalize col-span-6 justify-self-center;
+  text-shadow: 0 0 rgba(255, 255, 255, 0.3);
+}

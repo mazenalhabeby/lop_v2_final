@@ -1,0 +1,33 @@
+{
+  "characterName1": "Mazen",
+  "charactorPossion1": "Co-Founder & CEO",
+  "characterJob1": "BlockChain Developer",
+
+  "characterName2": "Bilal",
+  "charactorPossion2": "Co-Founder & COO",
+  "characterJob2": "Full-stack developer",
+
+  "characterName3": "Kateryna",
+  "charactorPossion3": "Art Manager",
+  "characterJob3": "2D - 3D Designer",
+
+  "characterName5": "David",
+  "charactorPossion5": "Game Developing Manager",
+  "characterJob5": "Unity Developer",
+
+  "characterName6": "Momen Medhat",
+  "charactorPossion6": "Strategic Partner",
+  "characterJob6": "Strategic",
+
+  "characterName7": "Ahmed Ragab",
+  "charactorPossion7": "Financial Advisor",
+  "characterJob7": "Business Development Director",
+
+  "advisor1": "Nariman",
+  "advisorPossion1": "Managing Partner & CTO",
+  "advisorTitle1": "Cybersecurity",
+
+  "advisor2": "Asad Zeeshan",
+  "advisorPossion2": "Co-Founder & CMO",
+  "advisorTitle2": "Crypto Advisor"
+}

@@ -1,0 +1,58 @@
+.wrapper {
+  height: calc(100vh);
+  width: 100%;
+  background-image: url(/images/background.jpg);
+  zindex: 1;
+  @apply bg-contain bg-center;
+}
+.container {
+  background-image: url(/images/background.jpg);
+  @apply bg-no-repeat bg-contain bg-center relative w-full h-full overflow-hidden;
+}
+
+.video {
+  @apply opacity-0 lg:opacity-10 z-30 w-full;
+}
+
+.pharaohs_wrapper {
+  @apply absolute bottom-0 mx-auto w-full;
+}
+
+.pharaohs_container {
+  @apply w-full flex justify-center gap-5 relative z-20;
+}
+
+.pharaohs_title {
+  @apply absolute bottom-32 text-5xl text-white uppercase tracking-[0.7rem] flex flex-row gap-3 italic;
+}
+.pharaohs_title span:last-child,
+.pharaohs_title span:nth-child(3) {
+  @apply text-amber-400 font-papyrus tracking-normal font-bold;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.pharaohs:first-of-type {
+  @apply w-[16%] h-[20%];
+}
+.pharaohs:nth-of-type(2) {
+  @apply w-[11%] h-[20%];
+}
+.pharaohs:last-of-type {
+  @apply w-[12.5%] h-[20%];
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(251, 191, 36, 0.4),
+      0 0 40px rgba(251, 191, 36, 0.4) 0 0 50px rgba(251, 191, 36, 0.4) 0 0 60px
+        rgba(251, 191, 36, 0.4) 0 0 70px rgba(251, 191, 36, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 30px rgb(255, 237, 43, 0.02), 0 0 40px rgb(255, 237, 43, 0.02),
+      0 0 50px rgb(255, 237, 43, 0.02), 0 0 60px rgb(255, 237, 43, 0.02),
+      0 0 70px rgb(255, 237, 43, 0.02), 0 0 80px rgb(255, 237, 43, 0.02);
+  }
+}

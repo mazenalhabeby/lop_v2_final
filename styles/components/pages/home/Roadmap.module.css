@@ -1,0 +1,16 @@
+.roadmap_parent .roadmap_status {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  top: 0;
+}
+.roadmap_parent:nth-child(odd) .roadmap_status {
+  transform: translate(50%, -50%);
+  right: -2rem;
+}
+
+.roadmap_parent:nth-child(even) .roadmap_status {
+  transform: translate(-50%, -50%);
+  left: -2rem;
+}

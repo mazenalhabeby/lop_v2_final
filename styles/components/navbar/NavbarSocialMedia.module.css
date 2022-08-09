@@ -1,0 +1,11 @@
+.wrapper {
+  @apply bg-slate-900 text-slate-100 py-2 uppercase tracking-wider font-aclonica text-xs;
+}
+
+.links_container {
+  @apply flex flex-row gap-2 justify-end items-center container mx-auto px-4;
+}
+
+.links_wrapper {
+  @apply flex flex-row gap-2 items-center text-base;
+}

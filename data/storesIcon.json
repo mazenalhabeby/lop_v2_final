@@ -1,0 +1,22 @@
+[
+  {
+    "name": "app store",
+    "fileName": "appstore"
+  },
+  {
+    "name": "play store",
+    "fileName": "googlestore"
+  },
+  {
+    "name": "microsoft store",
+    "fileName": "windowsstore"
+  },
+  {
+    "name": "playStation store",
+    "fileName": "playstation"
+  },
+  {
+    "name": "xbox store",
+    "fileName": "Xboxstore"
+  }
+]

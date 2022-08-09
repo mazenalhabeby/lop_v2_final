@@ -1,0 +1,67 @@
+{
+  "nftOwnership": "NFT SKIN OWNERSHIP",
+  "ownershipDesc": "Your pharaohs skins and all the tools are stored securely on the blockchain.",
+  "marketPlace": "MARKET PLACE",
+  "marketDesc": "Trade pharaohs skins and tools or fuse them together to get greater rewards!",
+  "nftStaking": "NFT STAKING",
+  "stakingDesc": "Increase your $LOP token yields by holding onto your NFT skins and tools",
+  "mobaGame": "MOBA GAME",
+  "gameDesc": "Battle it out in the Ancient Pharaonic Realm for FREE and earn $LOP while doing it.",
+
+  "tokenTitle1": "Participation",
+  "tokenFeature01": "Join in on a variety of special events, including tournaments, raffles, gambling and draws; potentially earning far greater rewards!",
+  "tokenTitle2": "LOP Staking",
+  "tokenFeature02": "Use your $LOP tokens to earn more currency! Watch it rise in value as $LOP inevitably conquers the NFT game market",
+  "tokenTitle3": "In Game Payment",
+  "tokenFeature03": "Use $LOP tokens to make in-game purchases, gaining new heroes skins or access to special events",
+  "tokenTitle4": "GOVERNANCE",
+  "tokenFeature04": "League of Pharaohs is designed to have a player driven economy, that economies growth is contigent upon our player base earning, spending and staking $LOP tokens",
+
+  "Brand": "Brand and strategy",
+  "gameLogic": "Game logic development",
+  "sMedia": "Social media channels launch",
+  "video": "Trailer video",
+  "website": "website UX/UI Design",
+  "preMarketing": "Pre-marketing",
+
+  "websiteV1": "LOP Website V1",
+  "character": "Main Characters Design",
+  "smartContract": "Smart Contract Development",
+  "ico": "ICO Funding",
+  "audit": "Smart Contract audit completion",
+
+  "publicsale": "Public Sale",
+  "Prototype": "Game ProtoType Development",
+  "Characters": "Characters 3D Design",
+  "Marketing2": "Marketing Compaigns",
+
+  "privatesale": "IDO",
+  "websiteV2": "Website V2",
+  "Ecosystem": "LOP Ecosystem",
+  "deploy": "Deploying smart contract",
+  "markets": "Coingecko, Coin MarketCap listing",
+
+  "NFTMBeta": "NFT Marketplace beta test",
+  "NFTM": "NFT Marketplace Launch",
+  "NFTSale": "NFT sale",
+  "NFTStake": "NFT Staking",
+  "NFTFusion": "NFT Fusion",
+  "listing2": "CEX listing",
+
+  "betaGame": "Beta Game Launch",
+  "PVP": "(PVP, Adventure/Mode/Contests)",
+  "character2": "Character upgrades",
+
+  "game": "Public launch of MOBA Game",
+  "additionalNFT": "Additional Exclusives Seasonal NFTs",
+  "Tournament": "Big Event (Tournament)",
+
+  "getYour": "Get your",
+  "tokenName": "$LOP Token ",
+  "early": "with early price now",
+
+  "listingCost": "Listing Price = 0.076 $",
+  "presaleButton": "BUY LOP",
+
+  "outPartner": "Our Partners"
+}
