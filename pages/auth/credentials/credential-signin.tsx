@@ -7,7 +7,7 @@ import AuthContainer from '@/components/AuthContainer'
 import toast from 'react-hot-toast'
 import {useRouter} from 'next/router'
 
-export default function credentialSignin() {
+export default function CredentialSignin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 

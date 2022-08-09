@@ -48,6 +48,7 @@ const ConnectWalletBtn: FC<ConnectWalletBtnProps> = ({
               }
               width={30}
               height={30}
+              alt="wallet Icon"
             />
             <button
               onClick={() => {

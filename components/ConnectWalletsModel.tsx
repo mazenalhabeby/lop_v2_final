@@ -103,6 +103,7 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
                     width={40}
                     height={40}
                     className={`group-disabled:grayscale group-disabled:opacity-50`}
+                    alt="wallet icons"
                   />
                   <span className={`group-disabled:text-slate-600 capitalize`}>
                     Connect with {item.replace('_', ' ')}
