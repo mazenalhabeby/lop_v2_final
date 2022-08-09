@@ -2,14 +2,14 @@
   "name": "lop_v2_final",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "yarn": "^1.22.18"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "engines": {
+    "yarn": "^1.22.18"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.6.8",
