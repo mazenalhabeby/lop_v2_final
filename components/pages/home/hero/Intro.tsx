@@ -3,6 +3,7 @@ import MainButton from '../../../MainButton'
 import styles from '@/styles/components/pages/home/hero/Intro.module.css'
 import StoresIcon from '@/components/StoresIcon'
 import Image from 'next/image'
+import liveKey from '@/assets/images/liveKey.png'
 
 const title = {
   visible: {opacity: 1, y: 0},
@@ -63,12 +64,7 @@ const Intro = ({scrollYProgress}: any) => {
             })}
             <div className="-mx-12 h-48 flex items-end ">
               <div className="animate-bounce-slow">
-                <Image
-                  src={'./images/liveKey.png'}
-                  width={50}
-                  height={90}
-                  alt={'lifekey'}
-                />
+                <Image src={liveKey} width={50} height={90} alt={'lifekey'} />
               </div>
             </div>
             <motion.div
