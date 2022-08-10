@@ -59,6 +59,7 @@ const Intro = ({scrollYProgress}: any) => {
                   key={i}
                   height={character.height}
                   width={character.width}
+                  priority
                 />
               )
             })}
@@ -69,6 +70,7 @@ const Intro = ({scrollYProgress}: any) => {
                   width={50}
                   height={90}
                   alt={'lifekey'}
+                  priority
                 />
               </div>
             </div>
