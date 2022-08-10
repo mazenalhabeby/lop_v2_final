@@ -64,7 +64,7 @@ const Intro = ({scrollYProgress}: any) => {
             <div className="-mx-12 h-48 flex items-end ">
               <div className="animate-bounce-slow">
                 <Image
-                  src={'/images/liveKey.png'}
+                  src={'./images/liveKey.png'}
                   width={50}
                   height={90}
                   alt={'lifekey'}
