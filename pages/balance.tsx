@@ -4,9 +4,7 @@ import {getSession} from 'next-auth/react'
 import Link from 'next/link'
 import {client} from '@/libs/sanity'
 import {useEffect, useState} from 'react'
-import UnderLink from '@/assets/svg/UnderLink'
 import TitleunderLine from '@/components/TitleunderLine'
-import {IoMdRemove} from 'react-icons/io'
 
 interface BalanceProps {
   userAmount: {
@@ -57,7 +55,9 @@ export default function Balance({userAmount}: BalanceProps) {
         <span>your Transaction history</span>
         <TitleunderLine />
       </div>
-      <div className="xl:w-4/5 min-h-[18rem] min-w-max">
+      <div
+        className="xl:w-4/5 min-w-max"
+        style={{minHeight: 'calc(100vh - 26.6rem)'}}>
         <table className="table-auto w-full border-collapse border border-slate-600">
           <thead>
             <tr>
