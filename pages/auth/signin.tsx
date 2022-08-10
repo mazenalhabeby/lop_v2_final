@@ -1,4 +1,3 @@
-import {motion} from 'framer-motion'
 import {getProviders, getSession, signIn} from 'next-auth/react'
 import {ImFacebook} from 'react-icons/im'
 import {BsGoogle, BsTwitter} from 'react-icons/bs'

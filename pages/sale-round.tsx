@@ -17,6 +17,14 @@ import ConnectWalletBtn from '@/components/ConnectWalletBtn'
 import {formatEther} from '@ethersproject/units'
 
 declare var window: any
+
+function getUserBalance(account: any, library: any, cb: any) {
+  if (account && library) {
+    library.getBalance(account).then((balance: any) => {
+      cb(balance)
+    })
+  }
+}
 export default function SaleRound() {
   const [openModel, setOpenModel] = useState(false)
   const [activatingConnector, setActivatingConnector] = useState()
@@ -48,16 +56,8 @@ export default function SaleRound() {
     }
   }, [activatingConnector, connector])
 
-  function getUserBalance() {
-    if (account && library) {
-      library.getBalance(account).then((balance: any) => {
-        setBalance(balance)
-      })
-    }
-  }
-
   useEffect(() => {
-    getUserBalance()
+    getUserBalance(account, library, setBalance)
   }, [account, library])
 
   enum ConnectorNames {

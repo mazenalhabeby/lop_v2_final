@@ -11,6 +11,7 @@ const DefaultLinks = () => {
     if (window.location.hash === '#_=_') {
       router.push({pathname: '/sale-round'})
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath])
   return (
     <div>

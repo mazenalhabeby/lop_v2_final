@@ -2,6 +2,7 @@ import {parseEther} from '@ethersproject/units'
 import {useWeb3React} from '@web3-react/core'
 import {ethers} from 'ethers'
 import {useSession} from 'next-auth/react'
+import Image from 'next/image'
 import {FC, useEffect, useState} from 'react'
 import {useForm} from 'react-hook-form'
 import toast from 'react-hot-toast'
@@ -119,7 +120,12 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
           onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-row justify-between items-center w-full">
             <div className="flex flex-row items-center justify-center gap-2 text-sm">
-              <img src="/images/bnb-icon2_2x.webp" width={15} />
+              <Image
+                src="/images/bnb-icon2_2x.webp"
+                width={15}
+                height={15}
+                alt={'BNB icon'}
+              />
               <span>1 BNB =</span>
               <span>{BNBPrince} $</span>
             </div>

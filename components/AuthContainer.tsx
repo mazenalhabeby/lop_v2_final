@@ -1,5 +1,6 @@
 import {ChildrenTypeProp} from '@/types'
 import {motion} from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import {FC} from 'react'
 import TitleunderLine from './TitleunderLine'
@@ -16,7 +17,7 @@ const AuthContainer: FC<AuthContainerProps> = ({children, title}) => {
       className="w-full h-screen flex justify-center items-center ">
       <div className="flex flex-col gap-4 rounded-xl nm-flat-slate-700 px-4">
         <div className="bg-slate-800 rounded-b-3xl w-max mx-auto px-3 py-2 ">
-          <img src="/images/logo.png" alt="logo" className=" w-24" />
+          <Image src="/images/logo.png" alt="logo" width={96} height={96} />
         </div>
         <h1 className="text-center font-aclonica uppercase text-xl ">
           League of pharaohs

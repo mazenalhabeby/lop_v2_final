@@ -45,7 +45,7 @@ export default function Balance({userAmount}: BalanceProps) {
     })
 
     setIcoTotal(totalIco)
-  }, [])
+  }, [userAmount])
 
   return (
     <motion.div

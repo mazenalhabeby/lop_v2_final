@@ -1,7 +1,8 @@
-import {motion, useTransform, useViewportScroll} from 'framer-motion'
+import {motion, useTransform} from 'framer-motion'
 import MainButton from '../../../MainButton'
 import styles from '@/styles/components/pages/home/hero/Intro.module.css'
 import StoresIcon from '@/components/StoresIcon'
+import Image from 'next/image'
 
 const title = {
   visible: {opacity: 1, y: 0},
@@ -19,9 +20,9 @@ const titleWords = [
 ]
 
 const charactersImg = [
-  {srcLink: '/images/anobus.png', alt: 'anobus'},
-  {srcLink: '/images/pharaohs.png', alt: 'pharaohs'},
-  {srcLink: '/images/horas.png', alt: 'horas'},
+  {srcLink: '/images/anobus.png', alt: 'anobus', height: 500, width: 250},
+  {srcLink: '/images/pharaohs.png', alt: 'pharaohs', height: 500, width: 200},
+  {srcLink: '/images/horas.png', alt: 'horas', height: 500, width: 220},
 ]
 
 const Intro = ({scrollYProgress}: any) => {
@@ -50,17 +51,24 @@ const Intro = ({scrollYProgress}: any) => {
           <div className={`${styles.pharaohs_container}`}>
             {charactersImg.map((character, i) => {
               return (
-                <img
+                <Image
                   src={character.srcLink}
                   className={`${styles.pharaohs}`}
                   alt={character.alt}
                   key={i}
+                  height={character.height}
+                  width={character.width}
                 />
               )
             })}
             <div className="-mx-12 h-48 flex items-end ">
               <div className="animate-bounce-slow">
-                <img src={'/images/liveKey.png'} width={40} />
+                <Image
+                  src={'/images/liveKey.png'}
+                  width={50}
+                  height={90}
+                  alt={'lifekey'}
+                />
               </div>
             </div>
             <motion.div

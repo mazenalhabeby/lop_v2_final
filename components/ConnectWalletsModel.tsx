@@ -50,13 +50,13 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
     document.addEventListener('mousedown', handleClick)
     // clean up
     return () => document.removeEventListener('mousedown', handleClick)
-  }, [openModel])
+  }, [openModel, setOpenModel])
 
   useEffect(() => {
     if (!!error) {
       toast.error(getErrorMessage(error))
     }
-  }, [error])
+  }, [error, getErrorMessage])
 
   return (
     <motion.div

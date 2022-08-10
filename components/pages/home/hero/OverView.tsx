@@ -110,6 +110,7 @@ const OverView = ({scrollYProgress}: any) => {
     )
 
     return () => window.removeEventListener('resize', handleResize)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handleResize])
 
   return (
