@@ -94,19 +94,19 @@ const RoadMap = () => {
   return (
     <section
       id="roadmap"
-      className="bg-gradient-to-br from-rose-600 to-amber-600 py-14">
+      className={` bg-slate-900 bg-[url("/images/egypt_book.jpeg")] bg-no-repeat bg-cover bg-fixed bg-center py-14 text-white bg-blend-overlay`}>
       <div className="container mx-auto space-y-8">
         <div className=" w-max mx-auto flex flex-col gap-4">
           <h3 className=" font-papyrus text-3xl uppercase">road map</h3>
           <TitleunderLine />
         </div>
-        <div className="relative mx-auto w-4/5 before:bg-slate-800 lg:before:absolute lg:before:top-0 lg:before:left-2/4 lg:before:h-full lg:before:w-0.5 lg:before:-translate-x-2/4 lg:before:content-[''] dark:lg:before:bg-white pt-0 md:pt-6">
+        <div className="relative mx-auto w-4/5 lg:before:absolute lg:before:top-0 lg:before:left-2/4 lg:before:h-full lg:before:w-0.5 lg:before:-translate-x-2/4 lg:before:content-[''] before:bg-slate-500 pt-0 md:pt-6">
           <ul>
             {raodMapContent.map((obj) => {
               return (
                 <li
                   key={obj.id}
-                  className={`${styles.roadmap_parent} relative mb-4 rounded-lg p-4 text-black last:mb-0 lg:mb-10 lg:w-2/4 lg:odd:float-left lg:odd:clear-right lg:odd:-translate-x-8 lg:even:float-right lg:even:clear-left lg:even:translate-x-8 glass_effect`}>
+                  className={`${styles.roadmap_parent} relative mb-4 rounded-lg p-4 text-black last:mb-0 lg:mb-10 lg:w-2/4 lg:odd:float-left lg:odd:clear-right lg:odd:-translate-x-8 lg:even:float-right lg:even:clear-left lg:even:translate-x-8 bg-[url("/images/papyusPaper.png")] bg-center bg-cover`}>
                   <div
                     className={`${styles.roadmap_status} ${
                       obj.mainStat === 'prog'
