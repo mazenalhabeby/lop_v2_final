@@ -105,8 +105,9 @@ const Intro = ({scrollYProgress}: any) => {
           <MainButton btnName={'Papyrus'} type="link" />
           <MainButton
             btnName={'buy lop'}
-            bgColor={'bg-amber-500'}
-            colorHover="text-slate-100"
+            bgColor={'bg-cyan-300'}
+            color={'text-slate-900'}
+            colorHover={'hover:text-slate-500'}
             fontWeight="sami-bold"
             type="link"
             hrefLink="/sale-round"

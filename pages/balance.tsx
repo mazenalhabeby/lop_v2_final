@@ -5,6 +5,7 @@ import Link from 'next/link'
 import {client} from '@/libs/sanity'
 import {useEffect, useState} from 'react'
 import TitleunderLine from '@/components/TitleunderLine'
+import Image from 'next/image'
 
 interface BalanceProps {
   userAmount: {
@@ -145,11 +146,18 @@ export default function Balance({userAmount}: BalanceProps) {
         </table>
         {userAmount.length === 0 && (
           <div className="border border-slate-600 border-t-0 w-full flex flex-col gap-4 justify-center items-center py-14">
-            <span className="text-2xl capitalize font-semibold tracking-widest text-slate-400">
+            <Image
+              src="/images/burialOpen.png"
+              alt="empty balance"
+              width={150}
+              height={75}
+              className={'opacity-50'}
+            />
+            <span className="text-xl capitalize font-papyrus font-semibold tracking-widest text-slate-400">
               you do not have a balance yet!
             </span>
             <Link href={'/sale-round'}>
-              <a className=" bg-amber-600 py-2 px-4 rounded-lg text-xl uppercase font-semibold tracking-wider shadow-lg">
+              <a className=" bg-cyan-300 text-slate-700 font-papyrus py-2 px-4 rounded-lg text-xl uppercase tracking-wider shadow-lg">
                 Buy LOP
               </a>
             </Link>

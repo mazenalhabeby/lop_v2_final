@@ -105,9 +105,12 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
         getUserBalance()
         reset()
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err) {
         setTransactionLoading(false)
+        if (err.code == '-32603') {
+          toast.error('insufficient funds')
+        }
       }
     }
   }
@@ -169,7 +172,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
           </div>
           <button
             type="submit"
-            className=" flex flex-row items-center gap-1 bg-amber-500 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
+            className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
             disabled={transactionLoading}>
             {transactionLoading && <ImSpinner2 className=" animate-spin" />} Buy
             now

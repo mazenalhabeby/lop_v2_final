@@ -1,4 +1,5 @@
 import JobAplication from '@/components/JobAplication'
+import MainButton from '@/components/MainButton'
 import TeamMembers from '@/components/TeamMembers'
 import TitleunderLine from '@/components/TitleunderLine'
 
@@ -11,6 +12,19 @@ const Teams = () => {
           <TitleunderLine />
         </div>
         <TeamMembers />
+      </div>
+      <div
+        className={` bg-black/90 bg-[url("/images/egypt_book.jpeg")] bg-no-repeat bg-cover bg-fixed bg-center bg-blend-overlay flex flex-row justify-center items-center gap-10 py-10`}>
+        <MainButton btnName={'Papyrus'} type="link" />
+        <MainButton
+          btnName={'buy lop'}
+          bgColor={'bg-cyan-300'}
+          color={'text-amber-600'}
+          colorHover={'hover:text-slate-500'}
+          fontWeight="sami-bold"
+          type="link"
+          hrefLink="/sale-round"
+        />
       </div>
       <JobAplication />
     </section>
