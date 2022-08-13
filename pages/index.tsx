@@ -5,6 +5,7 @@ import RoadMap from '@/components/pages/home/RoadMap'
 import Teams from '@/components/pages/home/Teams'
 import Tokenomics from '@/components/pages/home/Tokenomics'
 import HomeLayout from '@/layouts/HomeLayout'
+import JobAplication from '@/components/JobAplication'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <RoadMap />
       <Partners />
       <Teams />
+      <JobAplication />
     </motion.div>
   )
 }

@@ -1,4 +1,3 @@
-import JobAplication from '@/components/JobAplication'
 import MainButton from '@/components/MainButton'
 import TeamMembers from '@/components/TeamMembers'
 import TitleunderLine from '@/components/TitleunderLine'
@@ -26,7 +25,6 @@ const Teams = () => {
           hrefLink="/sale-round"
         />
       </div>
-      <JobAplication />
     </section>
   )
 }

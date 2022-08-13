@@ -41,15 +41,14 @@ const HeroMobile = () => {
             }}
             className="h-full w-full rounded-lg opacity-70"></video>
         </div>
-        <div className="absolute w-[95%] md:w-[78%] h-[83%] md:h-[83%] border-2 rounded-tr-[3rem] rounded-bl-[3rem] border-yellow-600 dark:border-yellow-500 flex flex-col gap-2 items-center justify-center">
+        <div className="absolute w-[95%] md:w-[78%] h-[83%] md:h-[83%] border-2 rounded-tr-[3rem] rounded-bl-[3rem] border-yellow-600 flex flex-col gap-2 items-center justify-center">
           <div className="flex flex-col text-center gap-2 text-white text-2xl md:text-4xl">
-            <h1 className="uppercase font-aclonica">
-              league of{' '}
-              <span className="text-3xl md:text-5xl text-yellow-500">
-                pharaohs
-              </span>
+            <h1 className="uppercase font-papyrus font-semibold">
+              live as <span className="text-yellow-500 ">a-king</span>
             </h1>
-            <span className="uppercase font-aclonica">on the blockchain</span>
+            <span className="uppercase font-papyrus font-semibold">
+              fight as <span className="text-yellow-500 ">a-legend</span>
+            </span>
           </div>
           <div className="flex flex-col md:flex-row gap-4">
             <MainButton btnName={'Papyrus'} type="link" />

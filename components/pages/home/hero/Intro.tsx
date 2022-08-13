@@ -102,12 +102,12 @@ const Intro = ({scrollYProgress}: any) => {
           transition={{duration: 0.5, delay: 1.4}}
           className=" absolute w-full bottom-52 inset-x-0 flex items-center justify-center z-40 gap-10"
           style={{opacity: btnOpacity}}>
-          <MainButton btnName={'Papyrus'} type="link" />
+          <MainButton btnName={'Papyrus'} type="link" hrefLink="/white-paper" />
           <MainButton
             btnName={'buy lop'}
             bgColor={'bg-cyan-300'}
             color={'text-slate-900'}
-            colorHover={'hover:text-slate-500'}
+            colorHover={'hover:text-amber-700'}
             fontWeight="sami-bold"
             type="link"
             hrefLink="/sale-round"

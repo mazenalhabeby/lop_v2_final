@@ -1,3 +1,4 @@
+import {SidebarContextProvider} from '@/context/SidebarContext'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import {useEffect} from 'react'
