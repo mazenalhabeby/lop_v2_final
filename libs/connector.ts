@@ -3,8 +3,8 @@ import {WalletConnectConnector} from '@web3-react/walletconnect-connector'
 
 const POLLING_INTERVAL = 12000
 const RPC_URLS: {[chainId: number]: string} = {
-  1: process.env.RPC_URL_1 as string,
-  56: process.env.RPC_URL_56 as string,
+  1: process.env.NEXT_PUBLIC_RPC_URL_1 as string,
+  56: 'https://bsc-dataseed.binance.org/',
 }
 
 export const injected = new InjectedConnector({
