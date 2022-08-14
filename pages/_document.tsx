@@ -34,7 +34,11 @@ class MyDocument extends Document {
             name="facebook-domain-verification"
             content="u5h4aw86ylzoqssxtqqgz7hsq72rsj"
           />
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WEPC74HGWB"></Script>
           <Script src="/scripts/fb.js"></Script>
+          <Script src="/scripts/Google.js"></Script>
           <noscript>
             <img
               height="1"
