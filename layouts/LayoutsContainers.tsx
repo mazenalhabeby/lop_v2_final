@@ -20,7 +20,9 @@ function LayoutsContainers({children}: ChildrenTypeProp) {
           name="facebook-domain-verification"
           content="u5h4aw86ylzoqssxtqqgz7hsq72rsj"
         />
-        <script src="/components/scripts/FB.js"></script>
+        <script
+          type="application/javascript"
+          src="/components/scripts/FB.js"></script>
         <noscript>
           <img
             height="1"
