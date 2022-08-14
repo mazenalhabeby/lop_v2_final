@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -33,7 +34,7 @@ class MyDocument extends Document {
             name="facebook-domain-verification"
             content="u5h4aw86ylzoqssxtqqgz7hsq72rsj"
           />
-          <script type="application/javascript" src="/scripts/fb.js"></script>
+          <Script src="/scripts/fb.js"></Script>
           <noscript>
             <img
               height="1"
