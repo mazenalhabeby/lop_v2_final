@@ -36,9 +36,10 @@ class MyDocument extends Document {
           />
           <Script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-WEPC74HGWB"></Script>
+            src="https://www.googletagmanager.com/gtag/js?id=G-3KF3LJB384"></Script>
+          <Script src="/scripts/google.js"></Script>
+
           <Script src="/scripts/fb.js"></Script>
-          <Script src="/scripts/Google.js"></Script>
           <noscript>
             <img
               height="1"
