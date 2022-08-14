@@ -1,6 +1,6 @@
 import {parseEther} from '@ethersproject/units'
 import {useWeb3React} from '@web3-react/core'
-import {ethers} from 'ethers'
+import {ethers, providers} from 'ethers'
 import {useSession} from 'next-auth/react'
 import Image from 'next/image'
 import {FC, useEffect, useState} from 'react'
@@ -84,11 +84,17 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
     const json = await result.json()
   }
 
+  const tx = {
+    from: account,
+    to: recieverAddress,
+  }
+
   const sentTransaction = async () => {
     setTransactionLoading(true)
     try {
       let value = parseEther(buyLopAmount.toString())
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+      const provider = new providers.Web3Provider(library.provider)
       const signer = provider.getSigner()
       const tx = await signer.sendTransaction({
         to: recieverAddress,
