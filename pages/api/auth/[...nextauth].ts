@@ -8,10 +8,10 @@ import {client} from '@/libs/sanity'
 export default NextAuth({
   providers: [
     SanityCredentials(client),
-    FacebookProvider({
-      clientId: process.env.NEXT_PUBLIC_FACEBOOK_ID!,
-      clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_SECRET!,
-    }),
+    // FacebookProvider({
+    //   clientId: process.env.NEXT_PUBLIC_FACEBOOK_ID!,
+    //   clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_SECRET!,
+    // }),
 
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_ID!,
