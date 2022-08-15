@@ -62,6 +62,12 @@ const HeroMobile = () => {
             />
           </div>
         </div>
+        <div
+          className={` absolute bottom-12 py-2 px-4 rounded-t-3xl text-center font-papyrus text-xl leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
+          buy lOP with <br />
+          ICO round price
+          <div className="text-3xl text-amber-900 animate-bounce">0.025$</div>
+        </div>
       </div>
     </section>
   )

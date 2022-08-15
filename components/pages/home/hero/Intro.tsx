@@ -63,6 +63,14 @@ const Intro = ({scrollYProgress}: any) => {
                 />
               )
             })}
+            <div
+              className={`absolute -top-44 p-4 rounded-b-3xl text-center font-papyrus text-xl leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
+              buy lOP with <br />
+              ICO round price
+              <div className="text-3xl text-amber-900 animate-bounce">
+                0.025$
+              </div>
+            </div>
             <div className="-mx-12 h-48 flex items-end ">
               <div className="animate-bounce-slow">
                 <Image
@@ -74,6 +82,7 @@ const Intro = ({scrollYProgress}: any) => {
                 />
               </div>
             </div>
+
             <motion.div
               className={`${styles.pharaohs_title}`}
               style={{y: titleY, opacity: titleOpacity}}>
