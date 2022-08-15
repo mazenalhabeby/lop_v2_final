@@ -29,7 +29,7 @@ const NavbarMain: FC<NavbarMainProps> = ({links}) => {
 
   return (
     <nav
-      className={` fixed top-0 left-0 h-12 w-full text-slate-100 z-50 transition-colors duration-300 bg-slate-800`}
+      className={` fixed top-8 left-0 h-12 w-full text-slate-100 z-50 transition-colors duration-300 bg-slate-800`}
       x-component="navbar-main"
       id="navbar-main">
       <div

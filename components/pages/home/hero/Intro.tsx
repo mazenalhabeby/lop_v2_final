@@ -64,7 +64,7 @@ const Intro = ({scrollYProgress}: any) => {
               )
             })}
             <div
-              className={`absolute -top-44 p-4 rounded-b-3xl text-center font-papyrus text-xl leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
+              className={`absolute -top-36 right-6 py-4 px-4 rounded-b-3xl text-center font-papyrus text-lg leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
               buy lOP with <br />
               ICO round price
               <div className="text-3xl text-amber-900 animate-bounce">
