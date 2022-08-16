@@ -13,7 +13,7 @@ const InfoSide = () => {
     {
       id: 2,
       infoKey: 'Round 2 finishes Time',
-      infoValue: '31-10-2022 20:00:00 CEST',
+      infoValue: '15-11-2022 20:00:00 CEST',
     },
     {
       id: 4,
