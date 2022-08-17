@@ -22,7 +22,7 @@ const Teams = () => {
           colorHover={'hover:text-slate-500'}
           fontWeight="sami-bold"
           type="link"
-          hrefLink="/sale-round"
+          hrefLink="/sale"
         />
       </div>
     </section>

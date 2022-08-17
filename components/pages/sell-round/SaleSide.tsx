@@ -102,8 +102,10 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
       if (listen.confirmations > 0) {
         postTransaction()
         setTransactionLoading(false)
-        route.push('/balance')
-        toast.success('Transaction Successful! Check your balance')
+        route.push(
+          {pathname: '/sale/thanks', query: {isBuy: true}},
+          '/sale/thanks'
+        )
         getUserBalance()
         reset()
       }

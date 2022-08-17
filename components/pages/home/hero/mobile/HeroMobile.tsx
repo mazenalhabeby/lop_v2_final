@@ -58,7 +58,7 @@ const HeroMobile = () => {
               colorHover="text-slate-100"
               fontWeight="sami-bold"
               type="link"
-              hrefLink="/sale-round"
+              hrefLink="/sale"
             />
           </div>
         </div>

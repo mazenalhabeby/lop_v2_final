@@ -9,7 +9,7 @@ const DefaultLinks = () => {
   useEffect(() => {
     // Test for the ugliness.
     if (window.location.hash === '#_=_') {
-      router.push({pathname: '/sale-round'})
+      router.push({pathname: '/sale'})
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath])

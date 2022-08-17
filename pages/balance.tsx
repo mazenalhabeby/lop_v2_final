@@ -156,7 +156,7 @@ export default function Balance({userAmount}: BalanceProps) {
             <span className="text-xl capitalize font-papyrus font-semibold tracking-widest text-slate-400">
               you do not have a balance yet!
             </span>
-            <Link href={'/sale-round'}>
+            <Link href={'/sale'}>
               <a className=" bg-cyan-300 text-slate-700 font-papyrus py-2 px-4 rounded-lg text-xl uppercase tracking-wider shadow-lg">
                 Buy LOP
               </a>

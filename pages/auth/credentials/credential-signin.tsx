@@ -25,7 +25,7 @@ export default function CredentialSignin() {
         if (response?.error) {
           toast.error('Invalid Email or Password')
         } else if (response?.ok) {
-          route.push('/sale-round')
+          route.push('/sale')
         }
       })
       .catch((error) => {})
@@ -83,7 +83,7 @@ export async function getServerSideProps(context: any) {
   if (session) {
     return {
       redirect: {
-        destination: '/sale-round',
+        destination: '/sale',
         permanent: false,
       },
     }
