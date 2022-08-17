@@ -126,7 +126,7 @@ export default function SaleRound() {
       exit={{opacity: 0}}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      className="flex flex-col gap-10 xl:gap-4 py-24 relative"
+      className="flex flex-col gap-10 xl:gap-4 pt-36 pb-20 relative"
       //@ts-ignore
     >
       {openModel && (
