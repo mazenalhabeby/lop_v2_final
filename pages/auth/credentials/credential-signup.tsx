@@ -25,7 +25,7 @@ export default function CredentialSignup() {
     setTimeout(() => {
       setLoading(false)
     }, 1000)
-    toast.success('account added')
+    toast.success('Account have been created, login in now')
     router.push('/auth/credentials/credential-signin')
   }
 

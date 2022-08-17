@@ -13,7 +13,7 @@ const Sidebar = () => {
         isOpen ? 'left-0' : '-left-full'
       } absolute lg:static lg:w-56 transition-all duration-300 z-40`}>
       <div
-        className={` fixed bg-slate-800 pt-14 pb-10 shadow-xl  top-12`}
+        className={` fixed bg-slate-800 pt-24 pb-10 shadow-xl  top-12`}
         style={{minHeight: 'calc(100vh)'}}>
         <ul className="flex flex-col items-center gap-6 px-4">
           {whitePaperLinks.map((links, i) => {

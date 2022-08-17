@@ -3,6 +3,7 @@ import {useWeb3React} from '@web3-react/core'
 import {ethers, providers} from 'ethers'
 import {useSession} from 'next-auth/react'
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 import {FC, useEffect, useState} from 'react'
 import {useForm} from 'react-hook-form'
 import toast from 'react-hot-toast'
@@ -15,6 +16,7 @@ interface SaleSideProps {
 }
 
 const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
+  const route = useRouter()
   const recieverAddress = '0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A'
 
   const {data: session} = useSession()
@@ -84,11 +86,6 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
     const json = await result.json()
   }
 
-  const tx = {
-    from: account,
-    to: recieverAddress,
-  }
-
   const sentTransaction = async () => {
     setTransactionLoading(true)
     try {
@@ -105,9 +102,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
       if (listen.confirmations > 0) {
         postTransaction()
         setTransactionLoading(false)
-        toast.success(
-          'Transaction Successful! Check your balance in your account'
-        )
+        route.push('/balance')
+        toast.success('Transaction Successful! Check your balance')
         getUserBalance()
         reset()
       }
