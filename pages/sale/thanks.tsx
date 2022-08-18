@@ -3,7 +3,6 @@ import {motion} from 'framer-motion'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Script from 'next/script'
-import {useEffect} from 'react'
 import {BsCheckLg} from 'react-icons/bs'
 
 export default function Thanks() {

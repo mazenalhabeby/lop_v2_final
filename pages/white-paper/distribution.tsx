@@ -17,6 +17,12 @@ const tbData = [
     Period: '6 MONTHS CLIFF THEN LINEAR VESTING MONTHLY',
   },
   {
+    Allocation: 'Liquidity',
+    Tokens: '100,000,000',
+    pecent: '1%',
+    Period: 'Locked',
+  },
+  {
     Allocation: 'Staking',
     Tokens: '1,500,000,000',
     pecent: '15%',
@@ -24,8 +30,8 @@ const tbData = [
   },
   {
     Allocation: 'Private sale',
-    Tokens: '700,000,000',
-    pecent: '7%',
+    Tokens: '1000,000,000',
+    pecent: '10%',
     Period: '5% TGE LINEAR VESTING MONTHLY',
   },
   {
@@ -36,20 +42,20 @@ const tbData = [
   },
   {
     Allocation: 'Pre-sale',
-    Tokens: '700,000,000',
-    pecent: '7%',
+    Tokens: '200,000,000',
+    pecent: '2%',
     Period: '10% TGE LINEAR VESTING MONTHLY FOR 10 MONTHS',
   },
   {
     Allocation: 'Marketing',
-    Tokens: '600,000,000',
-    pecent: '6%',
+    Tokens: '500,000,000',
+    pecent: '5%',
     Period: '2% TGE LINEAR VESTING MONTHLY',
   },
   {
     Allocation: 'NFT Staking',
-    Tokens: '600,000,000',
-    pecent: '6%',
+    Tokens: '800,000,000',
+    pecent: '8%',
     Period: '3 MONTHS CLIFF 10% LINEAR VESTING MONTHLY',
   },
   {
@@ -66,14 +72,14 @@ const tbData = [
   },
   {
     Allocation: 'Community',
-    Tokens: '200,000,000',
-    pecent: '2%',
+    Tokens: '100,000,000',
+    pecent: '1%',
     Period: 'LINEAR VESTING 12 MONTH',
   },
   {
     Allocation: 'Ecosystem fund',
-    Tokens: '300,000,000',
-    pecent: '3%',
+    Tokens: '400,000,000',
+    pecent: '4%',
     Period: '1 MONTH CLIFF LINEAR VESTING 6 MONTH',
   },
 ]
