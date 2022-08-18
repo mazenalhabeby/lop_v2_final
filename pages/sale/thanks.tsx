@@ -8,7 +8,6 @@ import {BsCheckLg} from 'react-icons/bs'
 
 export default function Thanks() {
   const router = useRouter()
-  console.log(router.query.isBuy)
 
   // useEffect(() => {
   //   if (!router.query || !router.query.isBuy) {
