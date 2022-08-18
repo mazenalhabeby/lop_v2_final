@@ -2,6 +2,7 @@ import DefaultLayout from '@/layouts/DefaultLayout'
 import {motion} from 'framer-motion'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+import Script from 'next/script'
 import {useEffect} from 'react'
 import {BsCheckLg} from 'react-icons/bs'
 
@@ -35,6 +36,15 @@ export default function Thanks() {
           </a>
         </Link>
       </div>
+      <Script src="/scripts/fbBixil.js"></Script>
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{display: 'none'}}
+          src="https://www.facebook.com/tr?id=537846264761705&ev=PageView&noscript=1"
+        />
+      </noscript>
     </motion.div>
   )
 }
