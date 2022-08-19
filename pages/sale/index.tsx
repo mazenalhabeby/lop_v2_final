@@ -62,12 +62,12 @@ export default function SaleRound() {
 
   enum ConnectorNames {
     Injected = 'meta_mask',
-    //WalletConnect = 'wallet_connect',
+    WalletConnect = 'wallet_connect',
   }
 
   const connectorsByName: {[connectorName in ConnectorNames]: any} = {
     [ConnectorNames.Injected]: injected,
-    // [ConnectorNames.WalletConnect]: walletconnect,
+    [ConnectorNames.WalletConnect]: walletconnect,
   }
 
   function getErrorMessage(error: Error) {

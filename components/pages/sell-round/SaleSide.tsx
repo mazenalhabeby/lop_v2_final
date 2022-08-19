@@ -94,8 +94,10 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
       const provider = new providers.Web3Provider(library.provider)
       const signer = provider.getSigner()
       const tx = await signer.sendTransaction({
+        from: account?.toString(),
         to: recieverAddress,
         value: value,
+        data: '0x',
       })
       let listen = await tx.wait()
 
