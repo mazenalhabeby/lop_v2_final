@@ -51,7 +51,11 @@ const HeroMobile = () => {
             </span>
           </div>
           <div className="flex flex-col md:flex-row gap-4">
-            <MainButton btnName={'Papyrus'} type="link" />
+            <MainButton
+              btnName={'Papyrus'}
+              type="link"
+              hrefLink={'/white-paper'}
+            />
             <MainButton
               btnName={'buy lop'}
               bgColor={'bg-amber-500'}

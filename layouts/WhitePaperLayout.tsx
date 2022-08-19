@@ -13,7 +13,7 @@ const WhitePaperLayout = (children: any) => {
         <NavbarMain links={<DefaultLinks />} />
         <div className="flex flex-row min-h-screen">
           <Sidebar />
-          <div className=" flex flex-1 pt-14">{children}</div>
+          <div className=" flex flex-1 pt-24">{children}</div>
         </div>
       </LayoutsContainers>
     </SidebarContextProvider>
