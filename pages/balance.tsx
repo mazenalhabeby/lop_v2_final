@@ -136,7 +136,7 @@ export default function Balance({userAmount, session}: BalanceProps) {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{delay: 0.3}}
+          exit={{opacity: 0}}
           className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
           <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">
             Refer Friends. Earn <br />
@@ -157,7 +157,7 @@ export default function Balance({userAmount, session}: BalanceProps) {
             </div>
             <div className="flex flex-col gap-4 my-4">
               <div className="flex flex-row justify-between items-center">
-                <span>Referral ID</span>
+                <span>Referral ID : </span>
                 <span className="flex gap-1">
                   {refferalUser?.refferalId}
                   <input
@@ -176,9 +176,9 @@ export default function Balance({userAmount, session}: BalanceProps) {
                 </span>
               </div>
               <div className="flex flex-row justify-between items-center">
-                <span>Referral Link</span>
+                <span>Referral Link : </span>
                 <span className="flex gap-1">
-                  {`https//league...=${refferalUser?.refferalId}`}
+                  {`https//lea...=${refferalUser?.refferalId}`}
                   <input
                     id="refLink"
                     type="text"
@@ -196,7 +196,7 @@ export default function Balance({userAmount, session}: BalanceProps) {
               </div>
             </div>
             <h2 className="text-xs font-semibold tracking-wider">
-              you will receive ${comassionRate}% on the first deposit your
+              you will receive {comassionRate}% on the first deposit your
               referral will make
             </h2>
           </div>
@@ -206,7 +206,7 @@ export default function Balance({userAmount, session}: BalanceProps) {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{delay: 0.4}}
+          transition={{delay: 0.5}}
           exit={{opacity: 0}}
           className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
           <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">

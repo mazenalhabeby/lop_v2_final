@@ -151,7 +151,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
               {...register('amount', {
                 required: {value: true, message: 'The amount is required'},
                 min: {
-                  value: 1 / BNBPrince,
+                  value: 100 / BNBPrince,
                   message: `The minimum investment is ${(
                     101 / BNBPrince
                   ).toFixed(4)} BNB`,
