@@ -43,20 +43,15 @@ const Features = () => {
     <section id="overview" className="py-14">
       <div className="container mx-auto space-y-8 text-center">
         <h2 className=" uppercase font-aclonica text-xl md:text-3xl">
-          biggest free-to-play,
+          {t('freeToPlay')}
           <br />
           <span className="text-yellow-600 dark:text-yellow-400">
-            play-to-earn
+            {t('playToEarn')}
           </span>{' '}
-          nft moba game
+          {t('nftMoba')}
         </h2>
         <p className="leading-9 tracking-wider w-[90%] md:w-1/2 mx-auto text-xl">
-          Engage in epic 5v5 strategic warfare in League of Pharaohs. Your goal?
-          Destroy the opposing team&#39;s Beacon of Power. Sounds easy?!
-          Maybe... Do you work as a team? Do you use terrain to your advantage?
-          Do you strategically ambush the enemy? Do you gather gold and upgrade
-          your pharaohs? Your skill, teamwork, wit, and determination shall
-          decide whether you return home a hero, or in a coffin...
+          {t('heroDisc')}
         </p>
         <div className="w-[90%] h-96 mx-auto relative flex max-w-4xl">
           <iframe
@@ -70,7 +65,7 @@ const Features = () => {
         <div className="flex flex-col gap-y-8">
           <div className=" w-min mx-auto">
             <h3 className="font-aclonica text-3xl uppercase md:text-4xl">
-              features
+              {t('features')}
             </h3>
             <TitleunderLine />
           </div>

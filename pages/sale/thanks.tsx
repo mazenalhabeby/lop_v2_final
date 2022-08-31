@@ -1,5 +1,6 @@
 import DefaultLayout from '@/layouts/DefaultLayout'
 import {motion} from 'framer-motion'
+import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Script from 'next/script'
@@ -7,6 +8,7 @@ import {useEffect} from 'react'
 import {BsCheckLg} from 'react-icons/bs'
 
 export default function Thanks() {
+  const {t} = useTranslation('common')
   const router = useRouter()
 
   useEffect(() => {
@@ -26,12 +28,12 @@ export default function Thanks() {
           <BsCheckLg className="text-3xl" />
         </div>
         <h2 className=" font-papyrus font-semibold text-3xl text-center leading-loose tracking-widest capitalize">
-          Thank you for purchasing the LOP Tokens.
-          <br /> You can check your balance in your personal account
+          {t('thanksMsg1')}
+          <br /> {t('thanksMsg2')}
         </h2>
         <Link href={'/balance'}>
           <a className="bg-amber-600 text-xl font-papyrus font-semibold tracking-widest uppercase p-3 rounded-lg shadow-lg">
-            your balance
+            {t('thanksBtn')}
           </a>
         </Link>
       </div>

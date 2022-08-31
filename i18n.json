@@ -3,6 +3,8 @@
   "defaultLocale": "en",
   "pages": {
     "*": ["common"],
-    "/": ["home"]
+    "/": ["home"],
+    "/balance": ["balance"],
+    "/sale": ["sale"]
   }
 }

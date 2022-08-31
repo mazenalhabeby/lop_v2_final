@@ -15,8 +15,18 @@ import {UnsupportedChainIdError, useWeb3React} from '@web3-react/core'
 import {useEagerConnect, useInactiveListener} from '@/hooks/ConnectWalletHook'
 import ConnectWalletBtn from '@/components/ConnectWalletBtn'
 import {formatEther} from '@ethersproject/units'
+import useTranslation from 'next-translate/useTranslation'
+import {fetchingUser} from '@/utils/fetching'
+import {apiEditpoint} from '@/utils/endpoint'
 
 declare var window: any
+
+type currentUserByDataType = {
+  email: string
+  name: string
+  refBy: string | null
+  _id: string
+}[]
 
 function getUserBalance(account: any, library: any, cb: any) {
   if (account && library) {
@@ -25,10 +35,50 @@ function getUserBalance(account: any, library: any, cb: any) {
     })
   }
 }
-export default function SaleRound() {
+export default function SaleRound({session}: any) {
+  const {t} = useTranslation('sale')
   const [openModel, setOpenModel] = useState(false)
   const [activatingConnector, setActivatingConnector] = useState()
   const [balance, setBalance] = useState(0)
+
+  const addRefId = async (refId: any) => {
+    const mutations = {
+      mutations: [
+        {
+          patch: {
+            query: `*[_type == 'user' && _id == "${session.id}"]`,
+            set: {
+              refBy: refId,
+            },
+          },
+        },
+      ],
+    }
+
+    await fetch(apiEditpoint, {
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SANITY_API_TOKEN}`,
+      },
+      body: JSON.stringify(mutations),
+      method: 'POST',
+    })
+  }
+
+  useEffect(() => {
+    const redIdfromStorge = window.localStorage.getItem('refId')
+
+    fetchingUser(session.id).then((data) => {
+      if (data[0].refBy == null) {
+        if (redIdfromStorge) {
+          addRefId(redIdfromStorge)
+          window.localStorage.removeItem('refId')
+        }
+      } else {
+        window.localStorage.removeItem('refId')
+      }
+    })
+  }, [session])
 
   const context = useWeb3React()
   const {
@@ -72,14 +122,11 @@ export default function SaleRound() {
 
   function getErrorMessage(error: Error) {
     if (error instanceof NoEthereumProviderError) {
-      return 'No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.'
+      return t('errorNoWallet')
     } else if (error instanceof UnsupportedChainIdError) {
       return (
         <div className="flex flex-row text-center gap-x-3">
-          <span>
-            You are connected to an unsupported network, click on the button to
-            switch network
-          </span>
+          <span>{t('errorWrongNetwork')}</span>
           <button
             className="bg-yellow-500 px-2 py-1 rounded-lg"
             onClick={() => {
@@ -93,9 +140,9 @@ export default function SaleRound() {
       error instanceof UserRejectedRequestErrorInjected ||
       error instanceof UserRejectedRequestErrorWalletConnect
     ) {
-      return 'Please authorize this website to access your Ethereum account.'
+      return t('errorAuthorize')
     } else {
-      return 'An unknown error occurred. Check the console for more details.'
+      return t('globalError')
     }
   }
 

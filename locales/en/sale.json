@@ -1,0 +1,17 @@
+{
+  "Round2Starts": "Round 2 starts Time",
+  "Round2Finishes": "Round 2 finishes Time",
+  "SwapRate": "Swap Rate",
+  "TokenPrice": "Token price",
+  "MinimumInvestment": "Minimum Investment",
+  "buyButton": "Buy now",
+
+  "errorNoWallet": "No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.",
+  "errorWrongNetwork": "You are connected to unsupported network, click on the button to switch network",
+  "errorAuthorize": "Please authorize this website to access your Ethereum account.",
+  "globalError": "An unknown error occurred. Check the console for more details.",
+  "noWallet": "Don't have a Wallet?",
+  "download": "Download Here",
+  "walletsTitle": "Connect Wallets",
+  "ConnectWith": "Connect with"
+}

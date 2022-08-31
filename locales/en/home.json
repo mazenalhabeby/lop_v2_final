@@ -1,4 +1,18 @@
 {
+  "heroTextAds": "buy lOP with",
+  "heroTextAds2": "ICO round price",
+  "buyBTN": "buy lop",
+  "whiteBTN": "Papyrus",
+  "availableSoon": "available soon on",
+
+  "freeToPlay": "biggest free-to-play,",
+  "playToEarn": "play-to-earn",
+  "nftMoba": "nft moba game",
+
+  "heroDisc": "Engage in epic 5v5 strategic warfare in League of Pharaohs. Your goal? Destroy the opposing team's Beacon of Power. Sounds easy?! Maybe... Do you work as a team? Do you use terrain to your advantage? Do you strategically ambush the enemy? Do you gather gold and upgrade your pharaohs? Your skill, teamwork, wit, and determination shall decide whether you return home a hero, or in a coffin...",
+
+  "features": "features",
+
   "nftOwnership": "NFT SKIN OWNERSHIP",
   "ownershipDesc": "Your pharaohs skins and all the tools are stored securely on the blockchain.",
   "marketPlace": "MARKET PLACE",
@@ -16,6 +30,8 @@
   "tokenFeature03": "Use $LOP tokens to make in-game purchases, gaining new heroes skins or access to special events",
   "tokenTitle4": "GOVERNANCE",
   "tokenFeature04": "League of Pharaohs is designed to have a player driven economy, that economies growth is contigent upon our player base earning, spending and staking $LOP tokens",
+
+  "tokenomics": "tokenomics",
 
   "Brand": "Brand and strategy",
   "gameLogic": "Game logic development",
@@ -63,5 +79,14 @@
   "listingCost": "Listing Price = 0.076 $",
   "presaleButton": "BUY LOP",
 
-  "outPartner": "Our Partners"
+  "outPartner": "Our Partners",
+
+  "leadership": "leadership",
+
+  "roadmap": "roadmap",
+
+  "Tokenomics": "Tokenomics",
+  "Roadmap": "Roadmap",
+  "OurPartners": "Our partners",
+  "OurTeam": "Our team"
 }

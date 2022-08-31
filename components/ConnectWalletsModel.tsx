@@ -7,6 +7,7 @@ import {MdOutlineClose} from 'react-icons/md'
 import {CgSpinnerTwo} from 'react-icons/cg'
 import {FaCheckCircle} from 'react-icons/fa'
 import toast from 'react-hot-toast'
+import useTranslation from 'next-translate/useTranslation'
 
 interface ConnectWalletsModelProps {
   openModel: boolean
@@ -38,6 +39,7 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
   error,
   getErrorMessage,
 }) => {
+  const {t} = useTranslation('sale')
   const model = useRef<any>(null)
   useEffect(() => {
     // only add the event listener when the dropdown is opened
@@ -67,7 +69,7 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
       className={`bg-slate-700 rounded-lg w-full max-w-sm text-slate-100`}>
       <div className="bg-slate-800 w-full p-4 flex flex-row justify-between items-center rounded-t-lg">
         <span className="text-lg uppercase tracking-wider font-aclonica">
-          Connect Wallets
+          {t('walletsTitle')}
         </span>
         <button
           className="text-xl nm-flat-slate-800 rounded-full p-1"
@@ -106,7 +108,7 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
                     alt="wallet icons"
                   />
                   <span className={`group-disabled:text-slate-600 capitalize`}>
-                    Connect with {item.replace('_', ' ')}
+                    {t('ConnectWith')} {item.replace('_', ' ')}
                   </span>
                 </div>
                 {connected && account && (
@@ -118,10 +120,10 @@ const ConnectWalletsModel: FC<ConnectWalletsModelProps> = ({
         })}
       </div>
       <div className="p-2 text-sm flex gap-1">
-        <span>Don't have a Wallet?</span>
+        <span>{t('noWallet')}</span>
         <Link href="https://metamask.io/">
           <a target="_blank" className="text-yellow-600 dark:text-yellow-500">
-            Download Here
+            {t('download')}
           </a>
         </Link>
       </div>

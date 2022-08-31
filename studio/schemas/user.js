@@ -19,6 +19,11 @@ export default {
       type: 'url',
     },
     {
+      name: 'refBy',
+      title: 'referral By',
+      type: 'string',
+    },
+    {
       name: 'password',
       type: 'string',
       hidden: true,

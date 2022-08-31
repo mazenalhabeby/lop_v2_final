@@ -4,6 +4,7 @@ import styles from '@/styles/components/pages/home/hero/Intro.module.css'
 import StoresIcon from '@/components/StoresIcon'
 import Image from 'next/image'
 import liveKey from '@/assets/images/liveKey.png'
+import useTranslation from 'next-translate/useTranslation'
 
 const title = {
   visible: {opacity: 1, y: 0},
@@ -27,6 +28,7 @@ const charactersImg = [
 ]
 
 const Intro = ({scrollYProgress}: any) => {
+  const {t} = useTranslation('home')
   const titleY = useTransform(scrollYProgress, [0, 0.2], [0, 100 * 4])
   const titleOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const btnOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
@@ -65,8 +67,8 @@ const Intro = ({scrollYProgress}: any) => {
             })}
             <div
               className={`absolute top-0 right-6 py-4 px-4 rounded text-center font-papyrus text-lg leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
-              buy lOP with <br />
-              ICO round price
+              {t('heroTextAds')} <br />
+              {t('heroTextAds2')}
               <div className="text-5xl text-amber-900 animate-bounce">
                 0.025$
               </div>
@@ -111,9 +113,13 @@ const Intro = ({scrollYProgress}: any) => {
           transition={{duration: 0.5, delay: 1.4}}
           className=" absolute w-full bottom-52 inset-x-0 flex items-center justify-center z-40 gap-10"
           style={{opacity: btnOpacity}}>
-          <MainButton btnName={'Papyrus'} type="link" hrefLink="/white-paper" />
           <MainButton
-            btnName={'buy lop'}
+            btnName={t('whiteBTN')}
+            type="link"
+            hrefLink="/white-paper"
+          />
+          <MainButton
+            btnName={t('buyBTN')}
             bgColor={'bg-cyan-300'}
             color={'text-slate-900'}
             colorHover={'hover:text-amber-700'}
@@ -130,7 +136,7 @@ const Intro = ({scrollYProgress}: any) => {
           transition={{duration: 0.5, delay: 1.4}}
           className="flex flex-col gap-y-2 text-center mx-auto glass_effect w-max p-2 rounded-t-3xl">
           <h4 className=" font-papyrus text-2xl text-slate-900 capitalize">
-            available soon on
+            {t('availableSoon')}
           </h4>
           <StoresIcon />
         </motion.div>

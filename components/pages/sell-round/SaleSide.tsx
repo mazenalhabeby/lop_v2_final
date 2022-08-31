@@ -2,6 +2,7 @@ import {parseEther} from '@ethersproject/units'
 import {useWeb3React} from '@web3-react/core'
 import {ethers, providers} from 'ethers'
 import {useSession} from 'next-auth/react'
+import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
 import {FC, useEffect, useState} from 'react'
@@ -16,6 +17,7 @@ interface SaleSideProps {
 }
 
 const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
+  const {t} = useTranslation('sale')
   const route = useRouter()
   const recieverAddress = '0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A'
 
@@ -149,7 +151,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
               {...register('amount', {
                 required: {value: true, message: 'The amount is required'},
                 min: {
-                  value: 100 / BNBPrince,
+                  value: 1 / BNBPrince,
                   message: `The minimum investment is ${(
                     101 / BNBPrince
                   ).toFixed(4)} BNB`,
@@ -180,8 +182,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
             type="submit"
             className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
             disabled={transactionLoading}>
-            {transactionLoading && <ImSpinner2 className=" animate-spin" />} Buy
-            now
+            {transactionLoading && <ImSpinner2 className=" animate-spin" />}{' '}
+            {t('buyButton')}
           </button>
         </form>
       </div>

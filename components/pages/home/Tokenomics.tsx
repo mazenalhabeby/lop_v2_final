@@ -34,7 +34,7 @@ const Tokenomics = () => {
       id="tokenomics"
       className={`w-full bg-black bg-opacity-60 bg-[url("/images/pharaohs-wall.jpg")] bg-cover bg-fixed bg-center bg-no-repeat py-14 text-white bg-blend-overlay`}>
       <div className=" w-min mx-auto flex flex-col gap-4">
-        <h3 className=" font-papyrus text-3xl uppercase">tokenomics</h3>
+        <h3 className=" font-papyrus text-3xl uppercase">{t('tokenomics')}</h3>
         <TitleunderLine />
       </div>
       <div className="flex flrex-wrap space-y-8 container mx-auto flex-col md:flex-row justify-around items-center px-4 md:px-0 md:gap-8">

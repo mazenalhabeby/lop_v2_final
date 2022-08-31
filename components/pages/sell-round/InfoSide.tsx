@@ -2,32 +2,34 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {IoMdLock} from 'react-icons/io'
 import {BsInfoCircle} from 'react-icons/bs'
+import useTranslation from 'next-translate/useTranslation'
 
 const InfoSide = () => {
+  const {t} = useTranslation('sale')
   const infoTable = [
     {
       id: 1,
-      infoKey: 'Round 2 starts Time',
+      infoKey: t('Round2Starts'),
       infoValue: '01-08-2022 00:00:00 CEST',
     },
     {
       id: 2,
-      infoKey: 'Round 2 finishes Time',
+      infoKey: t('Round2Finishes'),
       infoValue: '15-11-2022 20:00:00 CEST',
     },
     {
       id: 4,
-      infoKey: 'Swap Rate',
+      infoKey: t('SwapRate'),
       infoValue: '1 USD = 40 $LOP',
     },
     {
       id: 5,
-      infoKey: 'Token price',
+      infoKey: t('TokenPrice'),
       infoValue: '1 $LOP = 0.025$',
     },
     {
       id: 6,
-      infoKey: 'Minimum Investment',
+      infoKey: t('MinimumInvestment'),
       infoValue: '100 USD',
     },
   ]

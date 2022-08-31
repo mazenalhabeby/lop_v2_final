@@ -1,8 +1,10 @@
 import styles from '@/styles/components/pages/home/hero/Oveiw.module.css'
 import {motion, useTransform} from 'framer-motion'
+import useTranslation from 'next-translate/useTranslation'
 import {useEffect, useState} from 'react'
 
 const OverView = ({scrollYProgress}: any) => {
+  const {t} = useTranslation('home')
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   const [leftDoorMovmentOpen, setLeftDoorMovmentOpen] = useState(0)
@@ -145,13 +147,7 @@ const OverView = ({scrollYProgress}: any) => {
           style={{opacity: contentOpactiy}}>
           <div className="grid grid-cols-12 px-6 gap-8">
             <p className={`${styles.text_wrapper} text-black`}>
-              Engage in epic 5v5 strategic warfare in League of Pharaohs. Your
-              goal? Destroy the opposing team's Beacon of Power. Sounds easy?!
-              Maybe... Do you work as a team? Do you use terrain to your
-              advantage? Do you strategically ambush the enemy? Do you gather
-              gold and upgrade your pharaohs? Your skill, teamwork, wit, and
-              determination shall decide whether you return home a hero, or in a
-              coffin...
+              {t('heroDisc')}
             </p>
 
             <iframe

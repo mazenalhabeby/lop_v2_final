@@ -1,0 +1,12 @@
+{
+  "Data": "Data",
+  "Value": "Value",
+  "SaleRound": "Sale Round",
+  "roundPrice": "round price",
+  "Balance": "Balance",
+  "WalletAddress": "Wallet Address",
+  "Distribution": "Distribution",
+  "historyTitle": "your Transaction history",
+  "presaleMsg": "you will receive your tokens linear vesting on 10 months",
+  "icosaleMsg": "you will receive your tokens all on distribution day"
+}

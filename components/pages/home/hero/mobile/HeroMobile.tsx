@@ -1,8 +1,10 @@
 import MainButton from '@/components/MainButton'
 import StoresIcon from '@/components/StoresIcon'
 import TitleunderLine from '@/components/TitleunderLine'
+import useTranslation from 'next-translate/useTranslation'
 
 const HeroMobile = () => {
+  const {t} = useTranslation('home')
   return (
     <section style={{height: 'calc(100vh)'}} className=" relative">
       <div className="h-full before:absolute before:inset-0 before:bg-[url('/images/pharaohs-wall.jpg')] before:bg-center before:opacity-80 before:blur-sm before:conttent-['']"></div>
@@ -13,7 +15,7 @@ const HeroMobile = () => {
             <div className="flex flex-col text-center items-center gap-y-5">
               <div className="flex flex-col gap-1">
                 <h2 className=" capitalize font-aclonica tracking-wider text-lg">
-                  available soon on
+                  {t('availableSoon')}
                 </h2>
                 <TitleunderLine />
               </div>
@@ -52,12 +54,12 @@ const HeroMobile = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-4">
             <MainButton
-              btnName={'Papyrus'}
+              btnName={t('whiteBTN')}
               type="link"
               hrefLink={'/white-paper'}
             />
             <MainButton
-              btnName={'buy lop'}
+              btnName={t('buyBTN')}
               bgColor={'bg-amber-500'}
               colorHover="text-slate-100"
               fontWeight="sami-bold"
@@ -68,8 +70,8 @@ const HeroMobile = () => {
         </div>
         <div
           className={` absolute bottom-12 py-2 px-4 rounded-t-3xl text-center font-papyrus text-xl leading-loose capitalize tracking-wider bg-[url("/images/papyusPaper.png")] bg-center bg-cover text-black font-semibold shadow-xl`}>
-          buy lOP with <br />
-          ICO round price
+          {t('heroTextAds')} <br />
+          {t('heroTextAds2')}
           <div className="text-3xl text-amber-900 animate-bounce">0.025$</div>
         </div>
       </div>

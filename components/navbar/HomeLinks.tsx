@@ -1,10 +1,30 @@
-import Links from '@/data/homeLinks.json'
+import useTranslation from 'next-translate/useTranslation'
 import {Link as ReactLink} from 'react-scroll'
 const HomeLinks = () => {
+  const {t} = useTranslation('home')
+
+  const homeLinks = [
+    {
+      linkName: t('Tokenomics'),
+      href: 'tokenomics',
+    },
+    {
+      linkName: t('Roadmap'),
+      href: 'roadmap',
+    },
+    {
+      linkName: t('OurPartners'),
+      href: 'partner',
+    },
+    {
+      linkName: t('OurTeam'),
+      href: 'our-team',
+    },
+  ]
   return (
     <>
       <ul className="flex flex-col lg:flex-row items-center gap-4 lg:gap-1">
-        {Links.map((link, i) => {
+        {homeLinks.map((link, i) => {
           return (
             <li
               className="tracking-wide uppercase h-full w-[7.5rem] text-center cursor-pointer"

@@ -29,5 +29,13 @@
 
   "advisor2": "Asad Zeeshan",
   "advisorPossion2": "Co-Founder & CMO",
-  "advisorTitle2": "Crypto Advisor"
+  "advisorTitle2": "Crypto Advisor",
+
+  "papyrusPaper": "papyrus paper",
+  "sellRound": "sell round",
+  "yourBalance": "your balance",
+
+  "thanksMsg1": "Thank you for purchasing the LOP Tokens.",
+  "thanksMsg2": "You can check your balance in your personal account",
+  "thanksBtn": " your balance"
 }

@@ -97,7 +97,7 @@ const RoadMap = () => {
       className={` bg-slate-900 bg-[url("/images/egypt_book.jpeg")] bg-no-repeat bg-cover bg-fixed bg-center py-14 text-white bg-blend-overlay`}>
       <div className="container mx-auto space-y-8">
         <div className=" w-max mx-auto flex flex-col gap-4">
-          <h3 className=" font-papyrus text-3xl uppercase">road map</h3>
+          <h3 className=" font-papyrus text-3xl uppercase">{t('roadmap')}</h3>
           <TitleunderLine />
         </div>
         <div className="relative mx-auto w-4/5 lg:before:absolute lg:before:top-0 lg:before:left-2/4 lg:before:h-full lg:before:w-0.5 lg:before:-translate-x-2/4 lg:before:content-[''] before:bg-slate-500 pt-0 md:pt-6">
