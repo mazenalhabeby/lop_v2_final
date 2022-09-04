@@ -1,40 +1,35 @@
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 import {FaUsers} from 'react-icons/fa'
 import {HiChip} from 'react-icons/hi'
 import {ImPower} from 'react-icons/im'
 
-const visionList = [
-  {
-    icon: FaUsers,
-    title: 'Empower the Community',
-    details:
-      "We want our members to have full ownership of their assets and know that their feedback, suggestions and involvement makes a difference in LOP's evolution.",
-  },
-  {
-    icon: HiChip,
-    title: 'A Strong Ecosystem',
-    details:
-      'We aim to provide a fair, balanced, transparent and self-sustaining ecosystem where all players are incentivized to play and earn assets.',
-  },
-  {
-    icon: ImPower,
-    title: 'An Excellent Game',
-    details:
-      'As MOBA enthusiasts, we are cutting no corners and we are driven to create an absolutely fantastic gaming experience.',
-  },
-]
-
 export default function vision() {
+  const {t} = useTranslation('vision')
+
+  const visionList = [
+    {
+      icon: FaUsers,
+      title: t('subtitle1'),
+      details: t('details1'),
+    },
+    {
+      icon: HiChip,
+      title: t('subtitle2'),
+      details: t('details2'),
+    },
+    {
+      icon: ImPower,
+      title: t('subtitle3'),
+      details: t('details3'),
+    },
+  ]
   return (
-    <PageContainer pageTitle="Vision & Mission">
-      <ContentContainer title={'Vision & Mission'}>
-        <p className="text-center leading-loose tracking-wider">
-          To create an excellent, stable and ever-evolving block-chain game;
-          which empowers our community with equal opportunity to earn assets
-          while enjoying a great MOBA gaming experience.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <ul className="flex flex-col lg:flex-row flex-wrap justify-around w-full text-center">
           {visionList.map((item, i) => {
             return (

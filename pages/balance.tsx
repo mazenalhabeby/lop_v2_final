@@ -7,7 +7,7 @@ import {useEffect, useMemo, useState} from 'react'
 import TitleunderLine from '@/components/TitleunderLine'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
-import {fetchingRefferalUser} from '@/utils/fetching'
+import {fetchingRefferalUser, fetchingRefferalUsers} from '@/utils/fetching'
 import MainButton from '@/components/MainButton'
 import {apiEditpoint} from '@/utils/endpoint'
 import toast from 'react-hot-toast'
@@ -15,6 +15,7 @@ import {FaSpinner} from 'react-icons/fa'
 import {useRouter} from 'next/router'
 import {copyClipBoard} from '@/utils/CopyClipboard'
 import {RiFileCopyLine} from 'react-icons/ri'
+import {referralUsers, refferalQUERY} from '@/utils/query'
 
 interface BalanceProps {
   userAmount: {
@@ -31,19 +32,32 @@ interface BalanceProps {
     _updatedAt: string
   }[]
   session: any
+  currentUser: any
 }
 
 type refferaluserType = {
   refferalId: string | null
   refferalRoul: string | null
   _id: string
+  referralUsers: []
 }
-export default function Balance({userAmount, session}: BalanceProps) {
+export default function Balance({
+  userAmount,
+  session,
+  currentUser,
+}: BalanceProps) {
   const icoRate = 0.015
   const preSale = 0.025
   const {t} = useTranslation('balance')
   const [icoTotal, setIcoTotal] = useState<any>([])
-  const [refferalUser, setRefferalUser] = useState<refferaluserType>()
+  const [refferalUser, setRefferalUser] = useState<refferaluserType>(
+    currentUser[0]
+  )
+  const [currentRefCode, setcurrentRefCode] = useState(
+    currentUser[0] ? currentUser[0].refferalId : ' '
+  )
+  const [referralsUsers, setReferralsUsers] = useState([])
+
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -53,9 +67,12 @@ export default function Balance({userAmount, session}: BalanceProps) {
     setIcoTotal(totalIco)
   }, [userAmount])
 
-  useMemo(() => {
-    fetchingRefferalUser(session.id).then((data) => {
-      setRefferalUser(data[0])
+  useEffect(() => {
+    setcurrentRefCode(currentUser[0].refferalId)
+    setRefferalUser(currentUser[0])
+    fetchingRefferalUsers(currentRefCode).then((data) => {
+      setReferralsUsers(data)
+      console.log(data)
     })
   }, [])
 
@@ -150,7 +167,7 @@ export default function Balance({userAmount, session}: BalanceProps) {
                 <span>Your balance</span>
               </div>
               <div className="grid grid-cols-3 gap-4 w-full justify-items-center text-lg font-semibold text-amber-500">
-                <span>0</span>
+                <span>{referralsUsers.length}</span>
                 <span>0</span>
                 <span>0</span>
               </div>
@@ -366,7 +383,12 @@ export async function getServerSideProps(context: any) {
   const userAmount = await client.fetch(query, {
     userId: session.id,
   })
+
+  const currentUser = await client.fetch(refferalQUERY, {
+    userId: session.id,
+  })
+
   return {
-    props: {session, userAmount},
+    props: {session, userAmount, currentUser},
   }
 }

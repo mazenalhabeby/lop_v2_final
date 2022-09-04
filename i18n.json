@@ -5,6 +5,18 @@
     "*": ["common"],
     "/": ["home"],
     "/balance": ["balance"],
-    "/sale": ["sale"]
+    "/sale": ["sale"],
+    "/white-paper": ["whitePaperHome"],
+    "/white-paper/inspiration": ["inspiration"],
+    "/white-paper/vision": ["vision"],
+    "/white-paper/team": ["team"],
+    "/white-paper/pharaohs": ["pharaohs"],
+    "/white-paper/game-mode": ["gameMode"],
+    "/white-paper/ingame-currency": ["ingameCurrency"],
+    "/white-paper/equipments": ["equipments"],
+    "/white-paper/nft-character": ["nftCharacter"],
+    "/white-paper/amulets": ["amulets"],
+    "/white-paper/lop-tokengover": ["lopTokengover"],
+    "/white-paper/distribution": ["distribution"]
   }
 }

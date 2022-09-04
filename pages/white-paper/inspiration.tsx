@@ -1,22 +1,14 @@
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function Inspiration() {
+  const {t} = useTranslation('inspiration')
   return (
-    <PageContainer pageTitle="Inspiration">
-      <ContentContainer title={'What Inspired League of Pharaohs?'}>
-        <p className="text-center leading-loose tracking-wider">
-          Before a great project comes to fruition, great inspiration must
-          precede it. When deciding on what to call our passionate project, we
-          had at least a hundred ideas. At first, we couldn’t decide. but after
-          team discussion, we followed our passion, it is MOBA games and Ancient
-          Egyptian civilization, it only made sense to come up with a name and
-          image which encompassed the feel of the great games that inspired us.
-          League of Pharaohs was the name we chose. It encapsulated the essence
-          of our inspirations while maintaining a new, yet familiar identity of
-          its own.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
           <div className="flex relative pb-12">
             <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
@@ -39,11 +31,9 @@ export default function Inspiration() {
             </div>
             <div className="flex-grow pl-4">
               <h2 className="font-medium title-font text-l mb-1 tracking-wider text-yellow-600  ">
-                League of Pharaohs{' '}
+                {t('subtitle1')}
               </h2>
-              <p className="leading-relaxed text-white">
-                A fusion of our greatest inspirations
-              </p>
+              <p className="leading-relaxed text-white">{t('details1')}</p>
             </div>
           </div>
           <div className="flex relative pb-12">
@@ -67,12 +57,9 @@ export default function Inspiration() {
             </div>
             <div className="flex-grow pl-4">
               <h2 className="font-medium title-font text-l mb-1 tracking-wider text-yellow-600  ">
-                Golden Color
+                {t('subtitle2')}
               </h2>
-              <p className="leading-relaxed text-white">
-                Inspired by the greatness of the pharaonic civilization and how
-                they used gold to decorate their existence.
-              </p>
+              <p className="leading-relaxed text-white">{t('details2')}</p>
             </div>
           </div>
           <div className="flex relative pb-12">
@@ -96,11 +83,9 @@ export default function Inspiration() {
             </div>
             <div className="flex-grow pl-4">
               <h2 className="font-medium title-font text-l mb-1 tracking-wider text-yellow-600 ">
-                The Boat{' '}
+                {t('subtitle3')}
               </h2>
-              <p className="leading-relaxed text-white">
-                Inspired by the greatness of Khufu ship.
-              </p>
+              <p className="leading-relaxed text-white">{t('details3')}</p>
             </div>
           </div>
           <div className="flex relative pb-12">
@@ -122,13 +107,9 @@ export default function Inspiration() {
             </div>
             <div className="flex-grow pl-4">
               <h2 className="font-medium title-font text-l mb-1 tracking-wider text-yellow-600 ">
-                Ankh and the letter A
+                {t('subtitle4')}
               </h2>
-              <p className="leading-relaxed text-white">
-                {' '}
-                Ankh symbol to the life and letter A symbol to the pyramids and
-                both symbol to life and death.
-              </p>
+              <p className="leading-relaxed text-white">{t('details4')}</p>
             </div>
           </div>
         </div>

@@ -2,16 +2,14 @@ import TeamMembers from '@/components/TeamMembers'
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function team() {
+  const {t} = useTranslation('team')
   return (
-    <PageContainer pageTitle="Team & Advisors">
-      <ContentContainer title={'Our Royal Family'}>
-        <p className="text-center leading-loose tracking-wider">
-          We strive to deliver what we promise on the right time in the right
-          way, keep in touch with us on our Social Media channels to get the
-          latest updates and accomplishments of LOP.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <TeamMembers />
       </ContentContainer>
     </PageContainer>
