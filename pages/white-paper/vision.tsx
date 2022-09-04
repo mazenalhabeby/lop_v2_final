@@ -6,8 +6,8 @@ import {FaUsers} from 'react-icons/fa'
 import {HiChip} from 'react-icons/hi'
 import {ImPower} from 'react-icons/im'
 
-export default function vision() {
-  const {t} = useTranslation('vision')
+export default function Vision() {
+  const {t} = useTranslation('wvision')
 
   const visionList = [
     {
@@ -50,4 +50,4 @@ export default function vision() {
   )
 }
 
-vision.getLayout = WhitePaperLayout
+Vision.getLayout = WhitePaperLayout

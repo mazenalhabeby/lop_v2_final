@@ -4,7 +4,7 @@ import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 
-export default function whitePaper() {
+export default function WhitePaper() {
   const {t} = useTranslation('whitePaperHome')
   return (
     <PageContainer pageTitle={t('pageTitle')}>
@@ -21,4 +21,4 @@ export default function whitePaper() {
   )
 }
 
-whitePaper.getLayout = WhitePaperLayout
+WhitePaper.getLayout = WhitePaperLayout

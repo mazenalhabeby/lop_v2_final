@@ -4,8 +4,8 @@ import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 
-export default function team() {
-  const {t} = useTranslation('team')
+export default function Team() {
+  const {t} = useTranslation('wteam')
   return (
     <PageContainer pageTitle={t('pageTitle')}>
       <ContentContainer title={t('title')}>
@@ -16,4 +16,4 @@ export default function team() {
   )
 }
 
-team.getLayout = WhitePaperLayout
+Team.getLayout = WhitePaperLayout
