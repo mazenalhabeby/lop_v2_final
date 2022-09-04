@@ -74,6 +74,7 @@ export default function Balance({
       setReferralsUsers(data)
       console.log(data)
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let generateNum = Math.floor(Math.random() * 1000 + 10)
