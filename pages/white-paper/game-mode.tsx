@@ -5,7 +5,7 @@ import useTranslation from 'next-translate/useTranslation'
 import {GiTrophyCup, GiVikingChurch} from 'react-icons/gi'
 import {RiSwordFill} from 'react-icons/ri'
 
-export default function gameMode() {
+export default function GameMode() {
   const {t} = useTranslation('wgameMode')
 
   const gameModeList = [
@@ -64,4 +64,4 @@ export default function gameMode() {
   )
 }
 
-gameMode.getLayout = WhitePaperLayout
+GameMode.getLayout = WhitePaperLayout

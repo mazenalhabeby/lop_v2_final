@@ -4,7 +4,7 @@ import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 
-export default function nftCharacter() {
+export default function NftCharacter() {
   const {t} = useTranslation('wnftCharacter')
 
   const tbHead1 = [
@@ -176,4 +176,4 @@ export default function nftCharacter() {
   )
 }
 
-nftCharacter.getLayout = WhitePaperLayout
+NftCharacter.getLayout = WhitePaperLayout

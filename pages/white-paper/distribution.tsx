@@ -4,7 +4,7 @@ import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 
-export default function distribution() {
+export default function Distribution() {
   const {t} = useTranslation('wdistribution')
 
   const tbHead = [
@@ -165,4 +165,4 @@ export default function distribution() {
   )
 }
 
-distribution.getLayout = WhitePaperLayout
+Distribution.getLayout = WhitePaperLayout

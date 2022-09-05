@@ -4,7 +4,7 @@ import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 
-export default function amulets() {
+export default function Amulets() {
   const {t} = useTranslation('wamulets')
 
   const tbHead1 = [{title: t('subhead1')}, {title: t('subhead2')}]
@@ -190,4 +190,4 @@ export default function amulets() {
   )
 }
 
-amulets.getLayout = WhitePaperLayout
+Amulets.getLayout = WhitePaperLayout

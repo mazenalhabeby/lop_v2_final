@@ -3,7 +3,7 @@ import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
 import useTranslation from 'next-translate/useTranslation'
 
-export default function ingameCurrency() {
+export default function IngameCurrency() {
   const {t} = useTranslation('wingameCurrency')
 
   const tbHead = [{title: t('subhead1')}, {title: t('subhead2')}]
@@ -57,4 +57,4 @@ export default function ingameCurrency() {
   )
 }
 
-ingameCurrency.getLayout = WhitePaperLayout
+IngameCurrency.getLayout = WhitePaperLayout

@@ -6,7 +6,7 @@ import {BiCloudDownload} from 'react-icons/bi'
 import {BsShield} from 'react-icons/bs'
 import {FiHeadphones, FiUsers} from 'react-icons/fi'
 
-export default function lopTokengover() {
+export default function LopTokengover() {
   const {t} = useTranslation('wlopTokengover')
 
   const tokenList = [
@@ -55,4 +55,4 @@ export default function lopTokengover() {
   )
 }
 
-lopTokengover.getLayout = WhitePaperLayout
+LopTokengover.getLayout = WhitePaperLayout
