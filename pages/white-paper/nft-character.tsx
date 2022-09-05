@@ -2,69 +2,73 @@ import TitleunderLine from '@/components/TitleunderLine'
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 
-const tbHead1 = [
-  {title: 'Skin Category'},
-  {title: 'Rarity Level'},
-  {title: 'How to obtain'},
-]
-
-const tbData1 = [
-  {skinCategory: 'Immortal', earningBonus: '10', obtain: 'NFT Skin Fusion'},
-  {
-    skinCategory: 'Mythical',
-    earningBonus: '9',
-    obtain: 'Pre-Launch Events & LOP Amulet',
-  },
-  {
-    skinCategory: 'Legendary',
-    earningBonus: '8',
-    obtain: 'LOP Events/Rank Rewards',
-  },
-  {
-    skinCategory: 'Epic',
-    earningBonus: '6',
-    obtain: 'LOP Amulet, Alpha Amulet & NFT Skin Fusion',
-  },
-  {
-    skinCategory: 'Rare',
-    earningBonus: '4',
-    obtain: 'LOP Amulet, Beta Amulet & NFT Skin Fusion',
-  },
-  {
-    skinCategory: 'UnCommom',
-    earningBonus: '2',
-    obtain: 'LOP Amulet, Beta Amulet & NFT Skin Fusion',
-  },
-  {
-    skinCategory: 'Commom',
-    earningBonus: '1',
-    obtain: 'LOP Amulet, Beta Amulet',
-  },
-]
-const tbHead2 = [{title: 'Fuse Combination'}, {title: 'Result'}]
-
-const tbData2 = [
-  {
-    Combination: '1 x "Mythical" skin + 1 x “Legendary" skin + 2x “Epic" skin',
-    Result: 'Immortal',
-  },
-  {
-    Combination: '1 x "Legendary" skin + 3 “Epic" skin',
-    Result: 'Mythical',
-  },
-]
 export default function nftCharacter() {
+  const {t} = useTranslation('wnftCharacter')
+
+  const tbHead1 = [
+    {title: t('subhead1')},
+    {title: t('subhead2')},
+    {title: t('subhead3')},
+  ]
+
+  const tbData1 = [
+    {
+      skinCategory: t('subtitle1'),
+      earningBonus: '10',
+      obtain: t('subtb1'),
+    },
+    {
+      skinCategory: t('subtitle2'),
+      earningBonus: '9',
+      obtain: t('subtb2'),
+    },
+    {
+      skinCategory: t('subtitle3'),
+      earningBonus: '8',
+      obtain: t('subtb3'),
+    },
+    {
+      skinCategory: t('subtitle4'),
+      earningBonus: '6',
+      obtain: t('subtb4'),
+    },
+    {
+      skinCategory: t('subtitle5'),
+      earningBonus: '4',
+      obtain: t('subtb5'),
+    },
+    {
+      skinCategory: t('subtitle6'),
+      earningBonus: '2',
+      obtain: t('subtb6'),
+    },
+    {
+      skinCategory: t('subtitle7'),
+      earningBonus: '1',
+      obtain: t('subtb7'),
+    },
+  ]
+  const tbHead2 = [{title: t('subhead4')}, {title: t('subhead5')}]
+
+  const tbData2 = [
+    {
+      Combination: t('subtb8'),
+      Result: t('subtb9'),
+    },
+    {
+      Combination: t('subtb10'),
+      Result: t('subtb11'),
+    },
+  ]
   return (
-    <PageContainer pageTitle="NFT Characters">
-      <ContentContainer title={'the Egyptian Ancient Realm'}>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
         <p className="text-center leading-loose tracking-wider">
-          For in-game mechanics, NFT rarity changes the appearance of the
-          respective Pharaoh and increase the earning potential of in-game
-          currency for Regular and P2E matches. <br />
-          In the NFT Marketplace, NFT rarities will affect the staking mechanism
-          in the marketplace and the player's account level. Higher the rarity
-          of the NFT, the higher potential earnings of $LOP tokens when staked
+          {t('Prag')}
+          <br />
+          {t('prag1')}
         </p>
         <div className=" w-full lg:w-1/2">
           <table className="table-auto w-full border-collapse border border-slate-600">
@@ -102,41 +106,29 @@ export default function nftCharacter() {
         </div>
         <div className="flex flex-col gap-2">
           <h2 className=" font-aclonica uppercase tracking-widest text-lg">
-            NFT staking
+            {t('title2')}
           </h2>
           <TitleunderLine />
         </div>
         <p className="text-center leading-loose tracking-wider">
-          In addition to battles in the ancient arena, Players can send their
-          Pharaoh (NFT) for staking in the LOP charging portal where NFT
-          characters yield token rewards. <br />
-          Each NFT character has a mining power that can be upgraded through NFT
-          fusion to upgrade its rarity level. User's mining power would be
-          determined by the total mining power of all their NFT characters. The
-          amount of LOP tokens mined per day depends on the total mining power
-          across all users on a weighted average period.
-          <br /> Apart from earning from $LOP tokens, users can earn tokens from
-          League of Pharaohs partners.
+          {t('prag3')}
+          <br />
+          {t('prag4')}
+          <br />
+          {t('prag5')}
         </p>
         <div className="flex flex-col gap-2">
           <h2 className=" font-aclonica uppercase tracking-widest text-lg">
-            NFT fusion
+            {t('title3')}
           </h2>
           <TitleunderLine />
         </div>
         <p className="text-center leading-loose tracking-wider">
-          In the NFT Marketplace, this feature allows users to combine various
-          NFTs together to create a higher tier NFT character. Thi way to obtain
-          an "Immortal" Character. After some time, most players will find that
-          they have collected extra low to mid-tier rarity NFTs. This feature
-          gives them a chance to burn their obsolete inventory and obtain a
-          higher tier NFT if conditions are met. <br />
-          way to obtain an "Immortal" Character. After some time, most players
-          will find that they have collected extra low to mid-tier rarity NFTs.
-          This feature gives them a chance to burn their obsolete inventory and
-          obtain a higher tier NFT if conditions are met.
+          {t('prag6')}
+          <br />
+          {t('prag7')}
         </p>
-        <span>For example:</span>
+        <span>{t('example')}</span>
         <div className="w-full lg:w-1/2">
           <table className="table-auto w-full border-collapse border border-slate-600">
             <thead>
@@ -170,22 +162,14 @@ export default function nftCharacter() {
         </div>
         <div className="flex flex-col gap-2">
           <h2 className=" font-aclonica uppercase tracking-widest text-lg">
-            NFT bonus
+            {t('title4')}
           </h2>
           <TitleunderLine />
         </div>
         <p className="text-center leading-loose tracking-wider">
-          A set bonus can be obtained when users have collected the same NFT
-          rarity level for all 5 different roles (Tank, Mage, Marksman, Support
-          and Assassin). Set bonus effects will grant a Boost effect, which
-          multiplies the total mining multiplier of the user. The Boost effect
-          will be calculated on top of the Account Level mining multiplier. For
-          example, a Level 5 account (with a Legendary bonus set) will have a
-          mining multiplier of 1.25x and a Boost effect of 2.5x. This is
-          calculated as 1.25x TIMES 2.5x = 3.125x Moreover,
-          <br /> set bonus effects will unlock certain in-game features. All
-          higher set bonuses will have the features of the lower set bonuses
-          below them.
+          {t('prag8')}
+          <br />
+          {t('prag9')}
         </p>
       </ContentContainer>
     </PageContainer>

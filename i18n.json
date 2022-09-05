@@ -10,13 +10,13 @@
     "/white-paper/inspiration": ["inspiration"],
     "/white-paper/vision": ["wvision"],
     "/white-paper/team": ["wteam"],
-    "/white-paper/pharaohs": ["pharaohs"],
-    "/white-paper/game-mode": ["gameMode"],
-    "/white-paper/ingame-currency": ["ingameCurrency"],
-    "/white-paper/equipments": ["equipments"],
-    "/white-paper/nft-character": ["nftCharacter"],
-    "/white-paper/amulets": ["amulets"],
-    "/white-paper/lop-tokengover": ["lopTokengover"],
-    "/white-paper/distribution": ["distribution"]
+    "/white-paper/pharaohs": ["wPharaohs"],
+    "/white-paper/game-mode": ["wgameMode"],
+    "/white-paper/ingame-currency": ["wingameCurrency"],
+    "/white-paper/equipments": ["wequipments"],
+    "/white-paper/nft-character": ["wnftCharacter"],
+    "/white-paper/amulets": ["wamulets"],
+    "/white-paper/lop-tokengover": ["wlopTokengover"],
+    "/white-paper/distribution": ["wdistribution"]
   }
 }

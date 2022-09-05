@@ -1,47 +1,40 @@
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 import {BiCloudDownload} from 'react-icons/bi'
 import {BsShield} from 'react-icons/bs'
 import {FiHeadphones, FiUsers} from 'react-icons/fi'
 
-const tokenList = [
-  {
-    icon: BsShield,
-    title: '50% of all profits',
-    details:
-      '50% of all profits across the platform will be used to buy back and burn LOP to reduce the total supply of the token hence increasing the token value, the remaining 50% goes for further game development and enhances etc.',
-  },
-  {
-    icon: FiUsers,
-    title: 'DEFI/STAKING',
-    details:
-      'Where users can stake tokens to earn more $LOP tokens. As we grow our network of partnerships, LP and several other tokens may become available for staking on the LOP platform',
-  },
-  {
-    icon: FiHeadphones,
-    title: 'EVENTS',
-    details:
-      'Players will have several ongoing opportunities to earn rare skins and extra $LOP tokens. These events include but are not limited to, raffles and E-sport tournaments.',
-  },
-  {
-    icon: BiCloudDownload,
-    title: 'NFT MARKETPLACE',
-    details: 'Where users can buy, trade and sell their NFTs.',
-  },
-]
-
 export default function lopTokengover() {
+  const {t} = useTranslation('wlopTokengover')
+
+  const tokenList = [
+    {
+      icon: BsShield,
+      title: t('categ1'),
+      details: t('details1'),
+    },
+    {
+      icon: FiUsers,
+      title: t('categ2'),
+      details: t('details2'),
+    },
+    {
+      icon: FiHeadphones,
+      title: t('categ3'),
+      details: t('details3'),
+    },
+    {
+      icon: BiCloudDownload,
+      title: t('categ4'),
+      details: t('details4'),
+    },
+  ]
   return (
-    <PageContainer pageTitle="The $LOP Token">
-      <ContentContainer title={'Game made best'}>
-        <p className="text-center leading-loose tracking-wider">
-          League of Pharaohs economy is composed of the NFT Marketplace, DEFI
-          and In-Game Economy that help sustain the development of the game. NFT
-          marketplace where users trade and sell their skins to obtain rarer
-          skins. Users can also stake other tokens to obtain $LOP tokens on the
-          platform.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <ul className="flex flex-col lg:flex-row flex-wrap justify-around w-full text-center">
           {tokenList.map((item, i) => {
             return (

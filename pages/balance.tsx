@@ -68,7 +68,7 @@ export default function Balance({
   }, [userAmount])
 
   useEffect(() => {
-    setcurrentRefCode(currentUser[0].refferalId)
+    setcurrentRefCode(currentUser[0] ? currentUser[0].refferalId : ' ')
     setRefferalUser(currentUser[0])
     fetchingRefferalUsers(currentRefCode).then((data) => {
       setReferralsUsers(data)

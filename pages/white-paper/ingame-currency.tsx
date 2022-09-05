@@ -1,30 +1,26 @@
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
-
-const tbHead = [{title: 'Skin Category'}, {title: 'Earning Bonus'}]
-
-const tbData = [
-  {skinCategory: 'Immortal', earningBonus: '2x'},
-  {skinCategory: 'Mythical', earningBonus: '1.8x'},
-  {skinCategory: 'Legendary', earningBonus: '1.8x'},
-  {skinCategory: 'Epic', earningBonus: '1.2x'},
-  {skinCategory: 'Rare', earningBonus: '1.1x'},
-  {skinCategory: 'UnCommom', earningBonus: 'Null'},
-  {skinCategory: 'Commom', earningBonus: 'Null'},
-]
+import useTranslation from 'next-translate/useTranslation'
 
 export default function ingameCurrency() {
+  const {t} = useTranslation('wingameCurrency')
+
+  const tbHead = [{title: t('subhead1')}, {title: t('subhead2')}]
+
+  const tbData = [
+    {skinCategory: t('subtitle1'), earningBonus: '2x'},
+    {skinCategory: t('subtitle2'), earningBonus: '1.8x'},
+    {skinCategory: t('subtitle3'), earningBonus: '1.8x'},
+    {skinCategory: t('subtitle4'), earningBonus: '1.2x'},
+    {skinCategory: t('subtitle5'), earningBonus: '1.1x'},
+    {skinCategory: t('subtitle6'), earningBonus: 'Null'},
+    {skinCategory: t('subtitle7'), earningBonus: 'Null'},
+  ]
   return (
-    <PageContainer pageTitle="In-game Currency">
-      <ContentContainer title={'Use LOP token to get the latest assests'}>
-        <p className="text-center leading-loose tracking-wider">
-          Players can earn in-game currency after completing a match. Matches
-          will reward players with in-game currency and/or Gold depending on the
-          type of match to use for utilities etc. in addition, players will have
-          a higher earning potential of in-game currency and Gold based on the
-          rarity of the respective Pharaoh used for that match.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <div className="w-full lg:w-1/2">
           <table className="table-auto w-full border-collapse border border-slate-600">
             <thead>

@@ -1,105 +1,105 @@
 import ContentContainer from '@/components/white-paper/ContentContainer'
 import PageContainer from '@/components/white-paper/PageContainer'
 import WhitePaperLayout from '@/layouts/WhitePaperLayout'
+import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
-const tbHead = [
-  {title: 'Token Allocation'},
-  {title: 'No of Tokens'},
-  {title: '%'},
-  {title: 'Vesting Period'},
-]
-
-const tbData = [
-  {
-    Allocation: 'Play to earn',
-    Tokens: '2,500,000,000',
-    pecent: '25%',
-    Period: '6 MONTHS CLIFF THEN LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'Liquidity',
-    Tokens: '100,000,000',
-    pecent: '1%',
-    Period: 'Locked',
-  },
-  {
-    Allocation: 'Staking',
-    Tokens: '1,500,000,000',
-    pecent: '15%',
-    Period: '3 MONTHS CLIFF 10% LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'Private sale',
-    Tokens: '1000,000,000',
-    pecent: '10%',
-    Period: '5% TGE LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'Team Token',
-    Tokens: '2,000,000,000',
-    pecent: '20%',
-    Period: '3 MONTHS CLIFF 2% LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'Pre-sale',
-    Tokens: '200,000,000',
-    pecent: '2%',
-    Period: '10% TGE LINEAR VESTING MONTHLY FOR 10 MONTHS',
-  },
-  {
-    Allocation: 'Marketing',
-    Tokens: '500,000,000',
-    pecent: '5%',
-    Period: '2% TGE LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'NFT Staking',
-    Tokens: '800,000,000',
-    pecent: '8%',
-    Period: '3 MONTHS CLIFF 10% LINEAR VESTING MONTHLY',
-  },
-  {
-    Allocation: 'Centralized Exchange',
-    Tokens: '500,000,000',
-    pecent: '5%',
-    Period: 'Unlocked',
-  },
-  {
-    Allocation: 'Advisors',
-    Tokens: '400,000,000',
-    pecent: '4%',
-    Period: 'LINEAR VESTING 10 MONTH',
-  },
-  {
-    Allocation: 'Community',
-    Tokens: '100,000,000',
-    pecent: '1%',
-    Period: 'LINEAR VESTING 12 MONTH',
-  },
-  {
-    Allocation: 'Ecosystem fund',
-    Tokens: '400,000,000',
-    pecent: '4%',
-    Period: '1 MONTH CLIFF LINEAR VESTING 6 MONTH',
-  },
-]
-
-const details = [
-  {title: 'Description', sub: 'LOP'},
-  {title: 'Protocol', sub: 'BSC'},
-  {title: 'Standard', sub: 'BEP20'},
-  {title: 'Total Supply', sub: '10,00,000,000'},
-]
 
 export default function distribution() {
+  const {t} = useTranslation('wdistribution')
+
+  const tbHead = [
+    {title: t('subhead1')},
+    {title: t('subhead2')},
+    {title: '%'},
+    {title: t('subhead3')},
+  ]
+
+  const tbData = [
+    {
+      Allocation: t('subtitle1'),
+      Tokens: '2,500,000,000',
+      pecent: '25%',
+      Period: t('subtitle2'),
+    },
+    {
+      Allocation: t('subtitle3'),
+      Tokens: '100,000,000',
+      pecent: '1%',
+      Period: t('subtitle4'),
+    },
+    {
+      Allocation: t('subtitle5'),
+      Tokens: '1,500,000,000',
+      pecent: '15%',
+      Period: t('subtitle6'),
+    },
+    {
+      Allocation: t('subtitle7'),
+      Tokens: '1000,000,000',
+      pecent: '10%',
+      Period: t('subtitle8'),
+    },
+    {
+      Allocation: t('subtitle9'),
+      Tokens: '2,000,000,000',
+      pecent: '20%',
+      Period: t('subtitle10'),
+    },
+    {
+      Allocation: t('subtitle11'),
+      Tokens: '200,000,000',
+      pecent: '2%',
+      Period: t('subtitle12'),
+    },
+    {
+      Allocation: t('subtitle13'),
+      Tokens: '500,000,000',
+      pecent: '5%',
+      Period: t('subtitle14'),
+    },
+    {
+      Allocation: t('subtitle15'),
+      Tokens: '800,000,000',
+      pecent: '8%',
+      Period: t('subtitle16'),
+    },
+    {
+      Allocation: t('subtitle17'),
+      Tokens: '500,000,000',
+      pecent: '5%',
+      Period: t('subtitle18'),
+    },
+    {
+      Allocation: t('subtitle19'),
+      Tokens: '400,000,000',
+      pecent: '4%',
+      Period: t('subtitle20'),
+    },
+    {
+      Allocation: t('subtitle21'),
+      Tokens: '100,000,000',
+      pecent: '1%',
+      Period: t('subtitle22'),
+    },
+    {
+      Allocation: t('subtitle23'),
+      Tokens: '400,000,000',
+      pecent: '4%',
+      Period: t('subtitle24'),
+    },
+  ]
+
+  const details = [
+    {title: t('subhead4'), sub: 'LOP'},
+    {title: t('subhead5'), sub: 'BSC'},
+    {title: t('subhead6'), sub: 'BEP20'},
+    {title: t('subhead7'), sub: '10,00,000,000'},
+  ]
+
   return (
-    <PageContainer pageTitle="Token distribution">
-      <ContentContainer title={'Tokenomics plan made by experts'}>
-        <p className="text-center leading-loose tracking-wider">
-          For every successful project, comes a successful fund managament plan,
-          we pride to say that we crafted the master formula to stabalize the
-          token price for maximum outcome.
-        </p>
+    <PageContainer pageTitle={t('pageTitle')}>
+      <ContentContainer title={t('title')}>
+        <p className="text-center leading-loose tracking-wider">{t('Prag')}</p>
         <div className="flex flex-col-reverse lg:flex-row justify-around w-full">
           <div>
             <table className="table-auto w-full border-collapse border border-slate-600">
