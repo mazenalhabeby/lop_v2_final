@@ -1,9 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import {FC, useEffect, useState} from 'react'
-import {useSession} from 'next-auth/react'
-import UserBtn from '../UserBtn'
-import {MdClose, MdMenu} from 'react-icons/md'
+import Image from "next/image"
+import Link from "next/link"
+import {FC, useEffect, useState} from "react"
+import {useSession} from "next-auth/react"
+import UserBtn from "../UserBtn"
+import {MdClose, MdMenu} from "react-icons/md"
+import LangBtn from "../LangBtn"
 
 interface NavbarMainProps {
   links: any
@@ -20,10 +21,10 @@ const NavbarMain: FC<NavbarMainProps> = ({links}) => {
       setWindowHeight(window.scrollY)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
@@ -38,35 +39,38 @@ const NavbarMain: FC<NavbarMainProps> = ({links}) => {
         <div className="flex justify-end w-full lg:hidden h-full py-4">
           <div onClick={handleClick}>{click ? <MdClose /> : <MdMenu />}</div>
         </div>
-        <Link href={'/'}>
+        <Link href={"/"}>
           <a className=" absolute bg-slate-800 w-max px-2 rounded-b-2xl shadow-xl z-50">
             <Image
-              src={'/images/logo.png'}
+              src={"/images/logo.png"}
               width={80}
               height={80}
-              alt={'logo'}
+              alt={"logo"}
             />
           </a>
         </Link>
+
         <div
           className={`#${
-            click ? 'left-0 right-0' : '-left-full -right-full'
+            click ? "left-0 right-0" : "-left-full -right-full"
           } flex lg:flex-1 flex-col lg:flex-row lg:justify-end items-center py-6 lg:py-2 gap-5 absolute transition-all duration-500 ease-in-out lg:static top-10 lg:top-0 lg:h-auto h-max w-1/2 lg:w-auto mt-2 md:mt-0 bg-slate-800  justify-center rounded-b-lg lg:rounded-none`}>
           {links}
-          {status != 'authenticated' && (
+          {status != "authenticated" && (
             <div
               className={
-                ' nm-flat-slate-800 rounded-lg py-1 capitalize font-papyrus flex flex-row justify-center items-center divide-x-2 divide-amber-500 lg:w-auto'
+                " nm-flat-slate-800 rounded-lg py-1 capitalize font-papyrus flex flex-row justify-center items-center divide-x-2 divide-amber-500 lg:w-auto"
               }>
-              <Link href={'/auth/signin'}>
+              <Link href={"/auth/signin"}>
                 <a className="px-2 hover:text-amber-400">login</a>
               </Link>
-              <Link href={'/auth/credentials/credential-signup'}>
+              <Link href={"/auth/credentials/credential-signup"}>
                 <a className="px-2 hover:text-amber-400">register</a>
               </Link>
             </div>
           )}
+
           <UserBtn />
+          <LangBtn />
         </div>
       </div>
     </nav>

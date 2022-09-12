@@ -1,19 +1,92 @@
 {
-  "nftOwnership": "NFT SKIN OWNERSHIP",
-  "ownershipDesc": "Your pharaohs skins and all the tools are stored securely on the blockchain.",
-  "marketPlace": "MARKET PLACE",
-  "marketDesc": "Trade pharaohs skins and tools or fuse them together to get greater rewards!",
-  "nftStaking": "NFT STAKING",
-  "stakingDesc": "Increase your $LOP token yields by holding onto your NFT skins and tools",
-  "mobaGame": "MOBA GAME",
-  "gameDesc": "Battle it out in the Ancient Pharaonic Realm for FREE and earn $LOP while doing it.",
+  "heroTextAds": "قم بشراء عملة LOP",
+  "heroTextAds2": "سعر البيع ماقبل الطرح",
+  "buyBTN": "شراء LOP",
+  "whiteBTN": "فكرة المشروع",
+  "availableSoon": "قريباً في",
 
-  "tokenTitle1": "Participation",
-  "tokenFeature01": "Join in on a variety of special events, including tournaments, raffles, gambling and draws; potentially earning far greater rewards!",
-  "tokenTitle2": "LOP Staking",
-  "tokenFeature02": "Use your $LOP tokens to earn more currency! Watch it rise in value as $LOP inevitably conquers the NFT game market",
-  "tokenTitle3": "In Game Payment",
-  "tokenFeature03": "Use $LOP tokens to make in-game purchases, gaining new heroes skins or access to special events",
-  "tokenTitle4": "GOVERNANCE",
-  "tokenFeature04": "League of Pharaohs is designed to have a player driven economy, that economies growth is contigent upon our player base earning, spending and staking $LOP tokens"
+  "freeToPlay": "أكبر لعبة مجانية ،",
+  "playToEarn": "اللعب واربح",
+  "nftMoba": "لعبة nft موبا",
+
+  "heroDisc": "ادخل في حرب إستراتيجية ملحمية 5 ضد 5 في لعبة صراع الفراعنة. ماهو هدفك؟ تدمير منارة القوة للفريق المنافس. يبدو سهلا ؟! ربما ... هل تعمل كفريق؟ هل تستخدم التضاريس لصالحك؟ هل تم نصب كمينًا استراتيجيًا للعدو؟ هل تجمع الذهب وتقوم بترقية قوة الفراعنة؟ ستحدد مهارتك وعملك الجماعي وذكائك وتصميمك ما إذا كنت ستعود إلى الوطن بطلاً أو في نعش",
+
+  "features": "المميزات",
+
+  "nftOwnership": "ملكية NFT",
+  "ownershipDesc": "يتم تخزين مظاهر الفراعنة وجميع الأدوات الخاصة بك بشكل آمن على البلوكتشين.",
+  "marketPlace": "المتجر",
+  "marketDesc": "تداول مظاهر وأدوات الفراعنة أو ادمجهم معًا للحصول على مكافآت أكبر!",
+  "nftStaking": "تخزين NFT",
+  "stakingDesc": "قم بزيادة عملات LOP الخاص بك من خلال التمسك مظاهر وأدوات NFT الخاصة بك",
+  "mobaGame": "لعبة موبا",
+  "gameDesc": "قاتل في العالم الفرعوني القديم مجانًا واربح LOP  عند الفوز بالمعركة الدامية.",
+
+  "tokenTitle1": "المشاركة",
+  "tokenFeature01": "انضم إلى مجموعة متنوعة من الأحداث الخاصة ، بما في ذلك البطولات والسحوبات ؛ يحتمل أن تكسب مكافآت أكبر بكثير!",
+  "tokenTitle2": "تخزين عملة LOP",
+  "tokenFeature02": "استخدم عملة LOP $ الخاصة بك لكسب المزيد من العملات! شاهد ارتفاع قيمته حيث أن $ LOP ينتصر حتمًا على سوق ألعاب NFT",
+  "tokenTitle3": "الدفع داخل اللعبة",
+  "tokenFeature03": "استخدم عملة $ LOP لإجراء عمليات شراء داخل اللعبة ، واكتساب مظاهر أبطال جدد أو الوصول إلى الأحداث الخاصة",
+  "tokenTitle4": "نظام الحكم",
+  "tokenFeature04": "تم تصميم لعبة صراع الفراعنة ليكون لديها اقتصاد يحركه اللاعب ، بحيث يكون نمو الاقتصادات متواصلاً على أرباح قاعدة اللاعبين لدينا ، والإنفاق المميزة",
+
+  "tokenomics": "توزعة العملة",
+
+  "Brand": "العلامة التجارية والاستراتيجية",
+  "gameLogic": "تطوير منطق اللعبة",
+  "sMedia": "إطلاق قنوات التواصل الاجتماعي",
+  "video": "الفيديو دعائي",
+  "website": "تصميم موقع اللعبة",
+  "preMarketing": "التسويق المبدئي",
+
+  "websiteV1": "موقع اللعبة النسخة الأولى",
+  "character": "تصميم الشخصيات الرئيسية",
+  "smartContract": "برمجة العقود الذكية",
+  "ico": "المرحلة الأولى لبيع العملة",
+  "audit": "تدقيق العقد الذكي",
+
+  "publicsale": "البيع العلني",
+  "Prototype": "تطوير اللعبة المبدئي",
+  "Characters": "تصميم الشخصيات بتقنية البعد الثالث",
+  "Marketing2": "حملة التسويق الإلكتروني",
+
+  "privatesale": "المرحلة الثانية لبيع العملة",
+  "websiteV2": "موقع اللعبة النسخة الثانية",
+  "Ecosystem": "النظام البيئي للعبة",
+  "deploy": "نشر العقد الذكي",
+  "markets": "طرح العملة على منصة كوين ماركت كاب وبانكين سواب",
+
+  "NFTMBeta": "اختبار تجريبي لمتجر NFT",
+  "NFTM": "نشر رسمي لمتجر NFT",
+  "NFTSale": "بيع NFT",
+  "NFTStake": "تخزين NFT",
+  "NFTFusion": "دمج NFT",
+  "listing2": "طرح العملة على منصات مختلفة",
+
+  "betaGame": "إطلاق اللعبة المبدئي",
+  "PVP": "(لاعب ضد لاعب ، مغامرة / وضع / مسابقات)",
+  "character2": "تطوير شخصيات اللعبة",
+
+  "game": "الإطلاق العام للعبة MOBA",
+  "additionalNFT": "حصريات إضافية موسمية NFTs",
+  "Tournament": "حدث كبير (بطولة عالمية)",
+
+  "getYour": "احصل على",
+  "tokenName": "عملة $LOP",
+  "early": "بسعر مخفض الان",
+
+  "listingCost": "سعر الطرح = 0.076 دولار",
+  "presaleButton": "شراء العملة ",
+
+  "outPartner": "شركائنا",
+
+  "leadership": "القيادة",
+
+  "roadmap": "خريطة المشروع",
+
+  "Tokenomics": "تقسيمة العملة",
+  "Roadmap": "خريطة المشروع",
+  "OurPartners": "شركائنا",
+  "OurTeam": "فريقنا المميز"
 }

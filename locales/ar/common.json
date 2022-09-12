@@ -1,42 +1,41 @@
 {
-  "characterName1": "Mazen",
-  "charactorPossion1": "Co-Founder & CEO",
-  "characterJob1": "BlockChain Developer",
+  "characterName1": "مازن",
+  "charactorPossion1": "الرئيس التنفيذي وشريك مؤسس",
+  "characterJob1": "مبرمج بلوكتشين",
 
-  "characterName2": "Bilal",
-  "charactorPossion2": "Co-Founder & COO",
-  "characterJob2": "Full-stack developer",
+  "characterName2": "بلال",
+  "charactorPossion2": "الرئيس التنفيذي للعمليات وشريك مؤسس",
+  "characterJob2": "مبرمج مواقع متكامل",
 
-  "characterName3": "Kateryna",
-  "charactorPossion3": "Art Manager",
-  "characterJob3": "2D - 3D Designer",
+  "characterName3": "كاترينا",
+  "charactorPossion3": "مديرة القسم الفني",
+  "characterJob3": "مصممة ثنائي وثلاثي الأبعاد",
 
-  "characterName5": "David",
-  "charactorPossion5": "Game Developing Manager",
-  "characterJob5": "Unity Developer",
+  "characterName5": "دايفيد",
+  "charactorPossion5": "مديرة قسم برمجة الالعاب",
+  "characterJob5": "مبرمج العاب يونيتي",
 
-  "characterName6": "Momen Medhat",
-  "charactorPossion6": "Strategic Partner",
-  "characterJob6": "Strategic",
+  "characterName6": "مؤمن مدحت",
+  "charactorPossion6": "شريك استراتيجي",
+  "characterJob6": "مطور استراتيجي",
 
-  "characterName7": "Ahmed Ragab",
-  "charactorPossion7": "Financial Advisor",
-  "characterJob7": "Business Development Director",
+  "characterName7": "أحمد رجب",
+  "charactorPossion7": "المستشار المالي",
+  "characterJob7": "مدير تطوير الأعمال",
 
-  "advisor1": "Nariman",
-  "advisorPossion1": "Managing Partner & CTO",
-  "advisorTitle1": "Cybersecurity",
+  "advisor1": "ناريمان",
+  "advisorPossion1": "الشريك الإداري ورئيس قسم التكنولوجيا",
+  "advisorTitle1": "الأمن الإلكتروني",
 
-  "advisor2": "Asad Zeeshan",
-  "advisorPossion2": "Co-Founder & CMO",
-  "advisorTitle2": "Crypto Advisor",
+  "advisor2": "أسد زيشان",
+  "advisorPossion2": "المؤسس المشارك ومدير التسويق",
+  "advisorTitle2": "مستشار خبير في العملات الرقمية",
 
-  "papyrusPaper": "papyrus paper",
-  "sellRound": "sell round",
-  "yourBalance": "your balance",
+  "papyrusPaper": "فكرة المشروع",
+  "sellRound": "جولة البيع",
+  "yourBalance": "رصيدك",
 
-  "Tokenomics": "Tokenomics",
-  "Roadmap": "Roadmap",
-  "OurPartners": "Our partners",
-  "OurTeam": "Our team"
+  "thanksMsg1": "شكرًا لك على شراء عملة LOP.",
+  "thanksMsg2": "يمكنك التحقق من رصيدك في حسابك الشخصي",
+  "thanksBtn": "رصيدك"
 }
