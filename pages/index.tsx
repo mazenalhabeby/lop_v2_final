@@ -1,20 +1,20 @@
-import {motion} from 'framer-motion'
-import Hero from '@/components/pages/home/hero/Hero'
-import Partners from '@/components/pages/home/Partners'
-import RoadMap from '@/components/pages/home/RoadMap'
-import Teams from '@/components/pages/home/Teams'
-import Tokenomics from '@/components/pages/home/Tokenomics'
-import HomeLayout from '@/layouts/HomeLayout'
-import JobAplication from '@/components/JobAplication'
-import {useRouter} from 'next/router'
-import {useEffect} from 'react'
+import {motion} from "framer-motion"
+import Hero from "@/components/pages/home/hero/Hero"
+import Partners from "@/components/pages/home/Partners"
+import RoadMap from "@/components/pages/home/RoadMap"
+import Teams from "@/components/pages/home/Teams"
+import Tokenomics from "@/components/pages/home/Tokenomics"
+import HomeLayout from "@/layouts/HomeLayout"
+import JobAplication from "@/components/JobAplication"
+import {useRouter} from "next/router"
+import {useEffect} from "react"
 
 export default function Home() {
   const location: any = useRouter()
 
   useEffect(() => {
     if (location.query.ref) {
-      localStorage.setItem('refId', location.query.ref)
+      localStorage.setItem("refId", location.query.ref)
     }
   }, [location.query])
   return (
@@ -26,7 +26,7 @@ export default function Home() {
       <Tokenomics />
       <RoadMap />
       <Partners />
-      <Teams />
+      {/* <Teams /> */}
       <JobAplication />
     </motion.div>
   )
