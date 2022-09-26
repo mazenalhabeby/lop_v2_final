@@ -26,7 +26,7 @@ export default function Home() {
       <Tokenomics />
       <RoadMap />
       <Partners />
-      <Teams />
+      {/* <Teams /> */}
       <JobAplication />
     </motion.div>
   )
