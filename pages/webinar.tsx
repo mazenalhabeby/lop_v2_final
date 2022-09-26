@@ -12,7 +12,7 @@ export default function Webinar() {
           viewBox="0 0 1440 320"
           className=" absolute bottom-0 fill-amber-400/40 z-10">
           <path
-            fill-opacity="1"
+            fillOpacity="1"
             d="M0,160L120,138.7C240,117,480,75,720,53.3C960,32,1200,32,1320,32L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
         </svg>
         <div className="z-50 flex flex-row justify-end -space-x-24 h-[95vh] absolute right-8 bottom-0">
