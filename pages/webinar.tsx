@@ -1,4 +1,3 @@
-import CountDown from "@/components/CountDown"
 import MainButton from "@/components/MainButton"
 import WebinarLayout from "@/layouts/WebinarLayout"
 
@@ -26,7 +25,7 @@ export default function Webinar() {
           <span className=" uppercase text-9xl font-bold tracking-tighter">
             Webinar
           </span>
-          <CountDown />
+
           <div className="z-50">
             <MainButton
               btnName={"register now"}
