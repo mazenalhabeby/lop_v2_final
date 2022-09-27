@@ -31,7 +31,7 @@ const RoadMap = () => {
         {id: 4, sDetail: t("ico"), stat: true},
         {id: 5, sDetail: t("audit"), stat: true},
       ],
-      mainStat: "prog",
+      mainStat: "done",
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const RoadMap = () => {
         {id: 3, sDetail: t("Characters"), stat: false},
         {id: 4, sDetail: t("Marketing2"), stat: false},
       ],
-      mainStat: false,
+      mainStat: "prog",
     },
     {
       id: 4,
