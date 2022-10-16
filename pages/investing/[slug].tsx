@@ -9,12 +9,13 @@ import {
 } from "@web3-react/injected-connector"
 import {UserRejectedRequestError as UserRejectedRequestErrorWalletConnect} from "@web3-react/walletconnect-connector"
 import {UnsupportedChainIdError, useWeb3React} from "@web3-react/core"
-import {injected, walletconnect} from "@/libs/connector"
+import {injected, networks, walletconnect} from "@/libs/connector"
 import useTranslation from "next-translate/useTranslation"
 import {useEagerConnect, useInactiveListener} from "@/hooks/ConnectWalletHook"
 import {formatEther} from "@ethersproject/units"
 import ConnectWalletsModel from "@/components/ConnectWalletsModel"
 import ConnectWalletBtn from "@/components/ConnectWalletBtn"
+import {getSession} from "next-auth/react"
 declare var window: any
 
 function getUserBalance(account: any, library: any, cb: any) {
@@ -160,6 +161,22 @@ export default function Slug() {
       </div>
     </motion.div>
   )
+}
+
+export async function getServerSideProps(context: any) {
+  const session = await getSession(context)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth/signin",
+        permanent: false,
+      },
+    }
+  }
+  return {
+    props: {session},
+  }
 }
 
 Slug.getLayout = DefaultLayout
