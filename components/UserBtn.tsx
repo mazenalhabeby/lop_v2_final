@@ -1,7 +1,7 @@
-import {signOut, useSession} from 'next-auth/react'
-import Link from 'next/link'
-import {useEffect, useRef, useState} from 'react'
-import {BsThreeDotsVertical} from 'react-icons/bs'
+import {signOut, useSession} from "next-auth/react"
+import Link from "next/link"
+import {useEffect, useRef, useState} from "react"
+import {BsThreeDotsVertical} from "react-icons/bs"
 
 const UserBtn = () => {
   const {data: session} = useSession()
@@ -10,8 +10,9 @@ const UserBtn = () => {
   const dropdown = useRef<any>(null)
 
   const userLinks = [
-    {linkName: 'your balance', linkHref: '/balance', type: 'link'},
-    {linkName: 'sign out', type: 'button'},
+    {linkName: "your balance", linkHref: "/balance", type: "link"},
+    {linkName: "your invest", linkHref: "/investing-balance", type: "link"},
+    {linkName: "sign out", type: "button"},
   ]
 
   useEffect(() => {
@@ -22,9 +23,9 @@ const UserBtn = () => {
         setShowDropdown(false)
       }
     }
-    document.addEventListener('mousedown', handleClick)
+    document.addEventListener("mousedown", handleClick)
     // clean up
-    return () => document.removeEventListener('mousedown', handleClick)
+    return () => document.removeEventListener("mousedown", handleClick)
   }, [showDropdown])
 
   return (
@@ -36,7 +37,7 @@ const UserBtn = () => {
           }}
           className="flex flex-row items-center justify-center gap-2 nm-flat-slate-800-lg py-1 px-3 rounded-full relative cursor-pointer">
           <h4 className=" font-papyrus capitalize tracking-wider">
-            welcome! {session.user.name?.split(' ').slice(0, 2).join(' ')}
+            welcome! {session.user.name?.split(" ").slice(0, 2).join(" ")}
           </h4>
           <div className=" nm-inset-slate-800 p-1 rounded-full">
             <BsThreeDotsVertical />
@@ -50,20 +51,20 @@ const UserBtn = () => {
                   <div
                     key={i}
                     className="px-4 py-2 hover:text-amber-500 capitalize font-papyrus">
-                    {item.type == 'link' && (
+                    {item.type == "link" && (
                       //@ts-ignore
                       <Link href={item.linkHref}>
                         <a>{item.linkName}</a>
                       </Link>
                     )}
-                    {item.type == 'button' && (
+                    {item.type == "button" && (
                       <button
                         onClick={(e) => {
                           e.preventDefault
                           signOut({callbackUrl: `${window.location.origin}`})
                         }}
                         className={
-                          ' nm-flat-slate-800 rounded-lg px-4 py-2 capitalize'
+                          " nm-flat-slate-800 rounded-lg px-4 py-2 capitalize"
                         }>
                         {item.linkName}
                       </button>
