@@ -12,21 +12,31 @@ const InvestingInfo = () => {
   const planInfo = [
     {
       name: "prince-plan",
-      info: "Prince plan allow you to invest",
-      APY: "10 %",
+      info: "Prince plan allow you to get stable Percentage Yield up to 10% with short time",
       minInvest: 50,
+      period: 3,
+      withdrawal: [{type: "one Time", ap: "10%"}],
     },
     {
       name: "king-plan",
-      info: "King plan allow you to invest",
-      APY: "up to 40 %",
+      info: "King plan allow you to get stable average Percentage Yield up to 40% with short time",
       minInvest: 50,
+      period: 6,
+      withdrawal: [
+        {type: "monthly", ap: "30%"},
+        {type: "one Time", ap: "40%"},
+      ],
     },
     {
       name: "royal-plan",
-      info: "Royal plan allow you to invest",
-      APY: "up to 100 %",
+      info: "Royal plan allow you to get stable amazing Percentage Yield up to 100% with short time",
       minInvest: 200,
+      period: 12,
+      withdrawal: [
+        {type: "weekly", ap: "60%"},
+        {type: "monthly", ap: "75%"},
+        {type: "one Time", ap: "100%"},
+      ],
     },
   ]
 
@@ -63,8 +73,24 @@ const InvestingInfo = () => {
                     <p>{item.info}</p>
                     <div className="flex flex-col divide-y-2 divide-amber-500">
                       <div className="flex flex-row justify-between py-2">
-                        <span>APY</span>
-                        <span>{item.APY}</span>
+                        <span>Plan Period</span>
+                        <span>{item.period} Months</span>
+                      </div>
+                      <div className="flex flex-col py-2 w-full divide-y-2 divide-amber-500">
+                        {item.withdrawal.map((item, i) => {
+                          return (
+                            <div
+                              key={i}
+                              className={"flex flex-row justify-between"}>
+                              <span className="my-2">
+                                Withdrawl Profit {item.type}
+                              </span>
+                              <span className="my-2">
+                                Percentage Yield : {item.ap}
+                              </span>
+                            </div>
+                          )
+                        })}
                       </div>
                       <div className="flex flex-row justify-between py-2">
                         <span>minimum invest</span>

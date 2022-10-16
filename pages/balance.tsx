@@ -149,7 +149,8 @@ export default function Balance({
       exit={{opacity: 0}}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      className={`pt-32 pb-12 flex flex-col gap-4 min-h-screen lg:min-h-0`}>
+      className={`pt-32 pb-12 flex flex-col gap-4`}
+      style={{minHeight: "calc(100vh - 210px)"}}>
       {/* {refferalUser?.refferalId != null && (
         // <motion.div
         //   initial={{opacity: 0}}
