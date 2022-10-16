@@ -12,18 +12,21 @@ export default function Investing() {
       apy: "10%",
       minInvest: 50,
       label: false,
+      slug: "prince-plan",
     },
     {
       name: "King PLan",
       apy: "40%",
       minInvest: 50,
       label: false,
+      slug: "king-plan",
     },
     {
       name: "Royal PLan",
       apy: "100%",
       minInvest: 200,
       label: true,
+      slug: "royal-plan",
     },
   ]
 
@@ -59,7 +62,7 @@ export default function Investing() {
       exit={{opacity: 0}}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
-      className={`pt-32 pb-12 flex flex-col gap-4 min-h-screen lg:min-h-0`}>
+      className={`pt-32 flex flex-col gap-4 min-h-screen lg:min-h-0`}>
       <div className="w-max flex flex-col gap-2 justify-center items-center mx-auto text-xl">
         <div className="flex flex-col justify-center items-center uppercase leading-loose font-papyrus tracking-widest font-bold text-amber-400">
           Invest with League Of Pharaohs

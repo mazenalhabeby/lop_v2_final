@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 
 interface PLanCardType {
@@ -6,6 +7,7 @@ interface PLanCardType {
     apy: string
     minInvest: number
     label: boolean
+    slug: string
   }
 }
 
@@ -19,9 +21,11 @@ const PlanCard: React.FC<PLanCardType> = ({item}) => {
       <span className="text-base capitalize">
         minimum invest {item.minInvest}$
       </span>
-      <button className=" bg-cyan-600 p-2 rounded-lg text-base uppercase my-4 shadow-lg">
-        get {item.name}
-      </button>
+      <Link href={`/investing/${item.slug}`}>
+        <a className=" bg-cyan-600 p-2 rounded-lg text-base uppercase my-4 shadow-lg">
+          get {item.name}
+        </a>
+      </Link>
       {item.label && (
         <div className=" absolute top-5 -right-6 rotate-45 bg-green-500 px-4 rounded-t-full uppercase">
           best value

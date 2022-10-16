@@ -1,21 +1,21 @@
-import {motion} from 'framer-motion'
-import DefaultLayout from '@/layouts/DefaultLayout'
-import {getSession} from 'next-auth/react'
-import Link from 'next/link'
-import {client} from '@/libs/sanity'
-import {useEffect, useMemo, useState} from 'react'
-import TitleunderLine from '@/components/TitleunderLine'
-import Image from 'next/image'
-import useTranslation from 'next-translate/useTranslation'
-import {fetchingRefferalUser, fetchingRefferalUsers} from '@/utils/fetching'
-import MainButton from '@/components/MainButton'
-import {apiEditpoint} from '@/utils/endpoint'
-import toast from 'react-hot-toast'
-import {FaSpinner} from 'react-icons/fa'
-import {useRouter} from 'next/router'
-import {copyClipBoard} from '@/utils/CopyClipboard'
-import {RiFileCopyLine} from 'react-icons/ri'
-import {referralUsers, refferalQUERY} from '@/utils/query'
+import {motion} from "framer-motion"
+import DefaultLayout from "@/layouts/DefaultLayout"
+import {getSession} from "next-auth/react"
+import Link from "next/link"
+import {client} from "@/libs/sanity"
+import {useEffect, useMemo, useState} from "react"
+import TitleunderLine from "@/components/TitleunderLine"
+import Image from "next/image"
+import useTranslation from "next-translate/useTranslation"
+import {fetchingRefferalUser, fetchingRefferalUsers} from "@/utils/fetching"
+import MainButton from "@/components/MainButton"
+import {apiEditpoint} from "@/utils/endpoint"
+import toast from "react-hot-toast"
+import {FaSpinner} from "react-icons/fa"
+import {useRouter} from "next/router"
+import {copyClipBoard} from "@/utils/CopyClipboard"
+import {RiFileCopyLine} from "react-icons/ri"
+import {referralUsers, refferalQUERY} from "@/utils/query"
 
 interface BalanceProps {
   userAmount: {
@@ -48,13 +48,13 @@ export default function Balance({
 }: BalanceProps) {
   const icoRate = 0.015
   const preSale = 0.025
-  const {t} = useTranslation('balance')
+  const {t} = useTranslation("balance")
   const [icoTotal, setIcoTotal] = useState<any>([])
   const [refferalUser, setRefferalUser] = useState<refferaluserType>(
     currentUser[0]
   )
   const [currentRefCode, setcurrentRefCode] = useState(
-    currentUser[0] ? currentUser[0].refferalId : ' '
+    currentUser[0] ? currentUser[0].refferalId : " "
   )
   const [referralsUsers, setReferralsUsers] = useState([])
 
@@ -62,13 +62,13 @@ export default function Balance({
 
   useEffect(() => {
     const totalIco = userAmount.filter((item) => {
-      item.seedRound == 'ico'
+      item.seedRound == "ico"
     })
     setIcoTotal(totalIco)
   }, [userAmount])
 
   useEffect(() => {
-    setcurrentRefCode(currentUser[0] ? currentUser[0].refferalId : ' ')
+    setcurrentRefCode(currentUser[0] ? currentUser[0].refferalId : " ")
     setRefferalUser(currentUser[0])
     fetchingRefferalUsers(currentRefCode).then((data) => {
       setReferralsUsers(data)
@@ -92,13 +92,13 @@ export default function Balance({
       mutations: [
         {
           create: {
-            _type: 'refferal',
+            _type: "refferal",
             refferalUser: {
-              _type: 'reference',
+              _type: "reference",
               _ref: session.id,
             },
             refferalId: generateReferralId.toLowerCase(),
-            refferalRoul: 'referral',
+            refferalRoul: "referral",
           },
         },
       ],
@@ -106,11 +106,11 @@ export default function Balance({
 
     await fetch(apiEditpoint, {
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_SANITY_API_TOKEN}`,
       },
       body: JSON.stringify(mutations),
-      method: 'POST',
+      method: "POST",
     })
   }
 
@@ -122,25 +122,25 @@ export default function Balance({
         fetchingRefferalUser(session.id).then((data) => {
           setRefferalUser(data[0])
         })
-        toast.success('Your code Activated')
+        toast.success("Your code Activated")
       }, 1000)
     })
   }
 
   const tableHeader = [
-    {title: t('Data')},
-    {title: t('Value')},
-    {title: t('SaleRound')},
-    {title: t('roundPrice')},
-    {title: t('Balance')},
-    {title: t('WalletAddress')},
-    {title: t('Distribution')},
+    {title: t("Data")},
+    {title: t("Value")},
+    {title: t("SaleRound")},
+    {title: t("roundPrice")},
+    {title: t("Balance")},
+    {title: t("WalletAddress")},
+    {title: t("Distribution")},
   ]
 
   const comassionRate =
-    refferalUser?.refferalRoul == 'referral'
+    refferalUser?.refferalRoul == "referral"
       ? 5
-      : refferalUser?.refferalRoul == 'affiliate'
+      : refferalUser?.refferalRoul == "affiliate"
       ? 10
       : undefined
 
@@ -150,103 +150,103 @@ export default function Balance({
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       className={`pt-32 pb-12 flex flex-col gap-4 min-h-screen lg:min-h-0`}>
-      {refferalUser?.refferalId != null && (
-        <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0}}
-          className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
-          <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">
-            Refer Friends. Earn <br />
-            Crypto Together.
-          </p>
-          <div className="nm-flat-slate-700 p-2">
-            <div className="flex flex-col justify-center items-center gap-2 w-full bg-slate-800">
-              <div className="grid grid-cols-3 gap-4 w-full justify-items-center">
-                <span>Total Referrals</span>
-                <span>Total Deposit</span>
-                <span>Your balance</span>
-              </div>
-              <div className="grid grid-cols-3 gap-4 w-full justify-items-center text-lg font-semibold text-amber-500">
-                <span>{referralsUsers.length}</span>
-                <span>0</span>
-                <span>0</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 my-4">
-              <div className="flex flex-row justify-between items-center">
-                <span>Referral ID : </span>
-                <span className="flex gap-1">
-                  {refferalUser?.refferalId}
-                  <input
-                    id="refId"
-                    type="text"
-                    defaultValue={refferalUser?.refferalId}
-                    readOnly
-                    hidden
-                  />
-                  <button
-                    onClick={() => {
-                      copyClipBoard('refId', 'Your Refferal Id copied')
-                    }}>
-                    <RiFileCopyLine />
-                  </button>
-                </span>
-              </div>
-              <div className="flex flex-row justify-between items-center">
-                <span>Referral Link : </span>
-                <span className="flex gap-1">
-                  {`https//lea...=${refferalUser?.refferalId}`}
-                  <input
-                    id="refLink"
-                    type="text"
-                    defaultValue={`https://leagueofpharaohs.com/?ref=${refferalUser?.refferalId}`}
-                    readOnly
-                    hidden
-                  />
-                  <button
-                    onClick={() => {
-                      copyClipBoard('refLink', 'Your Refferal Link copied')
-                    }}>
-                    <RiFileCopyLine />
-                  </button>
-                </span>
-              </div>
-            </div>
-            <h2 className="text-xs font-semibold tracking-wider">
-              you will receive {comassionRate}% on the first deposit your
-              referral will make
-            </h2>
-          </div>
-        </motion.div>
-      )}
-      {refferalUser?.refferalId == null && userAmount.length > 0 && (
-        <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{delay: 0.5}}
-          exit={{opacity: 0}}
-          className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
-          <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">
-            Refer Friends. Earn <br />
-            Crypto Together.
-          </p>
-          <div>
-            <button
-              onClick={addnewRefferalUser}
-              className="bg-amber-600 p-2 rounded-md font-semibold text-xl tracking-wider shadow-lg disabled:bg-slate-400 disabled:text-slate-500 flex flex-row justify-center items-center gap-2"
-              disabled={loading}>
-              {loading && (
-                <FaSpinner className=" animate-spin text-slate-500" />
-              )}
-              Activate Code
-            </button>
-          </div>
-        </motion.div>
-      )}
+      {/* {refferalUser?.refferalId != null && (
+        // <motion.div
+        //   initial={{opacity: 0}}
+        //   animate={{opacity: 1}}
+        //   exit={{opacity: 0}}
+        //   className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
+        //   <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">
+        //     Refer Friends. Earn <br />
+        //     Crypto Together.
+        //   </p>
+        //   <div className="nm-flat-slate-700 p-2">
+        //     <div className="flex flex-col justify-center items-center gap-2 w-full bg-slate-800">
+        //       <div className="grid grid-cols-3 gap-4 w-full justify-items-center">
+        //         <span>Total Referrals</span>
+        //         <span>Total Deposit</span>
+        //         <span>Your balance</span>
+        //       </div>
+        //       <div className="grid grid-cols-3 gap-4 w-full justify-items-center text-lg font-semibold text-amber-500">
+        //         <span>{referralsUsers.length}</span>
+        //         <span>0</span>
+        //         <span>0</span>
+        //       </div>
+        //     </div>
+        //     <div className="flex flex-col gap-4 my-4">
+        //       <div className="flex flex-row justify-between items-center">
+        //         <span>Referral ID : </span>
+        //         <span className="flex gap-1">
+        //           {refferalUser?.refferalId}
+        //           <input
+        //             id="refId"
+        //             type="text"
+        //             defaultValue={refferalUser?.refferalId}
+        //             readOnly
+        //             hidden
+        //           />
+        //           <button
+        //             onClick={() => {
+        //               copyClipBoard("refId", "Your Refferal Id copied")
+        //             }}>
+        //             <RiFileCopyLine />
+        //           </button>
+        //         </span>
+        //       </div>
+        //       <div className="flex flex-row justify-between items-center">
+        //         <span>Referral Link : </span>
+        //         <span className="flex gap-1">
+        //           {`https//lea...=${refferalUser?.refferalId}`}
+        //           <input
+        //             id="refLink"
+        //             type="text"
+        //             defaultValue={`https://leagueofpharaohs.com/?ref=${refferalUser?.refferalId}`}
+        //             readOnly
+        //             hidden
+        //           />
+        //           <button
+        //             onClick={() => {
+        //               copyClipBoard("refLink", "Your Refferal Link copied")
+        //             }}>
+        //             <RiFileCopyLine />
+        //           </button>
+        //         </span>
+        //       </div>
+        //     </div>
+        //     <h2 className="text-xs font-semibold tracking-wider">
+        //       you will receive {comassionRate}% on the first deposit your
+        //       referral will make
+        //     </h2>
+        //   </div>
+        // </motion.div>
+      )} */}
+      {/* {refferalUser?.refferalId == null && userAmount.length > 0 && (
+        // <motion.div
+        //   initial={{opacity: 0}}
+        //   animate={{opacity: 1}}
+        //   transition={{delay: 0.5}}
+        //   exit={{opacity: 0}}
+        //   className="my-8 flex flex-row flex-wrap gap-8 items-center justify-center nm-inset-slate-700 py-8 px-4 w-[90%] lg:w-max mx-auto rounded-lg">
+        //   <p className=" text-4xl font-bold capitalize tracking-wide leading-tight">
+        //     Refer Friends. Earn <br />
+        //     Crypto Together.
+        //   </p>
+        //   <div>
+        //     <button
+        //       onClick={addnewRefferalUser}
+        //       className="bg-amber-600 p-2 rounded-md font-semibold text-xl tracking-wider shadow-lg disabled:bg-slate-400 disabled:text-slate-500 flex flex-row justify-center items-center gap-2"
+        //       disabled={loading}>
+        //       {loading && (
+        //         <FaSpinner className=" animate-spin text-slate-500" />
+        //       )}
+        //       Activate Code
+        //     </button>
+        //   </div>
+        // </motion.div>
+      )} */}
 
       <div className="flex flex-col gap-2 items-center justify-center w-max mx-auto font-papyrus capitalize tracking-wider font-semibold text-2xl">
-        <span>{t('historyTitle')}</span>
+        <span>{t("historyTitle")}</span>
         <TitleunderLine />
       </div>
 
@@ -300,22 +300,22 @@ export default function Balance({
                           {item.seedRound}
                         </td>
                         <td className="border border-slate-600 p-2">
-                          {item.seedRound == 'ico'
+                          {item.seedRound == "ico"
                             ? `${icoRate} $`
-                            : item.seedRound == 'preSale'
+                            : item.seedRound == "preSale"
                             ? `${preSale} $`
                             : undefined}
                         </td>
                         <td className="border border-slate-600 p-2">
-                          {item.seedRound == 'ico'
+                          {item.seedRound == "ico"
                             ? `${(Number(item.amount) / icoRate).toLocaleString(
-                                'en-US'
+                                "en-US"
                               )} LOP`
-                            : item.seedRound == 'preSale'
+                            : item.seedRound == "preSale"
                             ? `${(
                                 (Number(item.amount) * item.coinPrice) /
                                 preSale
-                              ).toLocaleString('en-US')} LOP`
+                              ).toLocaleString("en-US")} LOP`
                             : undefined}
                         </td>
                         <td className="border border-slate-600 p-2">
@@ -325,10 +325,10 @@ export default function Balance({
                           )}
                         </td>
                         <td className="border border-slate-600 p-2 text-xs max-w-[2rem] px-2">
-                          {item.seedRound == 'ico'
-                            ? t('icosaleMsg')
-                            : item.seedRound == 'preSale'
-                            ? t('presaleMsg')
+                          {item.seedRound == "ico"
+                            ? t("icosaleMsg")
+                            : item.seedRound == "preSale"
+                            ? t("presaleMsg")
                             : undefined}
                         </td>
                       </tr>
@@ -345,12 +345,12 @@ export default function Balance({
               alt="empty balance"
               width={150}
               height={75}
-              className={'opacity-50'}
+              className={"opacity-50"}
             />
             <span className="text-xl capitalize font-papyrus font-semibold tracking-widest text-slate-400">
               you do not have a balance yet!
             </span>
-            <Link href={'/sale'}>
+            <Link href={"/sale"}>
               <a className=" bg-cyan-300 text-slate-700 font-papyrus py-2 px-4 rounded-lg text-xl uppercase tracking-wider shadow-lg">
                 Buy LOP
               </a>
@@ -370,7 +370,7 @@ export async function getServerSideProps(context: any) {
   if (!session) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: "/auth/signin",
         permanent: false,
       },
     }
