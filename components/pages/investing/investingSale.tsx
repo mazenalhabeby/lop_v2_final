@@ -111,6 +111,7 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
       if (listen.confirmations > 0) {
         postTransaction()
         setTransactionLoading(false)
+        router.push("/investing-balance")
         getUserBalance()
         reset()
       }
