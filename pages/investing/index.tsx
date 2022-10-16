@@ -9,24 +9,34 @@ export default function Investing() {
   const investingPlan = [
     {
       name: "Prince PLan",
-      apy: "10%",
       minInvest: 50,
       label: false,
       slug: "prince-plan",
+      period: "3 Months",
+      withdrawal: [{type: "one Time", ap: "10%"}],
     },
     {
       name: "King PLan",
-      apy: "40%",
       minInvest: 50,
       label: false,
       slug: "king-plan",
+      period: "6 Months",
+      withdrawal: [
+        {type: "monthly", ap: "30%"},
+        {type: "one Time", ap: "40%"},
+      ],
     },
     {
       name: "Royal PLan",
-      apy: "100%",
       minInvest: 200,
       label: true,
       slug: "royal-plan",
+      period: "1 Year",
+      withdrawal: [
+        {type: "Weekly", ap: "60%"},
+        {type: "Monthly", ap: "75%"},
+        {type: "one Time", ap: "100%"},
+      ],
     },
   ]
 
@@ -79,7 +89,7 @@ export default function Investing() {
           return <PlanCard key={i} item={item} />
         })}
       </div>
-      <table className="table-auto w-full border-collapse border border-slate-600 max-w-5xl mx-auto my-4">
+      {/* <table className="table-auto w-full border-collapse border border-slate-600 max-w-5xl mx-auto my-4">
         <thead>
           <tr>
             <th className="border border-slate-600 py-2 bg-slate-800">PLans</th>
@@ -112,7 +122,7 @@ export default function Investing() {
             )
           })}
         </tbody>
-      </table>
+      </table> */}
     </motion.div>
   )
 }

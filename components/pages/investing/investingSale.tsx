@@ -183,7 +183,7 @@ const InvestingSale = ({getUserBalance}: any) => {
           </div>
           {terms.map((item, i) => {
             return (
-              <div className="flex flex-row gap-2 items-start">
+              <div key={i} className="flex flex-row gap-2 items-start">
                 <input
                   type={"checkbox"}
                   {...register(item.name, {
