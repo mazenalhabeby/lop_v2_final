@@ -1,15 +1,15 @@
-import {parseEther} from '@ethersproject/units'
-import {useWeb3React} from '@web3-react/core'
-import {ethers, providers} from 'ethers'
-import {useSession} from 'next-auth/react'
-import useTranslation from 'next-translate/useTranslation'
-import Image from 'next/image'
-import {useRouter} from 'next/router'
-import {FC, useEffect, useState} from 'react'
-import {useForm} from 'react-hook-form'
-import toast from 'react-hot-toast'
-import {BiErrorCircle} from 'react-icons/bi'
-import {ImSpinner2} from 'react-icons/im'
+import {parseEther} from "@ethersproject/units"
+import {useWeb3React} from "@web3-react/core"
+import {ethers, providers} from "ethers"
+import {useSession} from "next-auth/react"
+import useTranslation from "next-translate/useTranslation"
+import Image from "next/image"
+import {useRouter} from "next/router"
+import {FC, useEffect, useState} from "react"
+import {useForm} from "react-hook-form"
+import toast from "react-hot-toast"
+import {BiErrorCircle} from "react-icons/bi"
+import {ImSpinner2} from "react-icons/im"
 declare var window: any
 
 interface SaleSideProps {
@@ -17,9 +17,9 @@ interface SaleSideProps {
 }
 
 const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
-  const {t} = useTranslation('sale')
+  const {t} = useTranslation("sale")
   const route = useRouter()
-  const recieverAddress = '0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A'
+  const recieverAddress = "0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A"
 
   const {data: session} = useSession()
 
@@ -47,7 +47,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
 
   const [transactionLoading, setTransactionLoading] = useState(false)
   const [buyLopAmount, setBuyLopAmount] = useState(0)
-  const [amount, setAmount] = useState('')
+  const [amount, setAmount] = useState("")
   const [BNBPrince, setBNBPrince] = useState(0)
 
   const onLopChange = (e: any) => {
@@ -57,10 +57,10 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
 
   const fetchingPrice = async () => {
     const priceUrl =
-      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cbinancecoin&vs_currencies=usd'
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cbinancecoin&vs_currencies=usd"
     const response = await fetch(priceUrl)
     const data = await response.json()
-    setBNBPrince(data['binancecoin'].usd)
+    setBNBPrince(data["binancecoin"].usd)
   }
 
   useEffect(() => {
@@ -75,15 +75,15 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
     const transactionInfo = {
       walletAddress: account,
       amount: amount,
-      seedRound: 'preSale',
-      coinUsed: 'bnb',
+      seedRound: "preSale",
+      coinUsed: "bnb",
       coinPrice: Number(BNBPrince),
       user: session?.id,
     }
 
     const result = await fetch(`/api/addTransaction`, {
       body: JSON.stringify(transactionInfo),
-      method: 'POST',
+      method: "POST",
     })
     const json = await result.json()
   }
@@ -99,7 +99,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
         from: account?.toString(),
         to: recieverAddress,
         value: value,
-        data: '0x',
+        data: "0x",
       })
       let listen = await tx.wait()
 
@@ -107,8 +107,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
         postTransaction()
         setTransactionLoading(false)
         route.push(
-          {pathname: '/sale/thanks', query: {isBuy: true}},
-          '/sale/thanks'
+          {pathname: "/sale/thanks", query: {isBuy: true}},
+          "/sale/thanks"
         )
         getUserBalance()
         reset()
@@ -116,8 +116,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
     } catch (err: any) {
       if (err) {
         setTransactionLoading(false)
-        if (err.code == '-32603') {
-          toast.error('insufficient funds')
+        if (err.code == "-32603") {
+          toast.error("insufficient funds")
         }
       }
     }
@@ -135,7 +135,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
                 src="/images/bnb-icon2_2x.webp"
                 width={15}
                 height={15}
-                alt={'BNB icon'}
+                alt={"BNB icon"}
               />
               <span>1 BNB =</span>
               <span>{BNBPrince} $</span>
@@ -148,8 +148,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
 
           <div className="w-full nm-inset-slate-700-lg flex flex-row rounded-lg px-2 divide-x divide-slate-600">
             <input
-              {...register('amount', {
-                required: {value: true, message: 'The amount is required'},
+              {...register("amount", {
+                required: {value: true, message: "The amount is required"},
                 min: {
                   value: 100 / BNBPrince,
                   message: `The minimum investment is ${(
@@ -182,8 +182,8 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
             type="submit"
             className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
             disabled={transactionLoading}>
-            {transactionLoading && <ImSpinner2 className=" animate-spin" />}{' '}
-            {t('buyButton')}
+            {transactionLoading && <ImSpinner2 className=" animate-spin" />}{" "}
+            {t("buyButton")}
           </button>
         </form>
       </div>

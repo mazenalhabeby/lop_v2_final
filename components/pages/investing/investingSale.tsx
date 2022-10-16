@@ -1,27 +1,43 @@
-import DividerWithWord from "@/components/DividerWithWord"
-import Image from "next/image"
+import {useWeb3React} from "@web3-react/core"
+import {parseEther} from "@ethersproject/units"
+import {useSession} from "next-auth/react"
 import {useRouter} from "next/router"
-import React from "react"
+import React, {useState, FC} from "react"
 import {useForm} from "react-hook-form"
-import {BiRestaurant} from "react-icons/bi"
+import toast from "react-hot-toast"
 import {GiEyeOfHorus} from "react-icons/gi"
+import {ImSpinner2} from "react-icons/im"
+import {type} from "os"
 
-const InvestingSale = ({getUserBalance}: any) => {
+type InvestingSale = {
+  getUserBalance: Function
+  contract: any
+}
+
+const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
+  const {data: session} = useSession()
+  const [usdtAmount, setUsdtAmount] = useState("")
+  const [transactionLoading, setTransactionLoading] = useState(false)
   const {register, handleSubmit, watch, formState, reset} = useForm({
     mode: "onChange",
   })
+
+  const onLopChange = (e: any) => {
+    setUsdtAmount(e.target.value)
+  }
+
   const PrincePlan = [
-    {label: "yearly Withdrawl", value: "yearly", inputName: "value"},
+    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
   ]
 
   const KingPlan = [
     {label: "monthly Withdrawl", value: "monthly", inputName: "value"},
-    {label: "yearly Withdrawl", value: "yearly", inputName: "value"},
+    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
   ]
   const RoyalPlan = [
     {label: "weekly Withdrawl", value: "weekly", inputName: "value"},
     {label: "monthly Withdrawl", value: "monthly", inputName: "value"},
-    {label: "yearly Withdrawl", value: "yearly", inputName: "value"},
+    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
   ]
   const terms = [
     {
@@ -50,13 +66,65 @@ const InvestingSale = ({getUserBalance}: any) => {
 
   const currentPlan = router.query.slug
 
-  const onSubmit = (data: any) => {
-    console.log(data)
+  const onSubmit = async (data: any) => {
+    sentTransaction()
   }
 
-  console.log(formState.isValid)
+  const recieverAddress = "0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A"
+
+  const context = useWeb3React()
+  const {
+    connector,
+    library,
+    chainId,
+    account,
+    activate,
+    deactivate,
+    active,
+    error,
+  } = context
 
   const minimumInvesting = currentPlan == "royal-plan" ? 200 : 50
+
+  const postTransaction = async () => {
+    const transactionInfo = {
+      walletAddress: account,
+      amount: watch("amount"),
+      plan: currentPlan,
+      planType: watch("value"),
+      user: session?.id,
+    }
+
+    const result = await fetch(`/api/addInvest`, {
+      body: JSON.stringify(transactionInfo),
+      method: "POST",
+    })
+    const json = await result.json()
+  }
+
+  const sentTransaction = async () => {
+    setTransactionLoading(true)
+    try {
+      let value = parseEther(usdtAmount?.toString())
+      const tx = await contract.transfer(recieverAddress, value)
+      let listen = await tx.wait()
+      if (listen.confirmations > 0) {
+        postTransaction()
+        setTransactionLoading(false)
+        getUserBalance()
+        reset()
+      }
+    } catch (err: any) {
+      if (err) {
+        setTransactionLoading(false)
+        if (err.code == "-32603") {
+          toast.error("insufficient funds")
+        } else if (err.code == "4001") {
+          toast.error("You have denied transation")
+        }
+      }
+    }
+  }
 
   return (
     <div className=" w-full lg:w-full max-w-md relative">
@@ -177,6 +245,7 @@ const InvestingSale = ({getUserBalance}: any) => {
               className="flex-1 bg-transparent outline-none placeholder:text-slate-500 text-center placeholder:text-left placeholder:text-xs md:placeholder:text-base"
               placeholder={`Minimum investment is ${minimumInvesting} USDT`}
               autoComplete="off"
+              onChange={onLopChange}
               step="any"
             />
             <span className="py-3 pl-2">USDT</span>
@@ -200,8 +269,8 @@ const InvestingSale = ({getUserBalance}: any) => {
           <button
             type="submit"
             className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
-            disabled={!formState.isValid}>
-            Buy
+            disabled={!formState.isValid || transactionLoading}>
+            {transactionLoading && <ImSpinner2 className=" animate-spin" />} Buy
           </button>
         </form>
       </div>

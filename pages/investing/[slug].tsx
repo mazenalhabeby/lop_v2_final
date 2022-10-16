@@ -16,11 +16,12 @@ import {formatEther} from "@ethersproject/units"
 import ConnectWalletsModel from "@/components/ConnectWalletsModel"
 import ConnectWalletBtn from "@/components/ConnectWalletBtn"
 import {getSession} from "next-auth/react"
+import {getUsdtContract} from "@/utils/ABI/UsdtAbi"
 declare var window: any
 
-function getUserBalance(account: any, library: any, cb: any) {
+function getUserBalance(account: any, library: any, cb: any, contract: any) {
   if (account && library) {
-    library.getBalance(account).then((balance: any) => {
+    contract.balanceOf(account).then((balance: any) => {
       cb(balance)
     })
   }
@@ -45,6 +46,8 @@ export default function Slug() {
     error,
   } = context
 
+  const contract = getUsdtContract(library, account)
+
   useEffect(() => {
     if (openModel) {
       document.body.classList.add("active__model")
@@ -60,7 +63,7 @@ export default function Slug() {
   }, [activatingConnector, connector])
 
   useEffect(() => {
-    getUserBalance(account, library, setBalance)
+    getUserBalance(account, library, setBalance, contract)
   }, [account, library])
 
   enum ConnectorNames {
@@ -157,7 +160,7 @@ export default function Slug() {
       </div>
       <div className="flex flex-col-reverse  gap-10 xl:gap-0 px-8 xl:px-0 xl:flex-row  items-center justify-around">
         <InvestingInfo />
-        <InvestingSale getUserBalance={getUserBalance} />
+        <InvestingSale getUserBalance={getUserBalance} contract={contract} />
       </div>
     </motion.div>
   )
