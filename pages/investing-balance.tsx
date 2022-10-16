@@ -27,8 +27,6 @@ interface BalanceProps {
 export default function InvestingBalnace({userAmount, session}: BalanceProps) {
   const {t} = useTranslation("balance")
 
-  console.log(userAmount)
-
   const tableHeader = [
     {title: "Date"},
     {title: "Investing Amount"},

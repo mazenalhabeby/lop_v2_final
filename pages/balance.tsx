@@ -72,7 +72,6 @@ export default function Balance({
     setRefferalUser(currentUser[0])
     fetchingRefferalUsers(currentRefCode).then((data) => {
       setReferralsUsers(data)
-      console.log(data)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
