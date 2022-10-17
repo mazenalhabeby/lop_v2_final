@@ -43,22 +43,22 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
     {
       name: "term01",
       details:
-        "I agree to subscribe to investment plan and receive my profits as per my plan and recieve my original investment funds after the subscription period is over.",
+        "I Agree to subscribe to investment Contract and receive my profits as i have choose in the withdrawal plan and i agree to receive my investment funds after the contract period is over",
     },
     {
       name: "term02",
       details:
-        "If I choose to terminate the deal before the investment contract period is over, I understand I will not receive my original investment funds.",
+        "I Agree that I understand I can't get my investment funds back  before the contract period is over .",
     },
     {
       name: "term03",
       details:
-        "I accept to withdraw my profits to the original wallet address that I used to subscribe to the investing plans and any change in the wallet address cannot be undone and funds will not be withdrawn except to the original wallet address as per the contract.",
+        "I accept to withdraw my profits and investment funds only to the wallet address that I used to subscribe to the investing contract and i understand that i can't change the withdrawal wallet address for any reason",
     },
     {
       name: "term04",
       details:
-        " I accept and understand that in case of subscription to the (YEARLY INVESTMENT PLAN) I'm able to withdraw my original funds as a charge back with only 50% of my original funds to be funded.",
+        "I accept and understand that If I decided to terminate the ROYAL investment contract during or before the end of first 3 months of the total contract period , I will only get 50% of my investment funds charge back , and will also deduct from the 50% refund all profits i have received during the investment contract period.",
     },
   ]
 

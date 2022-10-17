@@ -8,34 +8,62 @@ import React from "react"
 export default function Investing() {
   const investingPlan = [
     {
-      name: "Prince PLan",
+      name: "Prince Contract",
       minInvest: 50,
       label: false,
       slug: "prince-plan",
       period: "3 Months",
-      withdrawal: [{type: "one Time", ap: "10%"}],
+      withdrawal: [{type: "one Time", ap: "10%", label: "Total profit"}],
     },
     {
-      name: "King PLan",
+      name: "King Contract",
       minInvest: 50,
       label: false,
       slug: "king-plan",
       period: "6 Months",
       withdrawal: [
-        {type: "monthly", ap: "30%"},
-        {type: "one Time", ap: "40%"},
+        {
+          type: "monthly",
+          ap: "30%",
+          monthlyProfit: "5%",
+          label: "monthly profit",
+        },
+        {
+          type: "one Time",
+          ap: "40%",
+          monthlyProfit: "-",
+          label: "Total profit",
+        },
       ],
     },
     {
-      name: "Royal PLan",
+      name: "Royal Contract",
       minInvest: 200,
       label: true,
       slug: "royal-plan",
       period: "1 Year",
       withdrawal: [
-        {type: "Weekly", ap: "60%"},
-        {type: "Monthly", ap: "75%"},
-        {type: "one Time", ap: "100%"},
+        {
+          type: "Weekly",
+          ap: "60%",
+          weeklyProfit: "1.25%",
+          monthlyProfit: "5%",
+          label: "Weekly profit",
+        },
+        {
+          type: "Monthly",
+          ap: "75%",
+          weeklyProfit: "-",
+          monthlyProfit: "6.25%",
+          label: "monthly profit",
+        },
+        {
+          type: "one Time",
+          ap: "100%",
+          weeklyProfit: "-",
+          monthlyProfit: "-",
+          label: "Total profit",
+        },
       ],
     },
   ]
@@ -84,45 +112,11 @@ export default function Investing() {
           choose your plan now
         </span>
       </div>
-      <div className="flex flex-row flex-wrap justify-around items-center w-4/5 mx-auto my-4">
+      <div className="grid grid-cols-12 gap-20 w-4/5 mx-auto my-8">
         {investingPlan.map((item, i) => {
           return <PlanCard key={i} item={item} />
         })}
       </div>
-      {/* <table className="table-auto w-full border-collapse border border-slate-600 max-w-5xl mx-auto my-4">
-        <thead>
-          <tr>
-            <th className="border border-slate-600 py-2 bg-slate-800">PLans</th>
-            {investingPlan.map((item, i) => {
-              return (
-                <th
-                  className="border border-slate-600 py-2 bg-slate-800"
-                  key={i}>
-                  {item.name}
-                </th>
-              )
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((item, i) => {
-            return (
-              <tr key={i} className="text-center">
-                <td className="border border-slate-600 p-2">{item.plan}</td>
-                <td className="border border-slate-600 p-2">
-                  {item.plan01Val}
-                </td>
-                <td className="border border-slate-600 p-2">
-                  {item.plan02Val}
-                </td>
-                <td className="border border-slate-600 p-2">
-                  {item.plan03Val}
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table> */}
     </motion.div>
   )
 }
