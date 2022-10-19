@@ -7,8 +7,7 @@ const Test = ({utcTimeStamp}: any) => {
   console.log(UTCtimeStamp)
   return (
     <div>
-      <div>hell</div>
-      <div>hell</div>
+      <div>{UTCtimeStamp}</div>
       <div>{timeStamp}</div>
     </div>
   )
