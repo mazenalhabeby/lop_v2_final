@@ -64,42 +64,42 @@ const TeamMembers = () => {
         },
       ],
     },
-    {
-      id: 4,
-      character: "/images/teams/kate.png",
-      possion: t("charactorPossion3"),
-      jobTitle: t("characterJob3"),
-      name: t("characterName3"),
-      Links: [
-        {
-          id: 1,
-          socialMedia: "Twitter",
-          link: "https://twitter.com/soy__Catalina",
-          socialIcon: FaTwitter,
-        },
-        {
-          id: 2,
-          socialMedia: "Linkedin",
-          link: "https://www.linkedin.com/in/katerina-stepanova-3bb20a153/",
-          socialIcon: FaLinkedin,
-        },
-      ],
-    },
-    {
-      id: 5,
-      character: "/images/teams/nana.png",
-      possion: t("advisorPossion1"),
-      jobTitle: t("advisorTitle1"),
-      name: t("advisor1"),
-      Links: [
-        {
-          id: 1,
-          socialMedia: "Linkedin",
-          link: "https://www.linkedin.com/in/nariman-salah-612316229/",
-          socialIcon: FaLinkedin,
-        },
-      ],
-    },
+    // {
+    //   id: 4,
+    //   character: "/images/teams/kate.png",
+    //   possion: t("charactorPossion3"),
+    //   jobTitle: t("characterJob3"),
+    //   name: t("characterName3"),
+    //   Links: [
+    //     {
+    //       id: 1,
+    //       socialMedia: "Twitter",
+    //       link: "https://twitter.com/soy__Catalina",
+    //       socialIcon: FaTwitter,
+    //     },
+    //     {
+    //       id: 2,
+    //       socialMedia: "Linkedin",
+    //       link: "https://www.linkedin.com/in/katerina-stepanova-3bb20a153/",
+    //       socialIcon: FaLinkedin,
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: 5,
+    //   character: "/images/teams/nana.png",
+    //   possion: t("advisorPossion1"),
+    //   jobTitle: t("advisorTitle1"),
+    //   name: t("advisor1"),
+    //   Links: [
+    //     {
+    //       id: 1,
+    //       socialMedia: "Linkedin",
+    //       link: "https://www.linkedin.com/in/nariman-salah-612316229/",
+    //       socialIcon: FaLinkedin,
+    //     },
+    //   ],
+    // },
     {
       id: 6,
       character: "/images/teams/daved.png",
