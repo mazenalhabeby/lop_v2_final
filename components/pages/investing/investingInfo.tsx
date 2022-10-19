@@ -71,7 +71,7 @@ const InvestingInfo = () => {
                       <TitleunderLine />
                     </div>
                     <p>{item.info}</p>
-                    <div className="flex flex-col divide-y-2 divide-amber-500">
+                    <div className="flex flex-col divide-y-2 divide-amber-500 ">
                       <div className="flex flex-row justify-between py-2">
                         <span>Plan Period</span>
                         <span>{item.period} Months</span>

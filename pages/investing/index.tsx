@@ -101,7 +101,7 @@ export default function Investing() {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       className={`pt-32 flex flex-col gap-4 min-h-screen lg:min-h-0`}>
-      <div className="w-max flex flex-col gap-2 justify-center items-center mx-auto text-xl">
+      <div className=" w-4/5 text-center lg:w-max flex flex-col gap-2 justify-center items-center mx-auto text-xl ">
         <div className="flex flex-col justify-center items-center uppercase leading-loose font-papyrus tracking-widest font-bold text-amber-400">
           Invest with League Of Pharaohs
           <span>and get the heights Annual Percentage Yield</span>
@@ -112,7 +112,7 @@ export default function Investing() {
           choose your plan now
         </span>
       </div>
-      <div className="grid grid-cols-12 gap-20 w-4/5 mx-auto my-8">
+      <div className="flex flex-col-reverse lg:grid grid-cols-12 gap-20 w-4/5 mx-auto my-8">
         {investingPlan.map((item, i) => {
           return <PlanCard key={i} item={item} />
         })}

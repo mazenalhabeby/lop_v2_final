@@ -45,7 +45,7 @@ const UserBtn = () => {
           {showDropdown && (
             <div
               ref={dropdown}
-              className=" absolute left-0 right-0 mx-auto top-10 w-max bg-slate-800 rounded-b-2xl flex flex-col justify-center items-center py-2 shadow-xl divide-y divide-amber-600">
+              className=" absolute left-0 right-0 mx-auto top-16 lg:top-10 w-max bg-slate-800 rounded-b-2xl flex flex-col justify-center items-center py-2 shadow-xl divide-y divide-amber-600 z-50">
               {userLinks.map((item, i) => {
                 return (
                   <div
