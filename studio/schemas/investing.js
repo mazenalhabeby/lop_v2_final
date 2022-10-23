@@ -16,13 +16,39 @@ export default {
       type: "string",
     },
     {
-      name: "planType",
+      name: "planPeriod",
+      type: "number",
+    },
+    {
+      name: "py",
       type: "string",
     },
     {
-      name: "avalibleAmount",
+      name: "withdrawalPeriod",
       type: "string",
+    },
+    {
+      name: "planType",
+      type: "string",
+    },
+    {name: "avalibleAmount", type: "number"},
+    {name: "withdrawalAmount", type: "number"},
+    {
+      title: "Withdrawals Amount Details",
+      name: "withdrawalsAmountDetails",
+      type: "array",
+      of: [{title: "Withdrawal Details Amount", type: "WithdrawalAmount"}],
+    },
+    {
+      title: "Pofit",
+      name: "withdrawal",
+      type: "array",
+      of: [{title: "Withdrawal", type: "withdrawalDetails"}],
     },
     {name: "user", title: "User", type: "reference", to: {type: "user"}},
   ],
+  initialValue: {
+    avalibleAmount: 0,
+    withdrawalAmount: 0,
+  },
 }

@@ -1,0 +1,103 @@
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 617302352,
+      "message": {
+        "message_id": 2,
+        "from": {
+          "id": 238273518,
+          "is_bot": false,
+          "first_name": "M.alhabeby",
+          "username": "Mazenalhabeby7",
+          "language_code": "en"
+        },
+        "chat": {
+          "id": 238273518,
+          "first_name": "M.alhabeby",
+          "username": "Mazenalhabeby7",
+          "type": "private"
+        },
+        "date": 1666513288,
+        "text": "hello again"
+      }
+    },
+    {
+      "update_id": 617302353,
+      "my_chat_member": {
+        "chat": {
+          "id": -842072675,
+          "title": "new Withdrawal req",
+          "type": "group",
+          "all_members_are_administrators": true
+        },
+        "from": {
+          "id": 238273518,
+          "is_bot": false,
+          "first_name": "M.alhabeby",
+          "username": "Mazenalhabeby7",
+          "language_code": "en"
+        },
+        "date": 1666513516,
+        "old_chat_member": {
+          "user": {
+            "id": 5632771018,
+            "is_bot": true,
+            "first_name": "new withdrawal order",
+            "username": "new_Withdrawal_order_bot"
+          },
+          "status": "left"
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 5632771018,
+            "is_bot": true,
+            "first_name": "new withdrawal order",
+            "username": "new_Withdrawal_order_bot"
+          },
+          "status": "member"
+        }
+      }
+    },
+    {
+      "update_id": 617302354,
+      "message": {
+        "message_id": 3,
+        "from": {
+          "id": 238273518,
+          "is_bot": false,
+          "first_name": "M.alhabeby",
+          "username": "Mazenalhabeby7",
+          "language_code": "en"
+        },
+        "chat": {
+          "id": -842072675,
+          "title": "new Withdrawal req",
+          "type": "group",
+          "all_members_are_administrators": true
+        },
+        "date": 1666513516,
+        "new_chat_participant": {
+          "id": 5632771018,
+          "is_bot": true,
+          "first_name": "new withdrawal order",
+          "username": "new_Withdrawal_order_bot"
+        },
+        "new_chat_member": {
+          "id": 5632771018,
+          "is_bot": true,
+          "first_name": "new withdrawal order",
+          "username": "new_Withdrawal_order_bot"
+        },
+        "new_chat_members": [
+          {
+            "id": 5632771018,
+            "is_bot": true,
+            "first_name": "new withdrawal order",
+            "username": "new_Withdrawal_order_bot"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -35,7 +35,7 @@ export default function Distribution() {
     },
     {
       Allocation: t("subtitle7"),
-      Tokens: "1000,000,000",
+      Tokens: "1,000,000,000",
       pecent: "10%",
       Period: t("subtitle8"),
     },

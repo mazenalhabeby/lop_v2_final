@@ -16,7 +16,11 @@ export default async function handler(
           walletAddress: data.walletAddress,
           amount: data.amount,
           plan: data.plan,
+          planPeriod: data.planPeriod,
+          py: data.py,
+          withdrawalPeriod: data.withdrawalPeriod,
           planType: data.planType,
+          withdrawal: data.withdrawal,
           user: {
             _type: "reference",
             _ref: data.user,

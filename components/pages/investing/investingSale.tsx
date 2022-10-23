@@ -2,25 +2,38 @@ import {useWeb3React} from "@web3-react/core"
 import {parseEther} from "@ethersproject/units"
 import {useSession} from "next-auth/react"
 import {useRouter} from "next/router"
-import React, {useState, FC} from "react"
+import React, {useState, FC, useEffect} from "react"
 import {useForm} from "react-hook-form"
 import toast from "react-hot-toast"
 import {GiEyeOfHorus} from "react-icons/gi"
 import {ImSpinner2} from "react-icons/im"
-import {type} from "os"
+import {nanoid} from "nanoid"
+import {client} from "@/libs/sanity"
 
 type InvestingSale = {
   getUserBalance: Function
   contract: any
+  utcTimeStamp: any
 }
 
-const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
+const InvestingSale: FC<InvestingSale> = ({
+  getUserBalance,
+  contract,
+  utcTimeStamp,
+}) => {
   const {data: session} = useSession()
   const [usdtAmount, setUsdtAmount] = useState("")
   const [transactionLoading, setTransactionLoading] = useState(false)
   const {register, handleSubmit, watch, formState, reset} = useForm({
     mode: "onChange",
   })
+  const router = useRouter()
+
+  const currentPlan = router.query.slug
+
+  const [planType, setPlantype] = useState()
+  const [py, setPy] = useState("10")
+  const [withdrawalPeriod, setWithdrawalPeriod] = useState("1")
 
   const onLopChange = (e: any) => {
     setUsdtAmount(e.target.value)
@@ -42,33 +55,67 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
   const terms = [
     {
       name: "term01",
+      appear: "all",
       details:
         "I Agree to subscribe to investment Contract and receive my profits as i have choose in the withdrawal plan and i agree to receive my investment funds after the contract period is over",
     },
     {
       name: "term02",
+      appear: "all",
       details:
         "I Agree that I understand I can't get my investment funds back  before the contract period is over .",
     },
     {
       name: "term03",
+      appear: "all",
       details:
         "I accept to withdraw my profits and investment funds only to the wallet address that I used to subscribe to the investing contract and i understand that i can't change the withdrawal wallet address for any reason",
     },
     {
       name: "term04",
+      appear: "royal",
       details:
         "I accept and understand that If I decided to terminate the ROYAL investment contract during or before the end of first 3 months of the total contract period , I will only get 50% of my investment funds charge back , and will also deduct from the 50% refund all profits i have received during the investment contract period.",
     },
   ]
 
-  const router = useRouter()
+  useEffect(() => {
+    currentPlan == "prince-plane"
+      ? setWithdrawalPeriod("1")
+      : currentPlan == "king-plan" && planType == "monthly"
+      ? setWithdrawalPeriod("6")
+      : currentPlan == "king-plan" && planType == "oneTime"
+      ? setWithdrawalPeriod("1")
+      : currentPlan == "royal-plan" && planType == "weekly"
+      ? setWithdrawalPeriod("48")
+      : currentPlan == "royal-plan" && planType == "monthly"
+      ? setWithdrawalPeriod("12")
+      : currentPlan == "royal-plan" &&
+        planType == "oneTime" &&
+        setWithdrawalPeriod("1")
+  }, [planType])
 
-  const currentPlan = router.query.slug
+  useEffect(() => {
+    currentPlan == "prince-plane"
+      ? setPy("10")
+      : currentPlan == "king-plan" && planType == "monthly"
+      ? setPy("30")
+      : currentPlan == "king-plan" && planType == "oneTime"
+      ? setPy("40")
+      : currentPlan == "royal-plan" && planType == "weekly"
+      ? setPy("60")
+      : currentPlan == "royal-plan" && planType == "monthly"
+      ? setPy("75")
+      : currentPlan == "royal-plan" && planType == "oneTime" && setPy("100")
+  }, [planType])
 
   const onSubmit = async (data: any) => {
     sentTransaction()
   }
+
+  useEffect(() => {
+    setPlantype(watch("value"))
+  }, [watch("value")])
 
   const recieverAddress = "0x6A741a293fE0cF3779DcBaD9055F1B0c0B0a7D5A"
 
@@ -86,12 +133,50 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
 
   const minimumInvesting = currentPlan == "royal-plan" ? 200 : 50
 
+  let arr = Array(Number(withdrawalPeriod)).fill({
+    py: py,
+    amount: usdtAmount,
+    pyProfit: (Number(usdtAmount) * Number(py)) / 100,
+    pyProfitByPeriod:
+      (Number(usdtAmount) * Number(py)) / 100 / Number(withdrawalPeriod),
+    withdrawalAppear: false,
+  })
+
+  let withdrawDetails = arr.map((item, index) => ({
+    ...item,
+    withdrawalTime:
+      withdrawalPeriod == "48"
+        ? new Date(utcTimeStamp).setHours(
+            new Date(utcTimeStamp).getHours() + 24 * (7 * (index + 1))
+          )
+        : withdrawalPeriod == "12" || withdrawalPeriod == "6"
+        ? new Date(utcTimeStamp).setMonth(
+            new Date(utcTimeStamp).getMonth() + (index + 1)
+          )
+        : withdrawalPeriod == "1" &&
+          new Date(utcTimeStamp).setFullYear(
+            new Date(utcTimeStamp).getFullYear() + 1
+          ),
+    _key: nanoid(),
+    _type: "withdrawalDetails",
+    itemCount: index + 1,
+  }))
+
   const postTransaction = async () => {
     const transactionInfo = {
       walletAddress: account,
       amount: watch("amount"),
       plan: currentPlan,
+      planPeriod:
+        currentPlan == "prince-plan"
+          ? 3
+          : currentPlan == "king-plan"
+          ? 6
+          : currentPlan == "royal-plan" && 12,
+      py: py,
+      withdrawalPeriod: withdrawalPeriod,
       planType: watch("value"),
+      withdrawal: withdrawDetails,
       user: session?.id,
     }
 
@@ -127,6 +212,28 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
     }
   }
 
+  // let editUser = async () => {
+  //   await client.create({
+  //     _createdAt: "2022-10-15T17:26:20Z",
+  //     _updatedAt: "2022-10-15T17:26:20Z",
+  //     _type: "investing",
+  //     walletAddress: account,
+  //     amount: watch("amount"),
+  //     plan: currentPlan,
+  //     planPeriod:
+  //       currentPlan == "prince-plan"
+  //         ? 3
+  //         : currentPlan == "king-plan"
+  //         ? 6
+  //         : currentPlan == "royal-plan" && 12,
+  //     py: py,
+  //     withdrawalPeriod: withdrawalPeriod,
+  //     planType: watch("value"),
+  //     withdrawal: withdrawDetails,
+  //     user: session?.id,
+  //   })
+  // }
+
   return (
     <div className=" w-full lg:w-full max-w-md relative">
       <div className="nm-flat-slate-700-lg rounded-lg px-8 pt-6 pb-10 text-center flex flex-col space-y-6 ">
@@ -148,7 +255,7 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
                     <input
                       {...register(item.inputName)}
                       type={"hidden"}
-                      value={"yearly"}
+                      value={"oneTime"}
                       readOnly
                     />
                   </div>
@@ -253,24 +360,48 @@ const InvestingSale: FC<InvestingSale> = ({getUserBalance, contract}) => {
           </div>
           {terms.map((item, i) => {
             return (
-              <div key={i} className="flex flex-row gap-2 items-start">
-                <input
-                  type={"checkbox"}
-                  {...register(item.name, {
-                    required: {
-                      value: true,
-                      message: "need to accept all the terms",
-                    },
-                  })}
-                />
-                <label className="text-xs text-start"> {item.details}</label>
+              <div key={i}>
+                {item.appear == "all" && (
+                  <div className="flex flex-row gap-2 items-start">
+                    <input
+                      type={"checkbox"}
+                      {...register(item.name, {
+                        required: {
+                          value: true,
+                          message: "need to accept all the terms",
+                        },
+                      })}
+                    />
+                    <label className="text-xs text-start">
+                      {" "}
+                      {item.details}
+                    </label>
+                  </div>
+                )}
+                {item.appear == "royal" && currentPlan == "royal-plan" && (
+                  <div className="flex flex-row gap-2 items-start">
+                    <input
+                      type={"checkbox"}
+                      {...register(item.name, {
+                        required: {
+                          value: true,
+                          message: "need to accept all the terms",
+                        },
+                      })}
+                    />
+                    <label className="text-xs text-start">
+                      {" "}
+                      {item.details}
+                    </label>
+                  </div>
+                )}
               </div>
             )
           })}
           <button
             type="submit"
             className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
-            disabled={!formState.isValid || transactionLoading}>
+            disabled={!formState.isValid || transactionLoading || !account}>
             {transactionLoading && <ImSpinner2 className=" animate-spin" />} Buy
           </button>
         </form>

@@ -1,38 +1,42 @@
-import Link from 'next/link'
-import {useRouter} from 'next/router'
-import {useEffect} from 'react'
-import useTranslation from 'next-translate/useTranslation'
+import Link from "next/link"
+import {useRouter} from "next/router"
+import {useEffect} from "react"
+import useTranslation from "next-translate/useTranslation"
 
 const DefaultLinks = () => {
   const {asPath} = useRouter()
   const router = useRouter()
-  const {t} = useTranslation('common')
+  const {t} = useTranslation("common")
   useEffect(() => {
     // Test for the ugliness.
-    if (window.location.hash === '#_=_') {
-      router.push({pathname: '/sale'})
+    if (window.location.hash === "#_=_") {
+      router.push({pathname: "/sale"})
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath])
 
   const defaultLink = [
     {
-      linkName: t('papyrusPaper'),
-      href: '/white-paper',
+      linkName: t("papyrusPaper"),
+      href: "/white-paper",
     },
     {
-      linkName: t('sellRound'),
-      href: '/sale',
+      linkName: t("sellRound"),
+      href: "/sale",
     },
     {
-      linkName: t('yourBalance'),
-      href: '/balance',
+      linkName: "lop investing",
+      href: "/investing",
+    },
+    {
+      linkName: t("yourBalance"),
+      href: "/balance",
     },
   ]
 
   return (
     <div>
-      <ul className="flex flex-col lg:flex-row items-center gap-4 lg:gap-1">
+      <ul className="flex flex-col lg:flex-row items-center gap-4 ">
         {defaultLink.map((link, i) => {
           return (
             <li
@@ -41,7 +45,7 @@ const DefaultLinks = () => {
               <Link href={link.href}>
                 <a
                   className={`${
-                    asPath == link.href ? 'text-amber-500' : 'text-slate-100'
+                    asPath == link.href ? "text-amber-500" : "text-slate-100"
                   }`}>
                   {link.linkName}
                 </a>

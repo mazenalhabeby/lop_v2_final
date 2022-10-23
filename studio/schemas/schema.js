@@ -9,6 +9,8 @@ import account from "./account"
 import verificationToken from "./verification-token"
 import refferal from "./refferal"
 import investing from "./investing"
+import withdrawalDetails from "./withdrawalDetails"
+import WithdrawalAmount from "./WithdrawalAmount"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,5 +26,7 @@ export default createSchema({
     verificationToken,
     refferal,
     investing,
+    withdrawalDetails,
+    WithdrawalAmount,
   ]),
 })

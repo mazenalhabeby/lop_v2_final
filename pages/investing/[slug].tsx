@@ -27,7 +27,7 @@ function getUserBalance(account: any, library: any, cb: any, contract: any) {
   }
 }
 
-export default function Slug() {
+export default function Slug({utcTimeStamp}: any) {
   const {t} = useTranslation("sale")
   const [openModel, setOpenModel] = useState(false)
   const [activatingConnector, setActivatingConnector] = useState()
@@ -160,7 +160,11 @@ export default function Slug() {
       </div>
       <div className="flex flex-col-reverse  gap-10 xl:gap-0 px-8 xl:px-0 xl:flex-row  items-center justify-around">
         <InvestingInfo />
-        <InvestingSale getUserBalance={getUserBalance} contract={contract} />
+        <InvestingSale
+          getUserBalance={getUserBalance}
+          contract={contract}
+          utcTimeStamp={utcTimeStamp}
+        />
       </div>
     </motion.div>
   )
@@ -177,8 +181,9 @@ export async function getServerSideProps(context: any) {
       },
     }
   }
+  const utcTimeStamp = new Date().getTime()
   return {
-    props: {session},
+    props: {session, utcTimeStamp},
   }
 }
 

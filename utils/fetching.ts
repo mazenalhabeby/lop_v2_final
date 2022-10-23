@@ -1,5 +1,5 @@
-import {client} from '@/libs/sanity'
-import {referralUsers, refferalQUERY, userQUERY} from './query'
+import {client} from "@/libs/sanity"
+import {investingPlan, referralUsers, refferalQUERY, userQUERY} from "./query"
 
 export const fetchingUser = async (id: any) => {
   const currentUser = await client.fetch(userQUERY, {
@@ -23,4 +23,11 @@ export const fetchingRefferalUsers = async (Code: any) => {
   })
 
   return currentUsers
+}
+
+export const fetchinginvestingPlan = async (id: any) => {
+  const invesingPlan = await client.fetch(investingPlan, {
+    userId: id,
+  })
+  return invesingPlan
 }

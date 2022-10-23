@@ -11,16 +11,10 @@ export default async function handler(
   const mutations = {
     mutations: [
       {
-        create: {
-          _type: "token-sale",
-          walletAddress: data.walletAddress,
-          amount: data.amount,
-          seedRound: data.seedRound,
-          coinUsed: data.coinUsed,
-          coinPrice: data.coinPrice,
-          user: {
-            _type: "reference",
-            _ref: data.user,
+        patch: {
+          _id: data._id,
+          set: {
+            withdrawal: data.withdrawal,
           },
         },
       },

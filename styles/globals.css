@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
-@import url('http://fonts.cdnfonts.com/css/papyrus');
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+@import url("http://fonts.cdnfonts.com/css/papyrus");
 
 html,
 body {
@@ -48,4 +48,20 @@ a {
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.pagination {
+  @apply flex justify-center items-center my-8 gap-1 text-sm;
+}
+
+.pagination .page-num {
+  @apply py-1 px-2 cursor-pointer rounded font-semibold;
+}
+
+.pagination .page-num:hover {
+  @apply bg-amber-500 text-slate-100;
+}
+
+.pagination .active {
+  @apply bg-amber-500 text-slate-100;
 }

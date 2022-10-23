@@ -12,6 +12,7 @@ const InvestingInfo = () => {
   const planInfo = [
     {
       name: "prince-plan",
+      title: "prince-contract",
       info: "Prince plan allow you to get stable Percentage Yield up to 10% with short time",
       minInvest: 50,
       period: 3,
@@ -19,6 +20,7 @@ const InvestingInfo = () => {
     },
     {
       name: "king-plan",
+      title: "king-contract",
       info: "King plan allow you to get stable average Percentage Yield up to 40% with short time",
       minInvest: 50,
       period: 6,
@@ -29,6 +31,7 @@ const InvestingInfo = () => {
     },
     {
       name: "royal-plan",
+      title: "royal-contract",
       info: "Royal plan allow you to get stable amazing Percentage Yield up to 100% with short time",
       minInvest: 200,
       period: 12,
@@ -66,7 +69,7 @@ const InvestingInfo = () => {
                   <div key={i} className={`flex flex-col gap-4`}>
                     <div className="w-max flex flex-col gap-4 place-self-center">
                       <h2 className=" text-amber-400 font-papyrus font-semibold uppercase  text-xl">
-                        {item.name.replace("-", " ")}
+                        {item.title.replace("-", " ")}
                       </h2>
                       <TitleunderLine />
                     </div>

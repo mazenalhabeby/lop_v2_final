@@ -1,3 +1,5 @@
+import {client} from "@/libs/sanity"
+import {getSession} from "next-auth/react"
 import React from "react"
 
 const Test = ({utcTimeStamp}: any) => {
@@ -14,7 +16,33 @@ const Test = ({utcTimeStamp}: any) => {
 }
 
 export async function getServerSideProps(context: any) {
+  const session = await getSession(context)
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth/signin",
+        permanent: false,
+      },
+    }
+  }
+
   const utcTimeStamp = new Date().getTime()
+
+  const query = `*[_type=="investing"&& user._ref == $userId] | order(_createdAt) {
+    _id,
+    ...
+  }`
+
+  const userAmount = await client.fetch(query, {
+    userId: session.id,
+  })
+
+  console.log(
+    userAmount.map((item: any) => {
+      return item.plan
+    })
+  )
+
   return {
     props: {utcTimeStamp},
   }
