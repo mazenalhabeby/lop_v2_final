@@ -278,11 +278,24 @@ export default function InvestingBalnace({session, currentUtcTimeStamp}: any) {
                           )}
                         </span>
                         <span className=" col-span-2">
-                          {new Date(
-                            new Date(item._createdAt).setFullYear(
-                              new Date(item._createdAt).getFullYear() + 1
-                            )
-                          ).toDateString()}
+                          {item.plan == "royal-plan"
+                            ? new Date(
+                                new Date(item._createdAt).setFullYear(
+                                  new Date(item._createdAt).getFullYear() + 1
+                                )
+                              ).toDateString()
+                            : item.plan == "king-plan"
+                            ? new Date(
+                                new Date(item._createdAt).setMonth(
+                                  new Date(item._createdAt).getMonth() + 6
+                                )
+                              ).toDateString()
+                            : item.plan == "prince-plan" &&
+                              new Date(
+                                new Date(item._createdAt).setMonth(
+                                  new Date(item._createdAt).getMonth() + 3
+                                )
+                              ).toDateString()}
                         </span>
                         <span className=" col-span-1">
                           {item.walletAddress.substring(0, 6)}...
@@ -376,11 +389,24 @@ export default function InvestingBalnace({session, currentUtcTimeStamp}: any) {
                         <div className=" col-span-4 flex flex-col items-center justify-center gap-2">
                           <span>Expiry date</span>
                           <span>
-                            {new Date(
-                              new Date(item._createdAt).setFullYear(
-                                new Date(item._createdAt).getFullYear() + 1
-                              )
-                            ).toDateString()}
+                            {item.plan == "royal-plan"
+                              ? new Date(
+                                  new Date(item._createdAt).setFullYear(
+                                    new Date(item._createdAt).getFullYear() + 1
+                                  )
+                                ).toDateString()
+                              : item.plan == "king-plan"
+                              ? new Date(
+                                  new Date(item._createdAt).setMonth(
+                                    new Date(item._createdAt).getMonth() + 6
+                                  )
+                                ).toDateString()
+                              : item.plan == "prince-plan" &&
+                                new Date(
+                                  new Date(item._createdAt).setMonth(
+                                    new Date(item._createdAt).getMonth() + 3
+                                  )
+                                ).toDateString()}
                           </span>
                         </div>
                         <div className=" col-span-4 flex flex-col items-center justify-center gap-2">
