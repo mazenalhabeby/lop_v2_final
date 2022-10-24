@@ -28,7 +28,7 @@ const ProfitAmount: React.FC<ProfitAmountType> = ({item}) => {
   const balnaceHeader = [
     {title: "#", cols: "col-span-1"},
     {title: "Date", cols: "col-span-3"},
-    {title: "avalible $", cols: "col-span-4"},
+    {title: "Available", cols: "col-span-4"},
     {title: "Status", cols: "col-span-4"},
   ]
   useEffect(() => {

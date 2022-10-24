@@ -77,7 +77,7 @@ export default function InvestingBalnace({session, currentUtcTimeStamp}: any) {
     {title: "Date", cols: "col-span-2"},
     {title: "Investing", cols: "col-span-1"},
     {title: "Plan", cols: "col-span-1"},
-    {title: "period", cols: "col-span-1"},
+    {title: "Period", cols: "col-span-1"},
     {title: "PY", cols: "col-span-1"},
     {title: "Contract Type", cols: "col-span-1"},
     {title: "Balance", cols: "col-span-1"},
