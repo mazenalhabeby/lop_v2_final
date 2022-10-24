@@ -3,7 +3,7 @@ import {investDetailsType} from "@/pages/investing-balance"
 import React, {useEffect, useState} from "react"
 import {AiFillCheckCircle} from "react-icons/ai"
 import {ImSpinner5} from "react-icons/im"
-import {MdError} from "react-icons/md"
+import {MdContentCopy, MdError} from "react-icons/md"
 import ReactPaginate from "react-paginate"
 
 interface WithdrawalAmountType {
@@ -99,7 +99,15 @@ const WithdrawalAmount: React.FC<WithdrawalAmountType> = ({item}) => {
                 )}
               </span>
             </span>
-            <span className=" col-span-3">{item.transactionLink}</span>
+            <div className=" col-span-3 w-full flex flex-row gap-2 items-center px-2">
+              <p className="flex-1 truncate">{item.transactionLink}</p>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(item.transactionLink)
+                }}>
+                <MdContentCopy />
+              </button>
+            </div>
           </div>
         )
       })}
