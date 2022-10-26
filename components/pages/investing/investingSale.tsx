@@ -40,17 +40,17 @@ const InvestingSale: FC<InvestingSale> = ({
   }
 
   const PrincePlan = [
-    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
+    {label: "one Time withdrawal", value: "oneTime", inputName: "value"},
   ]
 
   const KingPlan = [
-    {label: "monthly Withdrawl", value: "monthly", inputName: "value"},
-    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
+    {label: "monthly withdrawal", value: "monthly", inputName: "value"},
+    {label: "one Time withdrawal", value: "oneTime", inputName: "value"},
   ]
   const RoyalPlan = [
-    {label: "weekly Withdrawl", value: "weekly", inputName: "value"},
-    {label: "monthly Withdrawl", value: "monthly", inputName: "value"},
-    {label: "yearly Withdrawl", value: "oneTime", inputName: "value"},
+    {label: "weekly withdrawal", value: "weekly", inputName: "value"},
+    {label: "monthly withdrawal", value: "monthly", inputName: "value"},
+    {label: "one Time withdrawal", value: "oneTime", inputName: "value"},
   ]
   const terms = [
     {
@@ -131,7 +131,7 @@ const InvestingSale: FC<InvestingSale> = ({
     error,
   } = context
 
-  const minimumInvesting = 1
+  const minimumInvesting = currentPlan == "royal-plan" ? 200 : 50
 
   let arr = Array(Number(withdrawalPeriod)).fill({
     py: py,
