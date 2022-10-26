@@ -26,6 +26,15 @@ const WithdrawalAmount: React.FC<WithdrawalAmountType> = ({item}) => {
   const [currentItemsWithdrawal, setCurrentItemsWithdrawal] = useState<
     itemWithdarawlType[]
   >([])
+  const [showCopied, setShowCopied] = useState(false)
+
+  useEffect(() => {
+    if (showCopied) {
+      setTimeout(() => {
+        setShowCopied(false)
+      }, 1000)
+    }
+  }, [showCopied])
   const itemsPerPageWithdrawal = 6
   const balnaceHeader = [
     {title: "#", cols: "col-span-1"},
@@ -99,14 +108,21 @@ const WithdrawalAmount: React.FC<WithdrawalAmountType> = ({item}) => {
                 )}
               </span>
             </span>
-            <div className=" col-span-3 w-full flex flex-row gap-2 items-center px-2">
+            <div className=" col-span-3 w-20 lg:w-40 flex flex-row gap-2 items-center px-2 relative">
               <p className="flex-1 truncate">{item.transactionLink}</p>
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(item.transactionLink)
+                  setShowCopied(true)
                 }}>
                 <MdContentCopy />
               </button>
+              <div
+                className={`${
+                  showCopied ? "flex" : "hidden"
+                } absolute -top-6 ltr:right-1 rtl:left-1 bg-green-600 px-1 rounded-lg`}>
+                Copied
+              </div>
             </div>
           </div>
         )

@@ -131,7 +131,7 @@ const InvestingSale: FC<InvestingSale> = ({
     error,
   } = context
 
-  const minimumInvesting = currentPlan == "royal-plan" ? 200 : 50
+  const minimumInvesting = 1
 
   let arr = Array(Number(withdrawalPeriod)).fill({
     py: py,
