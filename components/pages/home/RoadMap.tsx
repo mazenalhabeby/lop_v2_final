@@ -37,12 +37,12 @@ const RoadMap = () => {
       id: 3,
       head: "Q3 / 2022",
       stips: [
-        {id: 1, sDetail: t("publicsale"), stat: false},
-        {id: 2, sDetail: t("Prototype"), stat: false},
-        {id: 3, sDetail: t("Characters"), stat: false},
-        {id: 4, sDetail: t("Marketing2"), stat: false},
+        {id: 1, sDetail: t("publicsale"), stat: true},
+        {id: 2, sDetail: t("Prototype"), stat: true},
+        {id: 3, sDetail: t("Characters"), stat: true},
+        {id: 4, sDetail: t("Marketing2"), stat: true},
       ],
-      mainStat: "prog",
+      mainStat: "done",
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const RoadMap = () => {
         {id: 5, sDetail: t("listing"), stat: false},
         {id: 6, sDetail: t("markets"), stat: false},
       ],
-      mainStat: false,
+      mainStat: "prog",
     },
     {
       id: 5,
@@ -72,7 +72,7 @@ const RoadMap = () => {
     },
     {
       id: 6,
-      head: "Q2 / 2023",
+      head: "Q2 & Q3 / 2023",
       stips: [
         {id: 1, sDetail: t("betaGame"), stat: false},
         {id: 2, sDetail: t("PVP"), stat: false},
@@ -82,7 +82,7 @@ const RoadMap = () => {
     },
     {
       id: 7,
-      head: "Q3 / 2023",
+      head: "Q4 / 2023",
       stips: [
         {id: 1, sDetail: t("game"), stat: false},
         {id: 2, sDetail: t("additionalNFT"), stat: false},
