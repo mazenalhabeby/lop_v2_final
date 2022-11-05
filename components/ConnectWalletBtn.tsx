@@ -32,7 +32,7 @@ const ConnectWalletBtn: FC<ConnectWalletBtnProps> = ({
       )}
       {account && (
         <div className="flex flex-row items-center nm-flat-slate-700 p-2 rounded-full font-mono text-lg gap-2 tracking-wider">
-          <span className="">{balance}-USDT</span>
+          <span className="">{balance}</span>
           <div className="flex flex-row items-center nm-inset-slate-700 px-2 py-1 rounded-full gap-2">
             <span>
               {account &&
