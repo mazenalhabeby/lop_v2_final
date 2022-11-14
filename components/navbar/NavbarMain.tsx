@@ -6,6 +6,8 @@ import UserBtn from "../UserBtn"
 import {MdClose, MdMenu} from "react-icons/md"
 import LangBtn from "../LangBtn"
 
+declare var window: any
+
 interface NavbarMainProps {
   links: any
 }
@@ -27,6 +29,36 @@ const NavbarMain: FC<NavbarMainProps> = ({links}) => {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  const tokenAddress = "0xdc41349306d3db04a3a21d1bebaf9882acf4e65e"
+  const tokenSymbol = "LOP"
+  const tokenDecimals = 18
+  const tokenImage = "https://assets.codepen.io/4625073/1.jpeg"
+
+  async function addTokenFunction() {
+    try {
+      const wasAdded = await window.ethereum.request({
+        method: "wallet_watchAsset",
+        params: {
+          type: "ERC20",
+          options: {
+            address: tokenAddress,
+            symbol: tokenSymbol,
+            decimals: tokenDecimals,
+            image: tokenImage,
+          },
+        },
+      })
+
+      if (wasAdded) {
+        console.log("Thanks for your interest!")
+      } else {
+        console.log("HelloWorld Coin has not been added")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <nav
@@ -71,6 +103,13 @@ const NavbarMain: FC<NavbarMainProps> = ({links}) => {
 
           <UserBtn />
           <LangBtn />
+          <button
+            onClick={() => {
+              addTokenFunction()
+            }}
+            className="bg-amber-500 p-1 rounded text-slate-900">
+            Add LOP Token
+          </button>
         </div>
       </div>
     </nav>
