@@ -181,7 +181,7 @@ const SaleSide: FC<SaleSideProps> = ({getUserBalance}) => {
           <button
             type="submit"
             className=" flex flex-row items-center gap-1 bg-cyan-300 text-slate-700 px-10 py-2 rounded-full disabled:bg-slate-500 disabled:text-slate-700"
-            disabled={transactionLoading}>
+            disabled={true}>
             {transactionLoading && <ImSpinner2 className=" animate-spin" />}{" "}
             {t("buyButton")}
           </button>
