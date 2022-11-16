@@ -1,23 +1,24 @@
-import {motion} from 'framer-motion'
-import InfoSide from '@/components/pages/sell-round/InfoSide'
-import SaleSide from '@/components/pages/sell-round/SaleSide'
-import DefaultLayout from '@/layouts/DefaultLayout'
-import {getSession} from 'next-auth/react'
-import {useEffect, useState} from 'react'
-import ConnectWalletsModel from '@/components/ConnectWalletsModel'
-import {injected, networks, walletconnect} from '@/libs/connector'
+import {motion} from "framer-motion"
+import InfoSide from "@/components/pages/sell-round/InfoSide"
+import SaleSide from "@/components/pages/sell-round/SaleSide"
+import DefaultLayout from "@/layouts/DefaultLayout"
+import {getSession} from "next-auth/react"
+import {useEffect, useState} from "react"
+import ConnectWalletsModel from "@/components/ConnectWalletsModel"
+import {injected, networks, walletconnect} from "@/libs/connector"
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
-import {UserRejectedRequestError as UserRejectedRequestErrorWalletConnect} from '@web3-react/walletconnect-connector'
-import {UnsupportedChainIdError, useWeb3React} from '@web3-react/core'
-import {useEagerConnect, useInactiveListener} from '@/hooks/ConnectWalletHook'
-import ConnectWalletBtn from '@/components/ConnectWalletBtn'
-import {formatEther} from '@ethersproject/units'
-import useTranslation from 'next-translate/useTranslation'
-import {fetchingUser} from '@/utils/fetching'
-import {apiEditpoint} from '@/utils/endpoint'
+} from "@web3-react/injected-connector"
+import {UserRejectedRequestError as UserRejectedRequestErrorWalletConnect} from "@web3-react/walletconnect-connector"
+import {UnsupportedChainIdError, useWeb3React} from "@web3-react/core"
+import {useEagerConnect, useInactiveListener} from "@/hooks/ConnectWalletHook"
+import ConnectWalletBtn from "@/components/ConnectWalletBtn"
+import {formatEther} from "@ethersproject/units"
+import useTranslation from "next-translate/useTranslation"
+import {fetchingUser} from "@/utils/fetching"
+import {apiEditpoint} from "@/utils/endpoint"
+import Link from "next/link"
 
 declare var window: any
 
@@ -36,7 +37,7 @@ function getUserBalance(account: any, library: any, cb: any) {
   }
 }
 export default function SaleRound({session}: any) {
-  const {t} = useTranslation('sale')
+  const {t} = useTranslation("sale")
   const [openModel, setOpenModel] = useState(false)
   const [activatingConnector, setActivatingConnector] = useState()
   const [balance, setBalance] = useState(0)
@@ -57,25 +58,25 @@ export default function SaleRound({session}: any) {
 
     await fetch(apiEditpoint, {
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_SANITY_API_TOKEN}`,
       },
       body: JSON.stringify(mutations),
-      method: 'POST',
+      method: "POST",
     })
   }
 
   useEffect(() => {
-    const redIdfromStorge = window.localStorage.getItem('refId')
+    const redIdfromStorge = window.localStorage.getItem("refId")
 
     fetchingUser(session.id).then((data) => {
       if (data[0].refBy == null) {
         if (redIdfromStorge) {
           addRefId(redIdfromStorge)
-          window.localStorage.removeItem('refId')
+          window.localStorage.removeItem("refId")
         }
       } else {
-        window.localStorage.removeItem('refId')
+        window.localStorage.removeItem("refId")
       }
     })
   }, [session])
@@ -94,9 +95,9 @@ export default function SaleRound({session}: any) {
 
   useEffect(() => {
     if (openModel) {
-      document.body.classList.add('active__model')
+      document.body.classList.add("active__model")
     } else {
-      document.body.classList.remove('active__model')
+      document.body.classList.remove("active__model")
     }
   }, [openModel])
 
@@ -111,8 +112,8 @@ export default function SaleRound({session}: any) {
   }, [account, library])
 
   enum ConnectorNames {
-    Injected = 'meta_mask',
-    WalletConnect = 'wallet_connect',
+    Injected = "meta_mask",
+    WalletConnect = "wallet_connect",
   }
 
   const connectorsByName: {[connectorName in ConnectorNames]: any} = {
@@ -122,15 +123,15 @@ export default function SaleRound({session}: any) {
 
   function getErrorMessage(error: Error) {
     if (error instanceof NoEthereumProviderError) {
-      return t('errorNoWallet')
+      return t("errorNoWallet")
     } else if (error instanceof UnsupportedChainIdError) {
       return (
         <div className="flex flex-row text-center gap-x-3">
-          <span>{t('errorWrongNetwork')}</span>
+          <span>{t("errorWrongNetwork")}</span>
           <button
             className="bg-yellow-500 px-2 py-1 rounded-lg"
             onClick={() => {
-              handleNetworkSwitch('bsc')
+              handleNetworkSwitch("bsc")
             }}>
             Binance Network
           </button>
@@ -140,16 +141,16 @@ export default function SaleRound({session}: any) {
       error instanceof UserRejectedRequestErrorInjected ||
       error instanceof UserRejectedRequestErrorWalletConnect
     ) {
-      return t('errorAuthorize')
+      return t("errorAuthorize")
     } else {
-      return t('globalError')
+      return t("globalError")
     }
   }
 
   const changeNetwork = async ({networkName}: {networkName: any}) => {
-    if (!window.ethereum) throw new Error('No crypto wallet found')
+    if (!window.ethereum) throw new Error("No crypto wallet found")
     await window.ethereum.request({
-      method: 'wallet_addEthereumChain',
+      method: "wallet_addEthereumChain",
       params: [
         {
           //@ts-ignore
@@ -193,7 +194,7 @@ export default function SaleRound({session}: any) {
           />
         </div>
       )}
-      <div className="w-full container flex justify-end px-4">
+      {/* <div className="w-full container flex justify-end px-4">
         <ConnectWalletBtn
           account={account}
           openModel={openModel}
@@ -202,10 +203,19 @@ export default function SaleRound({session}: any) {
           deactivate={deactivate}
           balance={Number(formatEther(balance)).toFixed(4)}
         />
-      </div>
+      </div> */}
       <div className="flex flex-col-reverse  gap-10 xl:gap-0 px-8 xl:px-0 xl:flex-row  items-center justify-around">
         <InfoSide />
-        <SaleSide getUserBalance={getUserBalance} />
+        {/* <SaleSide getUserBalance={getUserBalance} /> */}
+        <div className=" text-center nm-flat-slate-700 p-4 rounded-lg text-xl font-aclonica uppercase tracking-wider leading-relaxed">
+          Presale Time Finished,
+          <br /> buy Lop now from the market on <br />
+          <Link href={"https://difx.com/login"}>
+            <a>
+              <span className="text-blue-500">DIFX</span> PLATFORM
+            </a>
+          </Link>
+        </div>
       </div>
     </motion.div>
   )
@@ -217,7 +227,7 @@ export async function getServerSideProps(context: any) {
   if (!session) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: "/auth/signin",
         permanent: false,
       },
     }

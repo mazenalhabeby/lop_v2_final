@@ -125,7 +125,7 @@ const Intro = ({scrollYProgress}: any) => {
             colorHover={"hover:text-amber-700"}
             fontWeight="sami-bold"
             type="link"
-            hrefLink="/sale"
+            hrefLink="https://difx.com/login"
           />
           <MainButton
             btnName={"LOP INVEST"}
