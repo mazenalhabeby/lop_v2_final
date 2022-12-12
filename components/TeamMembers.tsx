@@ -34,21 +34,21 @@ const TeamMembers = () => {
         },
       ],
     },
-    {
-      id: 2,
-      character: "/images/teams/bill.png",
-      possion: t("charactorPossion2"),
-      jobTitle: t("characterJob2"),
-      name: t("characterName2"),
-      Links: [
-        {
-          id: 1,
-          socialMedia: "Linkedin",
-          link: "https://www.linkedin.com/in/bill-salah-b89002201/",
-          socialIcon: FaLinkedin,
-        },
-      ],
-    },
+    // {
+    //   id: 2,
+    //   character: "/images/teams/bill.png",
+    //   possion: t("charactorPossion2"),
+    //   jobTitle: t("characterJob2"),
+    //   name: t("characterName2"),
+    //   Links: [
+    //     {
+    //       id: 1,
+    //       socialMedia: "Linkedin",
+    //       link: "https://www.linkedin.com/in/bill-salah-b89002201/",
+    //       socialIcon: FaLinkedin,
+    //     },
+    //   ],
+    // },
     {
       id: 3,
       character: "/images/teams/asad.png",
