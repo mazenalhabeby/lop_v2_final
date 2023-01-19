@@ -26,7 +26,7 @@ export default function Home() {
   let interval: any
 
   const startTimer = () => {
-    const countDownDate = new Date("jan 19, 2023 20:00:00").getTime()
+    const countDownDate = new Date("jan 20, 2023 20:00:00").getTime()
 
     interval = setInterval(() => {
       const now = new Date().getTime()
