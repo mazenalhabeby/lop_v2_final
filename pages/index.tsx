@@ -8,8 +8,10 @@ import HomeLayout from "@/layouts/HomeLayout"
 import JobAplication from "@/components/JobAplication"
 import {useRouter} from "next/router"
 import React, {useEffect, useState} from "react"
+import {ImSpinner9} from "react-icons/im"
 
 export default function Home() {
+  const [initial, setInitial] = useState(false)
   // const location: any = useRouter()
 
   // useEffect(() => {
@@ -26,7 +28,7 @@ export default function Home() {
   let interval: any
 
   const startTimer = () => {
-    const countDownDate = new Date("jan 20, 2023 20:00:00").getTime()
+    const countDownDate = new Date("jan 20, 2023 18:58:00").getTime()
 
     interval = setInterval(() => {
       const now = new Date().getTime()
@@ -41,6 +43,7 @@ export default function Home() {
 
       if (distance < 0) {
         clearInterval(interval.current)
+        setInitial(true)
       } else {
         setDays(days)
         setHours(hours)
@@ -49,7 +52,7 @@ export default function Home() {
       }
     }, 1000)
   }
-
+  console.log(initial)
   useEffect(() => {
     startTimer()
     return () => {
@@ -79,9 +82,9 @@ export default function Home() {
     <div
       className={`bg-[url("/images/background.jpg")] bg-cover bg-top bg-slate-900/80 bg-blend-overlay w-full h-screen flex justify-center items-center`}
     >
-      <div className="text-3xl font-aclonica uppercase text-center flex flex-col gap-4">
+      <div className="text-3xl font-aclonica uppercase text-center flex flex-col gap-4 justify-center items-center">
         <div className="flex flex-row gap-2">
-          <h1>Updateing For new Website</h1>
+          <h1>initializing the Website</h1>
           <div className="flex flex-row gap-4">
             <span className="text-2xl font-bold animate-[bounce_1s_ease_infinite]">
               .
@@ -94,19 +97,24 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center border-2 border-slate-400 rounded-lg p-4 shadow-lg">
-          {settime.map((item, index) => {
-            return (
-              <div
-                className="flex flex-col justify-center items-center gap-2"
-                key={index}
-              >
-                <span>{item.data}</span>
-                <span className="text-xs">{item.name}</span>
-              </div>
-            )
-          })}
-        </div>
+        <p>website will be available any moment</p>
+        <ImSpinner9 className="text-7xl animate-spin" />
+        {/* {!initial && (
+          <div className="flex flex-row justify-between items-center border-2 border-slate-400 rounded-lg p-4 shadow-lg">
+            {settime.map((item, index) => {
+              return (
+                <div
+                  className="flex flex-col justify-center items-center gap-2"
+                  key={index}
+                >
+                  <span>{item.data}</span>
+                  <span className="text-xs">{item.name}</span>
+                </div>
+              )
+            })}
+          </div>
+        )} */}
+        <div></div>
       </div>
     </div>
   )
